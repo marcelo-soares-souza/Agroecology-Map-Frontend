@@ -2,6 +2,7 @@ import { useRouteError } from "react-router-dom";
 
 import MainHeader from "../components/MainHeader";
 import PageContent from "../components/PageContent";
+import Modal from "../components/UI/Modal";
 
 function ErrorPage() {
   const error: any = useRouteError();
@@ -19,9 +20,11 @@ function ErrorPage() {
   return (
     <>
       <MainHeader />
-      <PageContent>
-        <p>{message}</p>
-      </PageContent>
+      <Modal>
+        <PageContent>
+          <p>{message}</p>
+        </PageContent>
+      </Modal>
     </>
   );
 }
