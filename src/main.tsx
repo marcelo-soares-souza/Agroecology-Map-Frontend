@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router-dom";
 
 import { MainRouter } from "./routes/MainRouter";
 
+import "./i18n";
 import "./index.css";
 
 const portalDiv = document.getElementById("root")!;
