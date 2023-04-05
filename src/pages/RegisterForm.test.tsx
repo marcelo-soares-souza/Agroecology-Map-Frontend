@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "../i18n";
+
 import { RegisterForm } from "./RegisterForm";
 
 describe("< RegisterForm />", () => {
@@ -46,11 +48,12 @@ describe("< RegisterForm />", () => {
 		await userEvent.type(el, password);
 		expect(el).toHaveValue(password);
 	});
-	it("should display a link to switch to login (10-25ch)", () => {
+	it("should display a link to switch to login (10-40ch)", () => {
 		render(<RegisterForm />);
 		const el = screen.getByRole("link");
 		expect(el).toBeVisible();
-		expect(el).toHaveTextContent(/^[A-Za-z ]{10,25}$/);
+		expect(el).toHaveTextContent(/^[A-Za-z .!?]{10,40}$/);
+		expect(el).toHaveAttribute("href", "/login");
 	});
 	it("should display a submit button as a second button (4-12ch)", () => {
 		render(<RegisterForm />);
