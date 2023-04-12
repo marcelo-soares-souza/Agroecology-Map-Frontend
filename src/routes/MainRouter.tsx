@@ -5,23 +5,26 @@ import RootLayout from "./RouteLayout";
 
 import Home from "../pages/Home";
 import Register from "../pages/Register";
-
-import "../index.css";
+import Profile from "../pages/Profile";
 
 export const MainRouter = createBrowserRouter([
-	{
-		path: "/",
-		errorElement: <ErrorPage />,
-		element: <RootLayout />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/register",
-				element: <Register />,
-			},
-		],
-	},
+  {
+    path: "/",
+    errorElement: <ErrorPage />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+    ],
+  },
 ]);
