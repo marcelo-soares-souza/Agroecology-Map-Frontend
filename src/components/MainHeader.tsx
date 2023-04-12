@@ -11,6 +11,10 @@ const MainHeader = () => {
         <img src={logo} className={classes.logo} alt="Agroecology Map Logo" />
       </Link>
       <p>
+        <Link to="/profile" className={classes.link}>
+          Profile
+        </Link>
+
         <Link to="/register" className={classes.button}>
           Sign-Up
         </Link>
