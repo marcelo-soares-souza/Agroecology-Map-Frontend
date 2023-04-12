@@ -1,7 +1,5 @@
-import classes from "./PageContent.module.css";
-
 function PageContent({ children }: { children: any }) {
-  return <div className={classes.content}>{children}</div>;
+  return <main>{children}</main>;
 }
 
 export default PageContent;
