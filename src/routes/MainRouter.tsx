@@ -4,7 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import RootLayout from "./RouteLayout";
 
 import Home from "../pages/Home";
-import { RegisterForm } from "../pages/RegisterForm";
+import Register from "../pages/Register";
 
 import "../index.css";
 
@@ -20,7 +20,7 @@ export const MainRouter = createBrowserRouter([
 			},
 			{
 				path: "/register",
-				element: <RegisterForm />,
+				element: <Register />,
 			},
 		],
 	},

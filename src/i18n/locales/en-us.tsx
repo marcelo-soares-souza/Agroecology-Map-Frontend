@@ -3,11 +3,13 @@ export default {
 		home: {
 			about: "Welcome to Agroecology Map!",
 		},
+		form: {
+			submit: "Submit",
+		},
 		register: {
 			heading: "Be on the map",
 			description: "Create an account to start sharing your experiences!",
 			linkToLogin: "Already registered? Login instead.",
-			submitButton: "Submit",
 		},
 		error: {
 			something_went_wrong: "Something went wrong",

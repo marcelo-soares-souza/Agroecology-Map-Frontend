@@ -1,7 +1,7 @@
 import Translator from "../components/i18n/Translator";
-import classes from "./RegisterForm.module.css";
+import classes from "./Register.module.css";
 
-export const RegisterForm = () => {
+const Register = () => {
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.container}>
@@ -35,10 +35,12 @@ export const RegisterForm = () => {
 						<Translator path='register.linkToLogin' />
 					</a>
 					<button type='submit'>
-						<Translator path='register.submitButton' />
+						<Translator path='form.submit' />
 					</button>
 				</form>
 			</div>
 		</div>
 	);
 };
+
+export default Register;
