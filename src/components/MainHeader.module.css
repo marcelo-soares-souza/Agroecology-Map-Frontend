@@ -60,3 +60,7 @@
 .underline:hover::before {
   width: 22px;
 }
+
+.activeLink {
+  color: var(--olive) !important;
+}

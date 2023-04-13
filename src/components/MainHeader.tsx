@@ -1,4 +1,4 @@
-import { Link, useNavigation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import classes from "./MainHeader.module.css";
 
@@ -8,7 +8,7 @@ import Translator from "./i18n/Translator";
 const MainHeader = () => {
   return (
     <header className={classes.header}>
-      <Link className={classes.logoWrap} to="/">
+      <NavLink className={classes.logoWrap} to="/">
         <img
           height={100}
           src={logo}
@@ -18,17 +18,22 @@ const MainHeader = () => {
         <span className={classes.logotype}>
           <Translator path="header.agroecologyMap" />
         </span>
-      </Link>
+      </NavLink>
       <nav className={classes.nav}>
-        <Link className={classes.underline} to="/profile">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? classes.activeLink : classes.underline
+          }
+          to="/profile"
+        >
           <Translator path="header.profile" />
-        </Link>
+        </NavLink>
 
-        <Link to="/register" className={classes.button}>
+        <NavLink to="/register" className={classes.button}>
           <button className="btn-highlight-1">
             <Translator path="header.enter" />
           </button>
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );
