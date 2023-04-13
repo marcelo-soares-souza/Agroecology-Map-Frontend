@@ -9,18 +9,25 @@ const MainHeader = () => {
   return (
     <header className={classes.header}>
       <Link className={classes.logoWrap} to="/">
-        <img src={logo} className={classes.logo} alt="Agroecology Map Logo" />
+        <img
+          height={100}
+          src={logo}
+          className={classes.logo}
+          alt="Agroecology Map Logo"
+        />
         <span className={classes.logotype}>
           <Translator path="header.agroecologyMap" />
         </span>
       </Link>
       <nav className={classes.nav}>
-        <Link to="/profile" className={classes.link}>
-          Profile
+        <Link to="/profile">
+          <Translator path="header.profile" />
         </Link>
 
         <Link to="/register" className={classes.button}>
-          Sign-Up
+          <button className="btn-highlight-1">
+            <Translator path="header.enter" />
+          </button>
         </Link>
       </nav>
     </header>

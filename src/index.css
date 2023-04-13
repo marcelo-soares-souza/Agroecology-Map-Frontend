@@ -12,10 +12,16 @@
 }
 
 :root {
+  --font-base: 'DM Sans',
+    'Inter',
+    'Open Sans',
+    Verdana,
+    sans-serif;
+  --font-heading: 'Inter', 'Open Sans', "DM Sans", Ubuntu, Verdana, sans-serif;
   min-height: 100vh;
   font-size: 20px;
   line-height: 32px;
-  font-family: 'DM Sans', 'Inter', 'Open Sans', Helvetica, Verdana, sans-serif;
+  font-family: var(--font-base);
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -81,7 +87,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Inter, 'DM Sans', Verdana, sans-serif;
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -113,6 +119,7 @@ button {
   margin: var(--space-2) 0;
   height: var(--space-6);
   padding: 0 var(--space-4);
+  font-family: var(--font-heading);
   color: var(--neutral-light);
   border: 2px solid var(--neutral);
   border-radius: 28px;
@@ -131,6 +138,13 @@ button:disabled {
   background-color: var(--neutral-light);
   color: var(--neutral);
   border-color: var(--neutral-light);
+}
+
+.btn-highlight-1 {
+  background-color: var(--highlight-1);
+  color: var(--background);
+  font-weight: 700;
+  border: none;
 }
 
 input {
