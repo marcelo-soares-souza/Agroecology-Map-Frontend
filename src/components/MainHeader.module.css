@@ -1,11 +1,10 @@
 .header {
-  margin: 2rem 10%;
-  padding: 1rem;
-  text-align: center;
+  padding: var(--space-4) max(12px, 10%);
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--background-highlight);
+  margin-bottom: var(--space-4);
 }
 
 .button {
@@ -21,10 +20,32 @@
   font-weight: bold;
 }
 
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
-  height: 8rem;
+  height: 3rem;
   will-change: filter;
   transition: filter 300ms;
+}
+
+.logotype {
+  font-family: Inter, 'DM Sans', Ubuntu, Verdana, sans-serif;
+  color: var(--primary);
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.2rem;
+  white-space: pre-wrap;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .link {

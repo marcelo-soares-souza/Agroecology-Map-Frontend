@@ -1,5 +1,8 @@
 export default {
   translations: {
+    header: {
+      agroecologyMap: "Agroecology\nMap"
+    },
     home: {
       about: "Welcome to Agroecology Map!"
     },
