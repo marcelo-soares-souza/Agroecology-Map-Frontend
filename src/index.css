@@ -46,15 +46,15 @@
   --light-gray: #C3C3C3;
 
   --primary: var(--off-black);
-  --primary-dark: var(--beige);
   --highlight-1: var(--orange);
   --highlight-1-dark: var(--dark-orange);
+  --highlight-1-darker: var(--forest);
   --highlight-1-darker: var(--brown);
   --highlight-2:var(--lime);
   --highlight-2-dark: var(--olive);
   --neutral-light: var(--light-gray);
   --neutral: var(--gray);
-  --background-highlight: var(--forest);
+  --background-highlight: var(--beige);
   --background: var(--off-white);
 
   --space-0: 8px;
@@ -69,15 +69,7 @@
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --primary: var(--off-white);
-    --dark-primary: var(--beige);
-    --highlight-1: var(--orange);
-    --dark-highlight-1: var(--dark-orange);
-    --darker-highlight-1: var(--brown);
-    --highlight-2: var(--lime);
-    --dark-highlight-2: var(--olive);
-    --background-highlight: var(--forest);
-    --background: var(--off-black);
+    
   }
 } */
 
