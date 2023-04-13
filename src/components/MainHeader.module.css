@@ -32,6 +32,7 @@
 }
 
 .nav {
+  font-weight: 700;
   flex: 1;
   display: flex;
   align-items: center;
@@ -39,3 +40,23 @@
   gap: var(--space-6);
 }
 
+.nav a {
+  color: var(--highlight-1-darker);
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  background-color: var(--highlight-1-darker);
+  transition: width ease 120ms;
+}
+
+.underline:hover::before {
+  width: 22px;
+}

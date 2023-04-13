@@ -144,7 +144,12 @@ button:disabled {
   background-color: var(--highlight-1);
   color: var(--background);
   font-weight: 700;
-  border: none;
+  border:none;
+  transition: opacity linear 120ms;
+}
+.btn-highlight-1:hover {
+  opacity: 0.85;
+  color: var(--background);
 }
 
 input {

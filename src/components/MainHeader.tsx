@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 
 import classes from "./MainHeader.module.css";
 
@@ -20,7 +20,7 @@ const MainHeader = () => {
         </span>
       </Link>
       <nav className={classes.nav}>
-        <Link to="/profile">
+        <Link className={classes.underline} to="/profile">
           <Translator path="header.profile" />
         </Link>
 
