@@ -61,6 +61,18 @@
   width: 22px;
 }
 
-.activeLink {
-  color: var(--olive) !important;
+.activeLink:any-link {
+  color: var(--highlight-2-dark);
+}
+
+.activeLink:any-link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 22px;
+  background-color: var(--highlight-2-dark);
+  transition: width ease 120ms;
 }
