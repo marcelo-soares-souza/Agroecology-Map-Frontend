@@ -15,17 +15,17 @@ const Home = () => {
             </span>
           </h1>
           <p data-testid="subtitle">
-            {
-              "Ut at quibusdam accusantium vel odio. Temporibus molestiae sed suscipit. In qui ex ut dicta qui ut ad. Voluptatem minima nisi quis at amet. Fugiat ullam qui maxime et. Quo laborum occaecati dolor quisquam."
-            }
+            <Translator path="home.subtitle" />
           </p>
           <div className={classes.ctaButtonsContainer}>
             <Link to={"/"}>
-              <button className="btn-long">Discover Experiences</button>
+              <button className="btn-long">
+                <Translator path="home.discoverCTA" />
+              </button>
             </Link>
             <Link to={"/register"}>
               <button className="btn-long btn-highlight-2">
-                Be on the map
+                <Translator path="home.registerCTA" />
               </button>
             </Link>
           </div>

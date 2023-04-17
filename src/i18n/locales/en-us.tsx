@@ -10,7 +10,9 @@ export default {
       titleLine2: "Worldwide",
       about: "Welcome to Agroecology Map!",
       discoverCTA: "Discover Experiences",
-      registerCTA: "Be on the map"
+      registerCTA: "Be on the map",
+      subtitle:
+        "Ut at quibusdam accusantium vel odio. Temporibus molestiae sed suscipit. In qui ex ut dicta qui ut ad. Voluptatem minima nisi quis at amet. Fugiat ullam qui maxime et. Quo laborum occaecati dolor quisquam."
     },
     form: {
       submit: "Submit"
