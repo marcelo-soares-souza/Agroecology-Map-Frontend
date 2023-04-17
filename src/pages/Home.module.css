@@ -1,0 +1,20 @@
+.superTitle {
+  margin-top: 20%;
+  font-size: 3.2rem;
+  font-family: var(--font-super);
+}
+
+.title {
+  line-height: 1;
+  font-size: 6.4rem;
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  letter-spacing: -5;
+}
+
+.ctaButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 6rem;
+}

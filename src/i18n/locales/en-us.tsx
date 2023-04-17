@@ -6,7 +6,11 @@ export default {
       profile: "Profile"
     },
     home: {
-      about: "Welcome to Agroecology Map!"
+      titleLine1: "Your local agroecology guide",
+      titleLine2: "Worldwide",
+      about: "Welcome to Agroecology Map!",
+      discoverCTA: "Discover Experiences",
+      registerCTA: "Be on the map"
     },
     form: {
       submit: "Submit"

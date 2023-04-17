@@ -18,6 +18,8 @@
     Verdana,
     sans-serif;
   --font-heading: 'Inter', 'Open Sans', "DM Sans", Ubuntu, Verdana, sans-serif;
+  --font-super: 'Bebas Neue', sans-serif;
+  --font-title: 'Fira Sans', 'Inter', sans-serif;
   min-height: 100vh;
   font-size: 20px;
   line-height: 32px;
@@ -150,6 +152,25 @@ button:disabled {
 .btn-highlight-1:hover {
   opacity: 0.85;
   color: var(--background);
+}
+
+.btn-highlight-2 {
+  background-color: var(--highlight-2-dark);
+  color: var(--background);
+  font-weight: 700;
+  border: none;
+  transition: all linear 120ms;
+  box-shadow: 0 0 0 var(--neutral-light);
+}
+
+.btn-highlight-2:hover {
+  transform: scale(103%);
+  color: var(--background);
+  box-shadow: 0 0 18px var(--neutral-light);
+}
+
+.btn-long {
+  min-width: 13rem;
 }
 
 input {
