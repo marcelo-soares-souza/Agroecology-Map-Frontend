@@ -1,5 +1,41 @@
-.content {
+/* .content {
   margin: auto;
   max-width: 960px;
   text-align: justify;
+} */
+
+.container {
+  margin: var(--space-6) 0 0 var(--space-8);
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.container p {
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  margin: 0 0 var(--space-2) 0;
+}
+
+.smallGap {
+  gap: var(--space-3);
+}
+
+.btnNext {
+  position: relative;
+  width: 8rem;
+}
+
+.btnNext::after {
+  content: ">";
+  position: absolute;
+  right: 12%;
+}
+
+.profilePreviewContainer {
+  background-color: var(--neutral);
 }
