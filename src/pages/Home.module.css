@@ -6,7 +6,7 @@
 }
 
 .title {
-  line-height: 1;
+  line-height: 0.8;
   font-size: 6.4rem;
   text-transform: uppercase;
   font-family: var(--font-title);
@@ -14,8 +14,9 @@
 }
 
 .ctaButtonsContainer {
+  margin: var(--space-4) 0;
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 6rem;
+  gap: var(--space-6)
 }
