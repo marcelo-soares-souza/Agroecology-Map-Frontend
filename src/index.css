@@ -98,6 +98,10 @@ h1 {
   font-weight: 800;
 }
 
+.subtitle {
+  color: var(--neutral);
+}
+
 h2 {
   font-size: var(--text-2xl);
   font-weight: 700;

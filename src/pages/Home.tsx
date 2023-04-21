@@ -14,7 +14,7 @@ const Home = () => {
               <Translator path="home.titleLine2" />
             </span>
           </h1>
-          <p data-testid="subtitle" className={classes.subtitle}>
+          <p data-testid="subtitle" className="subtitle">
             <Translator path="home.subtitle" />
           </p>
           <div className={classes.ctaButtonsContainer}>
