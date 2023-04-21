@@ -1,5 +1,6 @@
 .superTitle {
   margin-top: 20%;
+  margin-bottom: var(--space-2);
   font-size: 3.2rem;
   font-family: var(--font-super);
 }
