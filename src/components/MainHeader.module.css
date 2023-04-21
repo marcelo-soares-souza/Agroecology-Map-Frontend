@@ -1,12 +1,13 @@
 .header {
-  min-height: 130px;
-  padding: 1rem max(12px, 10%);
+  min-height: 86px;
+  padding: 0 max(12px, 10%);
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
   align-items: center;
   border-bottom: 1px solid var(--background-highlight);
   margin-bottom: var(--space-4);
+  box-shadow: 0 0 10px rgb(210, 210, 188);
 }
 
 .logoWrap {
@@ -24,11 +25,16 @@
 .logotype {
   font-family: Inter, 'DM Sans', Ubuntu, Verdana, sans-serif;
   padding: var(--space-0);
-  color: var(--primary);
+  color: var(--gray);
   font-size: var(--text-base);
   font-weight: 600;
   line-height: 1.2rem;
   white-space: pre-wrap;
+  transition: color ease 150ms;
+}
+
+.logotype:hover {
+  color: var(--primary);
 }
 
 .nav {

@@ -70,9 +70,10 @@
   --space-2: 16px;
   --space-3: 20px;
   --space-4: 32px;
-  --space-5: 40px;
-  --space-6: 52px;
-  --space-7: 64px;
+  --space-5: 52px;
+  --space-6: 84px;
+  --space-7: 136px;
+  --space-8: 220px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -119,7 +120,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: var(--space-2) 0;
-  height: var(--space-6);
+  height: var(--space-5);
   padding: 0 var(--space-4);
   font-family: var(--font-heading);
   color: var(--neutral-light);
@@ -176,8 +177,8 @@ button:disabled {
 input {
   display: flex;
   margin: var(--space-2) 0;
-  padding: 0 var(--space-1);
-  height: var(--space-5);
+  padding: var(--space-3) var(--space-2);
+  height: var(--space-4);
   font-size: var(--text-base);
   color: var(--primary);
   background-color: var(--background);
