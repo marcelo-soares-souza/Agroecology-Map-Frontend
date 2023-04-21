@@ -51,7 +51,8 @@
   --forest: #33420B;
   --off-black: #0F0F0F;
   --gray: #4D4D4D;
-  --light-gray: #C3C3C3;
+  --gray-lighter: #C3C3C3;
+  --gray-light: #909090;
 
   --primary: var(--off-black);
   --highlight-1: var(--orange);
@@ -60,7 +61,8 @@
   --highlight-1-darker: var(--brown);
   --highlight-2:var(--lime);
   --highlight-2-dark: var(--olive);
-  --neutral-light: var(--light-gray);
+  --neutral-lighter: var(--gray-lighter);
+  --neutral-light: var(--gray-light);
   --neutral: var(--gray);
   --background-highlight: var(--beige);
   --background: var(--off-white);
@@ -99,7 +101,7 @@ h1 {
 }
 
 .subtitle {
-  color: var(--neutral);
+  color: var(--neutral-light);
 }
 
 h2 {
@@ -127,7 +129,7 @@ button {
   height: var(--space-5);
   padding: 0 var(--space-4);
   font-family: var(--font-heading);
-  color: var(--neutral-light);
+  color: var(--neutral-lighter);
   border: 2px solid var(--neutral);
   border-radius: 28px;
   font-size: var(--text-base);
@@ -137,14 +139,14 @@ button {
 
 button:hover {
   cursor: pointer;
-  border-color: var(--neutral-light);
+  border-color: var(--neutral-lighter);
   color: var(--neutral);
 }
 
 button:disabled {
-  background-color: var(--neutral-light);
+  background-color: var(--neutral-lighter);
   color: var(--neutral);
-  border-color: var(--neutral-light);
+  border-color: var(--neutral-lighter);
 }
 
 .btn-highlight-1 {
@@ -165,13 +167,13 @@ button:disabled {
   font-weight: 700;
   border: none;
   transition: all linear 120ms;
-  box-shadow: 0 0 0 var(--neutral-light);
+  box-shadow: 0 0 0 var(--neutral-lighter);
 }
 
 .btn-highlight-2:hover {
   transform: scale(103%);
   color: var(--background);
-  box-shadow: 0 0 18px var(--neutral-light);
+  box-shadow: 0 0 18px var(--neutral-lighter);
 }
 
 .btn-long {
@@ -186,7 +188,7 @@ input {
   font-size: var(--text-base);
   color: var(--primary);
   background-color: var(--background);
-  border: 2px solid var(--neutral-light);
+  border: 2px solid var(--neutral-lighter);
   border-radius: 12px;
 }
 
