@@ -91,8 +91,14 @@ body {
   color: var(--primary);
 }
 
+p {
+  margin: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
+  line-height: normal;
   font-family: var(--font-heading);
+  margin: 0;
 }
 
 h1 {
@@ -100,7 +106,7 @@ h1 {
   font-weight: 800;
 }
 
-.subtitle {
+.light-text {
   color: var(--neutral-light);
 }
 
@@ -110,13 +116,18 @@ h2 {
 }
 
 h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 700;
 }
 
 a {
   text-decoration: none;
   color: var(--dark-orange);
+  transition: color ease 150ms;
+}
+
+a:hover {
+  color: var(--orange);
 }
 
 button {
@@ -141,6 +152,10 @@ button:hover {
   cursor: pointer;
   border-color: var(--neutral-lighter);
   color: var(--neutral);
+}
+
+button:focus {
+  outline-style: auto;
 }
 
 button:disabled {
@@ -177,24 +192,30 @@ button:disabled {
 }
 
 .btn-long {
-  min-width: 13rem;
+  min-width: 12rem;
 }
 
 input {
   display: flex;
-  margin: var(--space-2) 0;
+  margin: 0;
   padding: var(--space-3) var(--space-2);
   height: var(--space-4);
   font-size: var(--text-base);
   color: var(--primary);
   background-color: var(--background);
   border: 2px solid var(--neutral-lighter);
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 label {
   font-size: var(text-2xl);
   font-weight: 800;
+}
+
+.input-description {
+  margin: 0;
+  line-height: var(--text-lg);
+  font-size: var(--text-sm);
 }
 
 .grid-container {
@@ -218,5 +239,11 @@ label {
 .contain-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
