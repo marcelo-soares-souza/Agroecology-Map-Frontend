@@ -52,3 +52,10 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
+@media (max-width: 1250px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
