@@ -1,0 +1,80 @@
+/** Fonts */
+/* General Text: DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+/* Headings: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Extra: Bebas Neue && Fira Sans */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:wght@700&display=swap');
+
+:root {
+  --font-base: 'DM Sans',
+    'Inter',
+    'Open Sans',
+    Verdana,
+    sans-serif;
+  --font-heading: 'Inter', 'Open Sans', "DM Sans", Ubuntu, Verdana, sans-serif;
+  --font-super: 'Bebas Neue', sans-serif;
+  --font-title: 'Fira Sans', 'Inter', sans-serif;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+    --text-sm: 0.8rem;
+      --text-base: 1rem;
+      --text-lg: 1.2rem;
+      --text-xl: 1.4rem;
+      --text-2xl: 1.6rem;
+      --text-3xl: 2rem;
+      --text-4xl: 2.6rem;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: normal;
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+}
+
+.light-text {
+  color: var(--neutral-light);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-orange);
+  transition: color ease 150ms;
+}
+
+a:hover {
+  color: var(--orange);
+}

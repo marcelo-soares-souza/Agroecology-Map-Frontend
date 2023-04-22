@@ -1,0 +1,22 @@
+input {
+  display: flex;
+  margin: 0;
+  padding: var(--space-3) var(--space-2);
+  height: var(--space-4);
+  font-size: var(--text-base);
+  color: var(--primary);
+  background-color: var(--background);
+  border: 2px solid var(--neutral-lighter);
+  border-radius: 8px;
+}
+
+label {
+  font-size: var(text-2xl);
+  font-weight: 800;
+}
+
+.input-description {
+  margin: 0;
+  line-height: var(--text-lg);
+  font-size: var(--text-sm);
+}
