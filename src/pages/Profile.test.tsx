@@ -1,10 +1,16 @@
 import { render } from "@testing-library/react";
 import "../i18n";
 
-import Profile from "./Profile";
+// Components
+import AboutYou from "../components/Profile/AboutYou";
+import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
 
 describe("<Profile />", () => {
-  it("should render without errors", () => {
-    expect(() => render(<Profile />)).not.toThrow();
+  it("should render RequiredProfileInformation without errors", () => {
+    expect(() => render(<RequiredProfileInformation />)).not.toThrow();
+  });
+
+  it("should render RequiredProfileInformation without errors", () => {
+    expect(() => render(<AboutYou />)).not.toThrow();
   });
 });

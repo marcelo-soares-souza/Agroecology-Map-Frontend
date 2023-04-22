@@ -7,6 +7,9 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 
+// Loaders
+import { loader as profileLoader } from "../pages/Profile";
+
 export const MainRouter = createBrowserRouter([
   {
     path: "/",
@@ -15,16 +18,17 @@ export const MainRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Home />
       },
       {
         path: "/register",
-        element: <Register />,
+        element: <Register />
       },
       {
         path: "/profile",
         element: <Profile />,
-      },
-    ],
-  },
+        loader: profileLoader
+      }
+    ]
+  }
 ]);

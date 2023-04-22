@@ -1,70 +1,48 @@
-import { useState, useEffect } from "react";
-import { IAccount } from "../interfaces/IAccount";
+import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+
+// Components
+import AboutYou from "../components/Profile/AboutYou";
+import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
+
+// Mock Data
 import { mockAccount } from "../mocks/mock-account";
 
+// CSS
 import classes from "./Profile.module.css";
-import { CheckboxItem } from "../components/CheckboxItem";
+
+// Interfaces
+import { IAccount } from "../interfaces/IAccount";
 
 const Profile = () => {
-  const [account, setAccount] = useState<IAccount>({});
+  const profile: IAccount = useLoaderData() as IAccount;
 
-  useEffect(() => {
-    // setAccount(mockAccount);
-  }, []);
+  const [whichPage, setWhichPage] = useState("RequiredProfileInformation");
+
+  const nextPageHandler = (page: string) => {
+    setWhichPage(page);
+  };
 
   return (
     <div className="two-columns">
-      <div className={classes.container}>
-        <div>
-          <h1 className={classes.title}>Required Profile Information</h1>
-          <p className="light-text">
-            Your profile will only be public after you fill this basic details.
-          </p>
-        </div>
-        <div>
-          <h3>Account name</h3>
-          <p className={"input-description light-text " + classes.mbSm}>
-            {
-              "This will help you be easily found. Just like the instagram @username."
-            }
-          </p>
-          <input type="text" placeholder="e.g.: @some_name_123" />
-        </div>
-        <div>
-          <h3>Full name</h3>
-          <p className={"input-description light-text " + classes.mbSm}>
-            {
-              "Please, fill your full name bellow. You can hide this from the profile if you want."
-            }
-          </p>
-          <div className={classes.smallGap + " flex-row"}>
-            <input type="text" placeholder="Type here your full name..." />
-            <CheckboxItem label="Visible in profile" />
-          </div>
-        </div>
+      {whichPage === "RequiredProfileInformation" && (
+        <RequiredProfileInformation nextPage={nextPageHandler} />
+      )}
+      {whichPage === "AboutYou" && <AboutYou nextPage={nextPageHandler} />}
 
-        <CheckboxItem>
-          <span>
-            {"I have read and agree with Agroecology Map's "}
-            <a href="#">{"terms of use"}</a>
-            {" and "}
-            <a href="#">{"privacy policy."}</a>
-          </span>
-        </CheckboxItem>
-
-        <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <button className={classes.btnNext + " btn-highlight-1"}>Next</button>
-        </div>
-      </div>
       <div
         className={
           classes.profilePreviewContainer + " contain-center light-text"
         }
       >
-        [profile preview area]
+        <p>{profile.email}</p>
       </div>
     </div>
   );
 };
 
 export default Profile;
+
+export const loader = async () => {
+  return mockAccount;
+};
