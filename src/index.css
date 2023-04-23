@@ -2,5 +2,6 @@
 @import "./theme/colors.module.css";
 @import "./theme/texts.module.css";
 @import "./theme/layout.module.css";
-@import './theme/buttons.module.css';
-@import './theme/inputs.module.css';
+@import "./theme/buttons.module.css";
+@import "./theme/inputs.module.css";
+@import "./theme/dev.module.css";
