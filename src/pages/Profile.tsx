@@ -13,6 +13,7 @@ import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
+import ProfilePreview from "../components/Profile/ProfilePreview";
 
 const Profile = () => {
   const profile: IAccount = useLoaderData() as IAccount;
@@ -33,11 +34,11 @@ const Profile = () => {
           {whichPage === "AboutYou" && <AboutYou nextPage={nextPageHandler} />}
         </div>
         <div
-          className={
-            classes.profilePreviewContainer + " contain-center light-text"
-          }
+          style={{
+            display: "flex"
+          }}
         >
-          <p>{profile.email}</p>
+          <ProfilePreview />
         </div>
       </div>
     </div>

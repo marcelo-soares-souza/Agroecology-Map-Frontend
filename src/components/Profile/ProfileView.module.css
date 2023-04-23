@@ -1,0 +1,87 @@
+.container {
+  background-color: var(--background);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.banner {
+  background-color: green;
+  height: 8rem;
+  margin-bottom: -3rem;
+}
+
+.avatarCtaContainer {
+display: flex; 
+}
+
+.ctaContainer{ 
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 0 1rem 0 0;
+}
+
+.ctaContainer button {
+  margin: 0;
+}
+
+.avatar {
+  background-color: var(--background);
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  border: 3px solid var(--background);
+  overflow: hidden;
+  margin-left: 1rem;
+}
+
+.avatarMock {
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+}
+
+.textContainer {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.textContainer p {
+  color: var(--neutral-light);
+}
+
+.details {
+  font-size: var(--text-base);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--neutral-light);
+}
+
+.details > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.hlContainer {
+  padding-top: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.hlCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 233px;
+  width: 377px;
+  border-radius: 10px;
+  background-color: var(--background-highlight);
+}

@@ -1,0 +1,15 @@
+.profilePreviewContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--space-3) 0 0 0;
+  background-color: var(--neutral);
+  max-height: min(780px, 100vh);
+}
+
+.profilePreviewContainer > * {
+    border-radius: 8px 8px 0 0;
+    width: min(640px, 96%);
+}

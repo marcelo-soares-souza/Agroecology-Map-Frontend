@@ -40,10 +40,6 @@
   right: 12%;
 }
 
-.profilePreviewContainer {
-  background-color: var(--neutral);
-}
-
 .textArea {
   width: 600px;
   height: 200px;
