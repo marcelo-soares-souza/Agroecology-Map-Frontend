@@ -24,18 +24,21 @@ const Profile = () => {
   };
 
   return (
-    <div className="two-columns">
-      {whichPage === "RequiredProfileInformation" && (
-        <RequiredProfileInformation nextPage={nextPageHandler} />
-      )}
-      {whichPage === "AboutYou" && <AboutYou nextPage={nextPageHandler} />}
-
-      <div
-        className={
-          classes.profilePreviewContainer + " contain-center light-text"
-        }
-      >
-        <p>{profile.email}</p>
+    <div className="column-justify-center" style={{ padding: "0 2%" }}>
+      <div className={classes.columnsContainer + " two-columns"}>
+        <div className="contain-center">
+          {whichPage === "RequiredProfileInformation" && (
+            <RequiredProfileInformation nextPage={nextPageHandler} />
+          )}
+          {whichPage === "AboutYou" && <AboutYou nextPage={nextPageHandler} />}
+        </div>
+        <div
+          className={
+            classes.profilePreviewContainer + " contain-center light-text"
+          }
+        >
+          <p>{profile.email}</p>
+        </div>
       </div>
     </div>
   );

@@ -4,8 +4,12 @@
   text-align: justify;
 } */
 
-.container {
-  margin: var(--space-6) 0 0 var(--space-8);
+.columnsContainer {
+  gap: 2rem;
+  flex: 1;
+}
+
+.firstColumn {
   max-width: 620px;
   display: flex;
   flex-direction: column;
@@ -13,7 +17,7 @@
   gap: var(--space-4);
 }
 
-.container p {
+.firstColumn p {
   margin-bottom: var(--space-2);
 }
 
@@ -37,8 +41,6 @@
 }
 
 .profilePreviewContainer {
-  max-width: 800px;
-  max-height: 500px;
   background-color: var(--neutral);
 }
 

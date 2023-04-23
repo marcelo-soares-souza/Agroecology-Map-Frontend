@@ -8,7 +8,7 @@ const RequiredProfileInformation = (props: any) => {
 
   return (
     <>
-      <div className={classes.container}>
+      <div className={classes.firstColumn}>
         <div>
           <h1 className={classes.title}>Required Profile Information</h1>
           <p className="light-text">
