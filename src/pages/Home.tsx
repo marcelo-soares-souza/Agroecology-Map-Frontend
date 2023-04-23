@@ -4,9 +4,9 @@ import classes from "./Home.module.css";
 
 const Home = () => {
   return (
-    <div className="grid-container">
-      <div className="two-columns">
-        <div>
+    <div className={classes.container + " grid-container"}>
+      <div className="two-columns" style={{ justifyContent: "center" }}>
+        <div className={classes.firstColumn}>
           <h1 className={classes.superTitle}>
             <Translator path="home.titleLine1" />
             <br />
@@ -14,7 +14,7 @@ const Home = () => {
               <Translator path="home.titleLine2" />
             </span>
           </h1>
-          <p data-testid="subtitle" className="light-text">
+          <p data-testid="subtitle" className={"light-text"}>
             <Translator path="home.subtitle" />
           </p>
           <div className={classes.ctaButtonsContainer}>
@@ -30,7 +30,9 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="contain-center">[ Illustration ]</div>
+        <div className={classes.illustration + " contain-center"}>
+          <img src="#" alt="Illustration" />
+        </div>
       </div>
     </div>
   );
