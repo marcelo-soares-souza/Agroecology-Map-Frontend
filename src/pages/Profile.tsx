@@ -1,9 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Components
-import AboutYou from "../components/Profile/AboutYou";
 import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
+import AboutYou from "../components/Profile/AboutYou";
+import ProfilePreview from "../components/Profile/ProfilePreview";
 
 // Mock Data
 import { mockAccount } from "../mocks/mock-account";
@@ -13,15 +14,36 @@ import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
-import ProfilePreview from "../components/Profile/ProfilePreview";
 
 const Profile = () => {
-  const profile: IAccount = useLoaderData() as IAccount;
+  // const mockProfile: IAccount = useLoaderData() as IAccount;
 
   const [whichPage, setWhichPage] = useState("RequiredProfileInformation");
+  const [profile, setProfile] = useState<IAccount>();
+
+  useEffect(() => {
+    setProfile({
+      accountName: "",
+      displayName: "",
+      fullName: "",
+      shortBio: ""
+    });
+  }, []);
 
   const nextPageHandler = (page: string) => {
     setWhichPage(page);
+  };
+
+  const onAccountNameChangeHandler = (accountName: string) => {
+    setProfile((prevProfile) => ({ ...prevProfile, accountName }));
+  };
+
+  const onFullNameChangeHandler = (fullName: string) => {
+    setProfile((prevProfile) => ({ ...prevProfile, fullName }));
+  };
+
+  const onShortBioChangeHandler = (shortBio: string) => {
+    setProfile((prevProfile) => ({ ...prevProfile, shortBio }));
   };
 
   return (
@@ -29,16 +51,29 @@ const Profile = () => {
       <div className={classes.columnsContainer + " two-columns"}>
         <div className="contain-center">
           {whichPage === "RequiredProfileInformation" && (
-            <RequiredProfileInformation nextPage={nextPageHandler} />
+            <RequiredProfileInformation
+              accountName={profile?.accountName ?? ""}
+              fullName={profile?.fullName ?? ""}
+              nextPage={nextPageHandler}
+              onAccountNameChange={onAccountNameChangeHandler}
+              onFullNameChange={onFullNameChangeHandler}
+            />
           )}
-          {whichPage === "AboutYou" && <AboutYou nextPage={nextPageHandler} />}
+
+          {whichPage === "AboutYou" && (
+            <AboutYou
+              shortBio={profile?.shortBio ?? ""}
+              nextPage={nextPageHandler}
+              onShortBioChange={onShortBioChangeHandler}
+            />
+          )}
         </div>
         <div
           style={{
             display: "flex"
           }}
         >
-          <ProfilePreview />
+          <ProfilePreview {...profile} />
         </div>
       </div>
     </div>

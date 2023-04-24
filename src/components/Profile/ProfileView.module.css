@@ -11,10 +11,10 @@
 }
 
 .avatarCtaContainer {
-display: flex; 
+  display: flex;
 }
 
-.ctaContainer{ 
+.ctaContainer {
   display: flex;
   justify-content: flex-end;
   flex: 1;

@@ -18,4 +18,5 @@ export interface IAccount {
     profession?: string;
     services?: string;
   };
+  shortBio?: string;
 }

@@ -1,9 +1,40 @@
+import { useEffect, useState } from "react";
 import { CheckboxItem } from "../../components/CheckboxItem";
 import classes from "../../pages/Profile.module.css";
 
-const RequiredProfileInformation = (props: any) => {
+const RequiredProfileInformation = (props: {
+  accountName: string;
+  fullName: string;
+  nextPage: Function;
+  onAccountNameChange: Function;
+  onFullNameChange: Function;
+}) => {
+  const [accountName, setAccountName] = useState("");
+  const [fullName, setFullName] = useState("");
+
+  useEffect(() => {
+    setAccountName(props.accountName);
+    setFullName(props.fullName);
+  }, []);
+
   const nextPageHandler = () => {
     props.nextPage("AboutYou");
+  };
+
+  const accountNameChangedHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.value;
+    setAccountName(value);
+    props.onAccountNameChange(value);
+  };
+
+  const fullNameChangedHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.value;
+    setFullName(value);
+    props.onFullNameChange(value);
   };
 
   return (
@@ -22,7 +53,12 @@ const RequiredProfileInformation = (props: any) => {
               "This will help you be easily found. Just like the instagram @username."
             }
           </p>
-          <input type="text" placeholder="e.g.: @some_name_123" />
+          <input
+            type="text"
+            placeholder="e.g.: @some_name_123"
+            onChange={accountNameChangedHandler}
+            value={accountName}
+          />
         </div>
 
         <div>
@@ -33,7 +69,12 @@ const RequiredProfileInformation = (props: any) => {
             }
           </p>
           <div className={classes.smallGap + " flex-row"}>
-            <input type="text" placeholder="Type here your full name..." />
+            <input
+              type="text"
+              placeholder="Type here your full name..."
+              onChange={fullNameChangedHandler}
+              value={fullName}
+            />
             <CheckboxItem label="Visible in profile" />
           </div>
         </div>

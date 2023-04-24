@@ -8,11 +8,25 @@ import ProfilePreview from "../components/Profile/ProfilePreview";
 
 describe("<Profile />", () => {
   it("should render RequiredProfileInformation without errors", () => {
-    expect(() => render(<RequiredProfileInformation />)).not.toThrow();
+    expect(() =>
+      render(
+        <RequiredProfileInformation
+          accountName=""
+          fullName=""
+          nextPage={() => {}}
+          onAccountNameChange={() => {}}
+          onFullNameChange={() => {}}
+        />
+      )
+    ).not.toThrow();
   });
 
   it("should render AboutYou without errors", () => {
-    expect(() => render(<AboutYou />)).not.toThrow();
+    expect(() =>
+      render(
+        <AboutYou shortBio="" nextPage={() => {}} onShortBioChange={() => {}} />
+      )
+    ).not.toThrow();
   });
 
   it("should render ProfilePreview without errors", () => {

@@ -1,13 +1,32 @@
+import { useEffect, useState } from "react";
 import classes from "../../pages/Profile.module.css";
 
-const AboutYou = (props: any) => {
+const AboutYou = (props: {
+  shortBio: string;
+  nextPage: Function;
+  onShortBioChange: Function;
+}) => {
+  const [shortBio, setShortBio] = useState("");
+
+  useEffect(() => {
+    setShortBio(props.shortBio);
+  }, []);
+
   const nextPageHandler = () => {
     props.nextPage("RequiredProfileInformation");
   };
 
+  const shortBioChangedHandler = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const value = event.target.value;
+    setShortBio(value);
+    props.onShortBioChange(value);
+  };
+
   return (
     <>
-      <div className={classes.container}>
+      <div className={classes.firstColumn}>
         <div>
           <h1 className={classes.title}>About You</h1>
           <p className="light-text">
@@ -22,7 +41,12 @@ const AboutYou = (props: any) => {
               "What's your experience? What do you do? Tell the community about yourself..."
             }
           </p>
-          <input type="text" className={classes.textArea} placeholder="" />
+          <textarea
+            className={classes.textArea}
+            placeholder=""
+            onChange={shortBioChangedHandler}
+            value={shortBio}
+          />
         </div>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>

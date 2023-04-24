@@ -1,6 +1,7 @@
+import { IAccount } from "../../interfaces/IAccount";
 import classes from "./ProfileView.module.css";
 
-const ProfileView = () => {
+const ProfileView = (props: IAccount) => {
   return (
     <div className={classes.container}>
       <div className={classes.banner}>
@@ -20,9 +21,9 @@ const ProfileView = () => {
       </div>
       <div className={classes.textContainer}>
         <div>
-          <h1>{"John Doe"}</h1>
+          <h1>{props.displayName}</h1>
           <p>
-            <strong>{"@johndoe"}</strong>
+            <strong>{"@" + props.accountName}</strong>
           </p>
           <p>{"(he/him)"}</p>
           <ul className={classes.details}>
@@ -36,20 +37,15 @@ const ProfileView = () => {
             </li>
           </ul>
         </div>
+        <div>
+          <h2>About me</h2>
+          <p>{props.shortBio}</p>
+        </div>
         <div className={classes.highlightsContainer}>
           <h2>My highlights</h2>
           <div className={classes.hlContainer}>
             <div className={classes.hlCard}>card</div>
           </div>
-        </div>
-        <div>
-          <h2>About me</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis
-            officiis repudiandae. Velit tempora, rem laboriosam enim nobis
-            beatae ipsum accusantium voluptates quae aspernatur ea dignissimos
-            libero tenetur amet adipisci!
-          </p>
         </div>
         <div>
           <h2>Services</h2>
