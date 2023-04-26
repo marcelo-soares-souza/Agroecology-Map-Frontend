@@ -52,6 +52,9 @@
   color: var(--highlight-1-darker);
   position: relative;
 }
+.nav a:hover {
+  color: var(--highlight-1-darker);
+}
 
 .underline::before {
   content: "";

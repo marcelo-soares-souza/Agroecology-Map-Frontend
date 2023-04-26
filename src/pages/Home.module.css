@@ -21,10 +21,52 @@
   letter-spacing: -5;
 }
 
-.illustration {
+.illustrationContainer {
   min-width: min(96%, 440px);
   max-width: 500px;
 }
+
+.illustration {
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.illustration img {
+  height: 100%;
+  position: absolute;
+  image-rendering: crisp-edges;
+}
+
+img.plantBL {
+  bottom: 25%;
+  left: 5%;
+  height: 60%;
+  animation: "openLeft" 1800ms ease-out 1 normal forwards;
+
+}
+img.plantTL {
+  height: 98%;
+  bottom: 18%;
+  left: 20%;
+  animation: "openLeft" 3800ms ease-out 1 normal forwards;
+}
+img.plantBR {
+  left: 40%;
+  bottom: -5%;
+  animation: "openRight" 2800ms ease 1 normal forwards;
+}
+img.iphone {
+  left: 10%;
+  animation: 'floating' 3000ms ease-in 1 alternate forwards;
+}
+img.plantTR {
+  height: 85%;
+  bottom: 12%;
+  left: 74%;
+  animation: "openRight" 4000ms ease-out 1 normal forwards;
+}
+
 /* 
 .illustration > img { 
   min-width: min(340px, 80%);

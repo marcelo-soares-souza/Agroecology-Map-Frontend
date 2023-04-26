@@ -1,0 +1,32 @@
+@keyframes floating {
+  0% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes openRight {
+
+  0% {
+    transform: rotateZ(-15deg) translate(-15%, -3%);
+  }
+
+  100% {
+    transform: rotateZ(0) translate(0, 0);
+  }
+  
+}
+@keyframes openLeft {
+
+  0% {
+    transform: rotateZ(8deg) translate(15%, -3%);
+  }
+
+  100% {
+    transform: rotateZ(0) translate(0, 0);
+  }
+  
+}
