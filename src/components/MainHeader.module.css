@@ -20,10 +20,12 @@
   height: 3rem;
   will-change: filter;
   transition: filter 300ms;
+  transform: translate(-5%, 10%);
 }
 
 .logotype {
   font-family: Inter, 'DM Sans', Ubuntu, Verdana, sans-serif;
+  text-transform: lowercase;
   padding: var(--space-0);
   color: var(--gray);
   font-size: var(--text-base);
