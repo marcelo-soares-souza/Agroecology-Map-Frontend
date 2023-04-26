@@ -35,6 +35,13 @@
       --text-4xl: 2.6rem;
 }
 
+@media (max-width: 920px) {
+  :root {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
 p {
   margin: 0;
 }
