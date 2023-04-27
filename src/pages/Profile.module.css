@@ -63,3 +63,8 @@
   border: 2px solid var(--neutral-lighter);
   border-radius: 8px;
 }
+
+.error {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}

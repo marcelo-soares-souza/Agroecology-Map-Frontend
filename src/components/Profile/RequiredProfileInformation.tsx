@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CheckboxItem } from "../../components/CheckboxItem";
+
 import classes from "../../pages/Profile.module.css";
 
 const RequiredProfileInformation = (props: {
@@ -12,6 +13,8 @@ const RequiredProfileInformation = (props: {
   onFullNameVisibleChange: Function;
 }) => {
   const [accountName, setAccountName] = useState("");
+  const [accountNameHasError, setAccountNameHasError] = useState(false);
+
   const [fullName, setFullName] = useState("");
   const [isFullNameVisible, setIsFullNameVisible] = useState(true);
 
@@ -29,8 +32,20 @@ const RequiredProfileInformation = (props: {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const value = event.target.value;
+    setAccountNameHasError(false);
     setAccountName(value);
     props.onAccountNameChange(value);
+  };
+
+  const accountNameBlurHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.value;
+    if (value.length <= 0) {
+      setAccountNameHasError(true);
+    } else {
+      setAccountNameHasError(false);
+    }
   };
 
   const fullNameChangedHandler = (
@@ -60,7 +75,7 @@ const RequiredProfileInformation = (props: {
           <h3>Account name</h3>
           <p className={"input-description light-text " + classes.mbSm}>
             {
-              "This will help you be easily found. Just like the instagram @username."
+              "This will help you be easily found. Just like the instagram/twitter @username."
             }
           </p>
           <input
@@ -68,6 +83,8 @@ const RequiredProfileInformation = (props: {
             placeholder="e.g.: @some_name_123"
             onChange={accountNameChangedHandler}
             value={accountName}
+            onBlur={accountNameBlurHandler}
+            className={`banner ${accountNameHasError ? classes.error : ""}`}
           />
         </div>
 
