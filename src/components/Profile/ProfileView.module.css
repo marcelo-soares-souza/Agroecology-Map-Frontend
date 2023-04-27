@@ -2,6 +2,7 @@
   background-color: var(--background);
   overflow-y: auto;
   max-height: 100%;
+  margin-bottom: auto;
 }
 
 .banner {

@@ -5,17 +5,21 @@ import classes from "../../pages/Profile.module.css";
 const RequiredProfileInformation = (props: {
   accountName: string;
   fullName: string;
+  isFullNameVisible: boolean;
   nextPage: Function;
   onAccountNameChange: Function;
   onFullNameChange: Function;
+  onFullNameVisibleChange: Function;
 }) => {
   const [accountName, setAccountName] = useState("");
   const [fullName, setFullName] = useState("");
+  const [isFullNameVisible, setIsFullNameVisible] = useState(true);
 
   useEffect(() => {
     setAccountName(props.accountName);
     setFullName(props.fullName);
-  }, []);
+    setIsFullNameVisible(props.isFullNameVisible);
+  }, [props]);
 
   const nextPageHandler = () => {
     props.nextPage("AboutYou");
@@ -35,6 +39,12 @@ const RequiredProfileInformation = (props: {
     const value = event.target.value;
     setFullName(value);
     props.onFullNameChange(value);
+  };
+
+  const onFullNameVisibleChange = () => {
+    const value = !isFullNameVisible;
+    setIsFullNameVisible(value);
+    props.onFullNameVisibleChange(value);
   };
 
   return (
@@ -75,7 +85,11 @@ const RequiredProfileInformation = (props: {
               onChange={fullNameChangedHandler}
               value={fullName}
             />
-            <CheckboxItem label="Visible in profile" />
+            <CheckboxItem
+              label="Visible in profile"
+              onChange={onFullNameVisibleChange}
+              checked={isFullNameVisible}
+            />
           </div>
         </div>
 

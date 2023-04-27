@@ -16,6 +16,10 @@ const AboutYou = (props: {
     props.nextPage("RequiredProfileInformation");
   };
 
+  const previousPageHandler = () => {
+    props.nextPage("RequiredProfileInformation");
+  }
+
   const shortBioChangedHandler = (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
@@ -50,6 +54,13 @@ const AboutYou = (props: {
         </div>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>
+        <button
+            className={classes.btnPrevious + " btn-highlight-1"}
+            onClick={previousPageHandler}
+          >
+            Previous
+          </button>
+
           <button
             className={classes.btnNext + " btn-highlight-1"}
             onClick={nextPageHandler}

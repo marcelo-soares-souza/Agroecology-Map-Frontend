@@ -13,9 +13,11 @@ describe("<Profile />", () => {
         <RequiredProfileInformation
           accountName=""
           fullName=""
+          isFullNameVisible={true}
           nextPage={() => {}}
           onAccountNameChange={() => {}}
           onFullNameChange={() => {}}
+          onFullNameVisibleChange={() => {}}
         />
       )
     ).not.toThrow();

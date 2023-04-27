@@ -26,6 +26,7 @@ const Profile = () => {
       accountName: "",
       displayName: "",
       fullName: "",
+      isFullNameVisible: true,
       shortBio: ""
     });
   }, []);
@@ -46,6 +47,10 @@ const Profile = () => {
     setProfile((prevProfile) => ({ ...prevProfile, shortBio }));
   };
 
+  const onIsFullNameVisibleHandler = (isFullNameVisible: boolean) => {
+    setProfile((prevProfile) => ({ ...prevProfile, isFullNameVisible }));
+  };
+
   return (
     <div className="column-justify-center" style={{ padding: "0 2%" }}>
       <div className={classes.columnsContainer + " two-columns"}>
@@ -54,9 +59,11 @@ const Profile = () => {
             <RequiredProfileInformation
               accountName={profile?.accountName ?? ""}
               fullName={profile?.fullName ?? ""}
+              isFullNameVisible={profile?.isFullNameVisible ?? true}
               nextPage={nextPageHandler}
               onAccountNameChange={onAccountNameChangeHandler}
               onFullNameChange={onFullNameChangeHandler}
+              onFullNameVisibleChange={onIsFullNameVisibleHandler}
             />
           )}
 

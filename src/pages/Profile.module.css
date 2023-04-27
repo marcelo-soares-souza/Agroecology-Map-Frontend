@@ -32,10 +32,23 @@
 .btnNext {
   position: relative;
   width: 8rem;
+  margin-left: 4px;
 }
 
 .btnNext::after {
   content: ">";
+  position: absolute;
+  left: 12%;
+}
+
+.btnPrevious {
+  position: relative;
+  width: 8rem;
+  margin-right: 4px;
+}
+
+.btnPrevious::before {
+  content: "<";
   position: absolute;
   right: 12%;
 }

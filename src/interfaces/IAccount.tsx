@@ -3,6 +3,7 @@ export interface IAccount {
   password?: string;
   accountName?: string;
   fullName?: string;
+  isFullNameVisible?: boolean;
   displayName?: string;
   pronouns?: string;
   location?: {
