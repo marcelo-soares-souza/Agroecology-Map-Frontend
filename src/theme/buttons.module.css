@@ -37,11 +37,11 @@ button:disabled {
   color: var(--background);
   font-weight: 700;
   border: none;
-  transition: opacity linear 120ms;
+  transition: filter linear 120ms;
 }
 
 .btn-highlight-1:hover {
-  opacity: 0.85;
+  filter: brightness(1.15);
   color: var(--background);
 }
 
@@ -55,7 +55,7 @@ button:disabled {
 }
 
 .btn-highlight-2:hover {
-  transform: scale(103%);
+  filter: brightness(1.20);
   color: var(--background);
   box-shadow: 0 0 18px var(--neutral-lighter);
 }

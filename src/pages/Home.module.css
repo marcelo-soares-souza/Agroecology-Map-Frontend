@@ -8,7 +8,7 @@
 }
 
 .superTitle {
-  margin: 5vh 0 var(--space-2) 0;
+  margin: 0 0 var(--space-2) 0;
   font-size: 3.2rem;
   font-family: var(--font-super);
 }
@@ -22,14 +22,16 @@
 }
 
 .illustrationContainer {
-  min-width: min(96%, 440px);
+  min-width: min(96%, 315px);
   max-width: 500px;
 }
 
 .illustration {
-  position: relative;
-  height: 100%;
-  flex-grow: 1;
+      position: relative;
+      flex: 1 1 auto;
+      aspect-ratio: 1/1;
+      max-width: 80%;
+    
 }
 
 .illustration img {
@@ -78,4 +80,21 @@ img.plantTR {
   align-items: center;
   justify-content: start;
   gap: var(--space-6)
+}
+
+@media (max-width: 920px) {
+  .superTitle {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 3.8rem;
+  }
+
+  .ctaButtonsContainer {
+    justify-content: unset;
+    gap: unset;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
 }

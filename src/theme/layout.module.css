@@ -12,15 +12,14 @@
 
 @media (max-width: 920px) {
   :root {
-    --space-0: 4px;
-    --space-1: 6px;
-    --space-2: 8px;
-    --space-3: 10px;
-    --space-4: 16px;
-    --space-5: 26px;
-    --space-6: 42px;
-    --space-7: 68px;
-    --space-8: 110px;
+      --space-1: 8px;
+        --space-2: 12px;
+        --space-3: 16px;
+        --space-4: 24px;
+        --space-5: 32px;
+    --space-6: 56px;
+    --space-7: 72px;
+    --space-8: 136px;
   }
 }
 

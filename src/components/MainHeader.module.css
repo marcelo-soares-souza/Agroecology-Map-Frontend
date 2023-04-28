@@ -87,3 +87,9 @@
   background-color: var(--highlight-2-dark);
   transition: width ease 120ms;
 }
+
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+}

@@ -3,12 +3,14 @@ import Translator from "../components/i18n/Translator";
 
 import classes from "./Register.module.css";
 
+import { SlLocationPin } from "react-icons/sl";
+
 const Register = () => {
   return (
     <div className="grid-container">
       <div className="two-columns">
         <div className="contain-center">
-          <p>IMAGEM</p>
+          <SlLocationPin size={120} />
         </div>
         <div className="contain-center">
           <div>
