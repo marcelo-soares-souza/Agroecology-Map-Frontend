@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+
 import classes from "../../pages/Profile.module.css";
 
-const AboutYou = (props: {
+interface IAboutYou {
   shortBio: string;
-  nextPage: Function;
+  changePage: Function;
   onShortBioChange: Function;
-}) => {
+}
+
+const AboutYou = (props: IAboutYou) => {
   const [shortBio, setShortBio] = useState("");
 
   useEffect(() => {
@@ -13,12 +16,12 @@ const AboutYou = (props: {
   }, []);
 
   const nextPageHandler = () => {
-    props.nextPage("RequiredProfileInformation");
+    props.changePage("WhereAreYouFrom");
   };
 
   const previousPageHandler = () => {
-    props.nextPage("RequiredProfileInformation");
-  }
+    props.changePage("RequiredProfileInformation");
+  };
 
   const shortBioChangedHandler = (
     event: React.ChangeEvent<HTMLTextAreaElement>
@@ -54,7 +57,7 @@ const AboutYou = (props: {
         </div>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>
-        <button
+          <button
             className={classes.btnPrevious + " btn-highlight-1"}
             onClick={previousPageHandler}
           >

@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
+
 import { CheckboxItem } from "../../components/CheckboxItem";
 
 import classes from "../../pages/Profile.module.css";
 
-const RequiredProfileInformation = (props: {
+interface IRequiredProfileInformation {
   accountName: string;
   fullName: string;
   isFullNameVisible: boolean;
-  nextPage: Function;
+  changePage: Function;
   onAccountNameChange: Function;
   onFullNameChange: Function;
   onFullNameVisibleChange: Function;
-}) => {
+}
+
+const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   const [accountName, setAccountName] = useState("");
   const [accountNameHasError, setAccountNameHasError] = useState(false);
 
@@ -25,7 +28,7 @@ const RequiredProfileInformation = (props: {
   }, [props]);
 
   const nextPageHandler = () => {
-    props.nextPage("AboutYou");
+    props.changePage("AboutYou");
   };
 
   const accountNameChangedHandler = (

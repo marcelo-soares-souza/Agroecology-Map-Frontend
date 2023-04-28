@@ -14,7 +14,7 @@ describe("<Profile />", () => {
           accountName=""
           fullName=""
           isFullNameVisible={true}
-          nextPage={() => {}}
+          changePage={() => {}}
           onAccountNameChange={() => {}}
           onFullNameChange={() => {}}
           onFullNameVisibleChange={() => {}}
@@ -26,7 +26,7 @@ describe("<Profile />", () => {
   it("should render AboutYou without errors", () => {
     expect(() =>
       render(
-        <AboutYou shortBio="" nextPage={() => {}} onShortBioChange={() => {}} />
+        <AboutYou shortBio="" changePage={() => {}} onShortBioChange={() => {}} />
       )
     ).not.toThrow();
   });

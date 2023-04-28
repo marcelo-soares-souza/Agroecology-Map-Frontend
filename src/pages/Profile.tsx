@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Components
@@ -14,6 +13,7 @@ import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
+import WhereAreYouFrom from "../components/Profile/WhereAreYouFrom";
 
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
@@ -27,11 +27,16 @@ const Profile = () => {
       displayName: "",
       fullName: "",
       isFullNameVisible: true,
-      shortBio: ""
+      shortBio: "",
+      location: {
+        country: "",
+        state: "",
+        city: ""
+      }
     });
   }, []);
 
-  const nextPageHandler = (page: string) => {
+  const changePageHandler = (page: string) => {
     setWhichPage(page);
   };
 
@@ -47,6 +52,27 @@ const Profile = () => {
     setProfile((prevProfile) => ({ ...prevProfile, shortBio }));
   };
 
+  const onCountryChangeHandler = (country: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      location: { ...prevProfile?.location, country: country }
+    }));
+  };
+
+  const onStateChangeHandler = (state: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      location: { ...prevProfile?.location, state: state }
+    }));
+  };
+
+  const onCityChangeHandler = (city: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      location: { ...prevProfile?.location, city: city }
+    }));
+  };
+
   const onIsFullNameVisibleHandler = (isFullNameVisible: boolean) => {
     setProfile((prevProfile) => ({ ...prevProfile, isFullNameVisible }));
   };
@@ -60,7 +86,7 @@ const Profile = () => {
               accountName={profile?.accountName ?? ""}
               fullName={profile?.fullName ?? ""}
               isFullNameVisible={profile?.isFullNameVisible ?? true}
-              nextPage={nextPageHandler}
+              changePage={changePageHandler}
               onAccountNameChange={onAccountNameChangeHandler}
               onFullNameChange={onFullNameChangeHandler}
               onFullNameVisibleChange={onIsFullNameVisibleHandler}
@@ -70,8 +96,20 @@ const Profile = () => {
           {whichPage === "AboutYou" && (
             <AboutYou
               shortBio={profile?.shortBio ?? ""}
-              nextPage={nextPageHandler}
+              changePage={changePageHandler}
               onShortBioChange={onShortBioChangeHandler}
+            />
+          )}
+
+          {whichPage === "WhereAreYouFrom" && (
+            <WhereAreYouFrom
+              country={profile?.location?.country ?? ""}
+              state={profile?.location?.state ?? ""}
+              city={profile?.location?.city ?? ""}
+              changePage={changePageHandler}
+              onCountryChange={onCountryChangeHandler}
+              onStateChange={onStateChangeHandler}
+              onCityChange={onCityChangeHandler}
             />
           )}
         </div>

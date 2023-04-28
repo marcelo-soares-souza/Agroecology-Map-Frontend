@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
+
 import { IAccount } from "../../interfaces/IAccount";
 import { GiPlantRoots, GiGreenhouse, GiMailbox } from "react-icons/gi";
 
 import classes from "./ProfileView.module.css";
-import { useEffect, useState } from "react";
 
 const ProfileView = (props: IAccount) => {
   const [hasPronouns, setHasPronouns] = useState(false);
@@ -12,15 +13,14 @@ const ProfileView = (props: IAccount) => {
   const [hasRelatetLocations, setHasRelatedLocations] = useState(false);
   const [hasRelatedExperiences, sethasRelatedExperiences] = useState(false);
   const [hasFullNameVisible, setHasFullNameVisible] = useState(true);
+  const [hasCountryVisible, setHasCountryVisible] = useState(false);
 
   useEffect(() => {
-    if (props.shortBio?.length ?? 0 > 0) {
-      setHasAboutMe(true);
-    } else {
-      setHasAboutMe(false);
-    }
-
+    setHasAboutMe(props.shortBio?.length ?? 0 > 0 ? true : false);
     setHasFullNameVisible(props.isFullNameVisible ?? true);
+    setHasCountryVisible(
+      props.location?.country?.length ?? 0 > 0 ? true : false
+    );
   }, [props]);
 
   return (
@@ -49,11 +49,16 @@ const ProfileView = (props: IAccount) => {
           </p>
           {hasPronouns && <p>{"(he/him)"}</p>}
           <ul className={classes.details}>
-            <li>
-              <GiGreenhouse />
-              &nbsp;
-              <p>Region, Country</p>
-            </li>
+            {hasCountryVisible && (
+              <li>
+                <GiGreenhouse />
+                &nbsp;
+                <p>
+                  {props.location?.country} {props.location?.state}{" "}
+                  {props.location?.city}{" "}
+                </p>
+              </li>
+            )}
             <li>
               <GiPlantRoots />
               &nbsp;
