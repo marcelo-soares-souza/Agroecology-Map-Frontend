@@ -12,7 +12,7 @@ export default {
       discoverCTA: "Discover Experiences",
       registerCTA: "Be on the map",
       subtitle:
-        "Ut at quibusdam accusantium vel odio. Temporibus molestiae sed suscipit. In qui ex ut dicta qui ut ad. Voluptatem minima nisi quis at amet. Fugiat ullam qui maxime et. Quo laborum occaecati dolor quisquam."
+        "Discover and share valuable resources and knowledge, find agroecological experiences near you and connect with a like-minded community. Create a profile, explore, be found."
     },
     form: {
       submit: "Submit"
