@@ -1,8 +1,8 @@
 .container {
   background-color: var(--background);
   overflow-y: auto;
-  max-height: 100%;
-  margin-bottom: auto;
+  height: min(96%, 720px);
+  /* margin-bottom: auto; */
 }
 
 .banner {
@@ -24,12 +24,13 @@
 
 .ctaContainer button {
   margin: 0;
+  min-width: max-content;
 }
 
 .avatar {
   background-color: var(--background);
-  height: 128px;
   width: 128px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   border: 3px solid var(--background);
   overflow: hidden;

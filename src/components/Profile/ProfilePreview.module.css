@@ -4,11 +4,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
+  background-color: #666;
   max-height: min(780px, 100vh);
+  min-height: min(100%, 720px);
+  padding: 0 var(--space-0);
 }
 
 .profilePreviewContainer > * {
   border-radius: 8px 8px 0 0;
   width: min(640px, 96%);
+  min-width: calc(320px * 0.96);
 }

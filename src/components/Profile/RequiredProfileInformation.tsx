@@ -106,7 +106,7 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
               value={fullName}
             />
             <CheckboxItem
-              label="Visible in profile"
+              label="Visible&nbsp;in profile"
               onChange={onFullNameVisibleChange}
               checked={isFullNameVisible}
             />

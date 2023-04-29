@@ -12,11 +12,11 @@
 
 @media (max-width: 920px) {
   :root {
-      --space-1: 8px;
-        --space-2: 12px;
-        --space-3: 16px;
-        --space-4: 24px;
-        --space-5: 32px;
+    --space-1: 8px;
+    --space-2: 12px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 32px;
     --space-6: 56px;
     --space-7: 72px;
     --space-8: 136px;
@@ -33,6 +33,7 @@ body {
   padding: 0;
   background-color: var(--background);
   color: var(--primary);
+  overflow: hidden auto;
 }
 
 body > #root {
