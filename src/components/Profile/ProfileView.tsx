@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 
+// types
 import { IAccount } from "../../interfaces/IAccount";
+
+// icons
 import { GiPlantRoots, GiGreenhouse, GiMailbox } from "react-icons/gi";
 
+// components
+import { FormattedLocation } from "./FormattedLocation";
+
+// styles
 import classes from "./ProfileView.module.css";
 
 const ProfileView = (props: IAccount) => {
@@ -49,13 +56,12 @@ const ProfileView = (props: IAccount) => {
           </p>
           {hasPronouns && <p>{"(he/him)"}</p>}
           <ul className={classes.details}>
-            {hasCountryVisible && (
+            {hasCountryVisible && props.location && (
               <li>
                 <GiGreenhouse />
                 &nbsp;
                 <p>
-                  {props.location?.country} {props.location?.state}{" "}
-                  {props.location?.city}{" "}
+                  <FormattedLocation location={props.location} />
                 </p>
               </li>
             )}
