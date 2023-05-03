@@ -68,3 +68,7 @@
   border: 1px solid #b40e0e;
   background-color: #fddddd;
 }
+
+.react_select {
+  min-width: 256px;
+}
