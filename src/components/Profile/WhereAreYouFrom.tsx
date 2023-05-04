@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Country, State, City, ICountry, IState } from "country-state-city";
+import {
+  Country,
+  State,
+  City,
+  ICountry,
+  IState,
+  ICity
+} from "country-state-city";
 import Select, { ActionMeta } from "react-select";
 
 import classes from "../../pages/Profile.module.css";
@@ -21,12 +28,41 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
 
   const [cscCountry, setCscCountry] = useState<ICountry>({} as ICountry);
   const [cscState, setCscState] = useState<IState>({} as IState);
+  const [cscCity, setCscCity] = useState<ICity>({} as ICity);
 
   useEffect(() => {
     setCountry(props.country);
     setState(props.state);
     setCity(props.city);
   }, []);
+
+  useEffect(() => {
+    if (country) {
+      setCscCountry(
+        updatedCountries.filter(
+          (fCountry) => fCountry.name === props.country
+        )[0]
+      );
+    }
+  }, [country]);
+
+  useEffect(() => {
+    if (cscCountry) {
+      setCscState(
+        updatedStates(cscCountry).filter(
+          (fState) => fState.name === props.state
+        )[0]
+      );
+    }
+  }, [cscCountry]);
+
+  useEffect(() => {
+    if (cscState) {
+      setCscCity(
+        updatedCities(cscState).filter((fCity) => fCity.name === props.city)[0]
+      );
+    }
+  }, [cscState]);
 
   const updatedCountries = Country.getAllCountries().map(
     (uCountry: ICountry) => ({
@@ -36,11 +72,18 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
     })
   );
 
-  const updatedStates = (isoCode: string) =>
-    State.getStatesOfCountry(isoCode).map((uState) => ({
+  const updatedStates = (country: ICountry) =>
+    State.getStatesOfCountry(country.isoCode).map((uState) => ({
       label: uState.name,
       value: uState.isoCode,
       ...uState
+    }));
+
+  const updatedCities = (state: IState) =>
+    City.getCitiesOfState(state.countryCode, state.isoCode).map((uCity) => ({
+      label: uCity.name,
+      value: uCity.name,
+      ...uCity
     }));
 
   const previousPageHandler = () => {
@@ -59,6 +102,10 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
       setCscState({} as IState);
       setState("");
       props.onStateChange("");
+
+      setCscCity({} as ICity);
+      setCity("");
+      props.onCityChange("");
     }
   };
 
@@ -70,13 +117,22 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
       setCscState(state);
       setState(state.name);
       props.onStateChange(state.name);
+
+      setCscCity({} as ICity);
+      setCity("");
+      props.onCityChange("");
     }
   };
 
-  const cityChangedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setCity(value);
-    props.onCityChange(value);
+  const cityChangedHandler = (
+    city: ICity | null,
+    actionMeta: ActionMeta<ICity>
+  ) => {
+    if (city) {
+      setCscCity(city);
+      setCity(city.name);
+      props.onCityChange(city.name);
+    }
   };
 
   return (
@@ -104,20 +160,20 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
             name="state"
             onChange={stateChangedHandler}
             value={cscState}
-            options={updatedStates(
-              cscCountry.isoCode ? cscCountry.isoCode : ""
-            )}
+            options={updatedStates(cscCountry ? cscCountry : ({} as ICountry))}
             className={classes.react_select}
           />
         </div>
 
         <div>
           <h3>City</h3>
-          <input
-            type="text"
-            placeholder="e.g.: Kampala"
+          <Select
+            id="city"
+            name="city"
             onChange={cityChangedHandler}
-            value={city}
+            value={cscCity}
+            options={updatedCities(cscState ? cscState : ({} as IState))}
+            className={classes.react_select}
           />
         </div>
 
