@@ -26,20 +26,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-    --text-sm: 0.8rem;
-      --text-base: 1rem;
-      --text-lg: 1.2rem;
-      --text-xl: 1.4rem;
-      --text-2xl: 1.6rem;
-      --text-3xl: 2rem;
-      --text-4xl: 2.6rem;
-}
-
-@media (max-width: 920px) {
-  :root {
-    font-size: 14px;
-    line-height: 24px;
-  }
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.6rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.6rem;
 }
 
 p {
@@ -84,4 +77,46 @@ a {
 
 a:hover {
   color: var(--orange);
+}
+
+/* Mobile */
+
+@media (max-width: 920px) {
+  :root {
+    font-size: 12px;
+    line-height: 16px;
+
+    --text-lg: 1.165rem; /* ~14px */
+    --text-xl: 1.333rem; /* ~16px */
+    --text-xl: 1.666rem; /* ~20px */
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+
+  .label {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+  }
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: normal;
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin: 0;
+  }
 }

@@ -4,15 +4,19 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: var(--space-2) 0;
+
   height: var(--space-5);
+  margin: var(--space-2) 0;
   padding: 0 var(--space-4);
+
   font-family: var(--font-heading);
-  color: var(--neutral-lighter);
-  border: 2px solid var(--neutral);
-  border-radius: 28px;
   font-size: var(--text-base);
   font-weight: 500;
+  color: var(--neutral-lighter);
+  
+  border: 2px solid var(--neutral);
+  border-radius: 28px;
+  
   transition: border-color linear 150ms, color linear 150ms;
 }
 
@@ -64,4 +68,11 @@ button:disabled {
   min-width: 12rem;
 }
 
-  
+@media (max-width: 920px) {
+  button {
+    font-size: var(--text-lg);
+    border-radius: 8px;
+    align-self: stretch;
+    margin: var(--space-2) var(--space-3);
+  }
+}

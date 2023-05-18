@@ -78,9 +78,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="column-justify-center" style={{ padding: "0 2%" }}>
+    <div className="column-justify-center">
       <div className={classes.columnsContainer + " two-columns"}>
-        <div className="contain-center">
+        <div className="grid-container">
           {whichPage === "RequiredProfileInformation" && (
             <RequiredProfileInformation
               accountName={profile?.accountName ?? ""}

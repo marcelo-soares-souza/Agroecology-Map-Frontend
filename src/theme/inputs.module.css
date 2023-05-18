@@ -20,3 +20,11 @@ label {
   line-height: var(--text-lg);
   font-size: var(--text-sm);
 }
+
+@media (max-width: 920px) {
+  input {
+    background-color: #EEEEEE;
+    border: none;
+    width: 100%;
+  }
+}
