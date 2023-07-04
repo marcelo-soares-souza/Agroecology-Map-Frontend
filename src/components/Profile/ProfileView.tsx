@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { IAccount } from "../../interfaces/IAccount";
 
 // icons
-import { GiPlantRoots, GiGreenhouse, GiMailbox } from "react-icons/gi";
+import { GiPlantRoots, GiGreenhouse } from "react-icons/gi";
+import {FiMail} from "react-icons/fi";
 
 // components
 import { FormattedLocation } from "./FormattedLocation";
@@ -42,7 +43,7 @@ const ProfileView = (props: IAccount) => {
         </div>
         <div className={classes.ctaContainer}>
           <button className="btn-highlight-2">
-            <GiMailbox />
+            <FiMail size={32} />
             &nbsp;
             {"Contact me"}
           </button>

@@ -41,7 +41,7 @@
 .btnNext::after {
   content: ">";
   position: absolute;
-  left: 12%;
+  right: 12%;
 }
 
 .btnPrevious {
@@ -53,7 +53,7 @@
 .btnPrevious::before {
   content: "<";
   position: absolute;
-  right: 12%;
+  left: 12%;
 }
 
 .textArea {
@@ -68,7 +68,7 @@
 }
 
 .error {
-  border: 1px solid #b40e0e;
+  border: 2px solid #b40e0e;
   background-color: #fddddd;
 }
 
