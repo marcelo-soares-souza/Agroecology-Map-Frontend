@@ -35,7 +35,7 @@ const AboutYou = (props: IAboutYou) => {
   return (
     <>
       <div className={classes.firstColumn}>
-        <div>
+        <div className="h-group">
           <h1 className={classes.title}>About You</h1>
           <p className="light-text">
             Every detail counts for you to be found by future clients or
@@ -43,28 +43,35 @@ const AboutYou = (props: IAboutYou) => {
           </p>
         </div>
         <div>
-          <h3>Short Bio</h3>
-          <p className={"input-description light-text " + classes.mbSm}>
+          <h3 className="mb-1">Short Bio</h3>
+          {/* <p className={"input-description light-text " + classes.mbSm}>
             {
               "What's your experience? What do you do? Tell the community about yourself..."
             }
-          </p>
+          </p> */}
           <textarea
             className={classes.textArea}
-            placeholder=""
+            placeholder="What's your experience? What do you do? Tell the community about yourself..."
             onChange={shortBioChangedHandler}
             value={shortBio}
           />
         </div>
 
-        <div className="contain-center" style={{ alignSelf: "stretch" }}>
+        <div
+          className="contain-center"
+          style={{
+            alignSelf: "stretch",
+            justifyContent: "flex-start",
+            gap: "1rem"
+          }}
+        >
           <Button
             icon="<"
             color="1"
             fill="outline"
             onClick={previousPageHandler}
           >
-            Previous
+            Back
           </Button>
 
           <Button icon={">"} color="1" fill="normal" onClick={nextPageHandler}>
@@ -77,5 +84,3 @@ const AboutYou = (props: IAboutYou) => {
 };
 
 export default AboutYou;
-
-

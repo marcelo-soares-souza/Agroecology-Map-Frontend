@@ -69,7 +69,7 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   return (
     <>
       <div className={classes.firstColumn}>
-        <div>
+        <div className="h-group">
           <h1 className={classes.title}>Required Profile Information</h1>
           <p className="light-text">
             Your profile will only be public after you fill this basic details.

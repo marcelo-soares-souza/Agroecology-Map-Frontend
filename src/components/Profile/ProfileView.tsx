@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import { IAccount } from "../../interfaces/IAccount";
 
 // icons
-import { GiPlantRoots, GiGreenhouse } from "react-icons/gi";
-import {FiMail} from "react-icons/fi";
+import { BsPersonLinesFill } from "react-icons/bs";
+import { HiOutlineMapPin } from "react-icons/hi2";
+import { FiMail } from "react-icons/fi";
 
 // components
 import { FormattedLocation } from "./FormattedLocation";
 
 // styles
 import classes from "./ProfileView.module.css";
+import { Button } from "../UI/Button";
 
 const ProfileView = (props: IAccount) => {
   const [hasPronouns, setHasPronouns] = useState(false);
@@ -41,12 +43,12 @@ const ProfileView = (props: IAccount) => {
           <div className={classes.avatarMock} />
           {/* <img src="#" alt="Profile Avatar" /> */}
         </div>
-        <div className={classes.ctaContainer}>
-          <button className="btn-highlight-2">
+        <div className={classes.ctaContainer + " mb-0"}>
+          <Button color="2" fill="normal">
             <FiMail size={32} />
             &nbsp;
             {"Contact me"}
-          </button>
+          </Button>
         </div>
       </div>
       <div className={classes.textContainer}>
@@ -59,7 +61,7 @@ const ProfileView = (props: IAccount) => {
           <ul className={classes.details}>
             {hasCountryVisible && props.location && (
               <li>
-                <GiGreenhouse />
+                <HiOutlineMapPin />
                 &nbsp;
                 <p>
                   <FormattedLocation location={props.location} />
@@ -67,7 +69,7 @@ const ProfileView = (props: IAccount) => {
               </li>
             )}
             <li>
-              <GiPlantRoots />
+              <BsPersonLinesFill />
               &nbsp;
               <p>Farmer</p>
             </li>
