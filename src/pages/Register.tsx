@@ -4,6 +4,7 @@ import Translator from "../components/i18n/Translator";
 import classes from "./Register.module.css";
 
 import { SlLocationPin } from "react-icons/sl";
+import { Button } from "../components/UI/Button";
 
 const Register = () => {
   return (
@@ -47,9 +48,9 @@ const Register = () => {
               <a href="/login">
                 <Translator path="register.linkToLogin" />
               </a>
-              <button type="submit">
+              <Button fill="outline" color="1">
                 <Translator path="form.submit" />
-              </button>
+              </Button>
             </form>
           </div>
         </div>

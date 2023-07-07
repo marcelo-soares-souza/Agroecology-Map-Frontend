@@ -10,6 +10,7 @@ import {
 import Select, { ActionMeta } from "react-select";
 
 import classes from "../../pages/Profile.module.css";
+import { Button } from "../UI/Button";
 
 interface IWhereAreYouFrom {
   country: string;
@@ -178,12 +179,14 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
         </div>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <button
-            className={classes.btnPrevious + " btn-highlight-1"}
+          <Button
+            color="1"
+            fill="outline"
+            icon="<"
             onClick={previousPageHandler}
           >
             Previous
-          </button>
+          </Button>
         </div>
       </div>
     </>

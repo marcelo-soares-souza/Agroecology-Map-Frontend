@@ -10,6 +10,11 @@
   box-shadow: 0 0 10px rgb(210, 210, 188);
 }
 
+.header button {
+  width: 6.5rem;
+  height: 2rem;
+}
+
 .logoWrap {
   display: flex;
   justify-content: center;
@@ -36,7 +41,7 @@
 }
 
 .logotype:hover {
-  color: var(--primary);
+  color: var(--foreground);
 }
 
 .nav {

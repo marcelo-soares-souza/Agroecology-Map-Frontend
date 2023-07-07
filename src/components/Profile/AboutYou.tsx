@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import classes from "../../pages/Profile.module.css";
+import { Button } from "../UI/Button";
 
 interface IAboutYou {
   shortBio: string;
@@ -57,19 +58,18 @@ const AboutYou = (props: IAboutYou) => {
         </div>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <button
-            className={classes.btnPrevious + " btn-highlight-1"}
+          <Button
+            icon="<"
+            color="1"
+            fill="outline"
             onClick={previousPageHandler}
           >
             Previous
-          </button>
+          </Button>
 
-          <button
-            className={classes.btnNext + " btn-highlight-1"}
-            onClick={nextPageHandler}
-          >
+          <Button icon={">"} color="1" fill="normal" onClick={nextPageHandler}>
             Next
-          </button>
+          </Button>
         </div>
       </div>
     </>
@@ -77,3 +77,5 @@ const AboutYou = (props: IAboutYou) => {
 };
 
 export default AboutYou;
+
+

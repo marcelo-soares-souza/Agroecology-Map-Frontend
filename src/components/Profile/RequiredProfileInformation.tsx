@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { CheckboxItem } from "../../components/CheckboxItem";
 
 import classes from "../../pages/Profile.module.css";
+import { Button } from "../UI/Button";
 
 interface IRequiredProfileInformation {
   accountName: string;
@@ -123,12 +124,9 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
         </CheckboxItem>
 
         <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <button
-            className={classes.btnNext + " btn-highlight-1"}
-            onClick={nextPageHandler}
-          >
+          <Button color="1" fill="normal" icon=">" onClick={nextPageHandler}>
             Next
-          </button>
+          </Button>
         </div>
       </div>
     </>

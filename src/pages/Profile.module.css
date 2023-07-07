@@ -61,7 +61,7 @@
   height: 200px;
   word-break: break-word;
   font-size: var(--text-base);
-  color: var(--primary);
+  color: var(--foreground);
   background-color: var(--background);
   border: 2px solid var(--neutral-lighter);
   border-radius: 8px;

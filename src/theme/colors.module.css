@@ -1,4 +1,5 @@
 :root {
+    --white: #FFFFFF;
     --off-white: #FDFFEB;
     --beige: #F4EEC7;
     --orange: #FE9801;
@@ -12,7 +13,7 @@
     --gray-lighter: #C3C3C3;
     --gray-light: #909090;
 
-    --primary: var(--off-black);
+    --foreground: var(--off-black);
     --highlight-1: var(--orange);
     --highlight-1-dark: var(--dark-orange);
     --highlight-1-darker: var(--forest);

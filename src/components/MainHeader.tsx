@@ -4,6 +4,7 @@ import classes from "./MainHeader.module.css";
 
 import logo from "../assets/logo-agroecologymap.svg";
 import Translator from "./i18n/Translator";
+import { Button } from "./UI/Button";
 
 const MainHeader = () => {
   return (
@@ -24,10 +25,10 @@ const MainHeader = () => {
           <Translator path="header.profile" />
         </NavLink>
 
-        <NavLink to="/register" className={classes.button}>
-          <button className="btn-highlight-1">
+        <NavLink to="/register">
+          <Button color="1" fill="outline">
             <Translator path="header.enter" />
-          </button>
+          </Button>
         </NavLink>
       </nav>
     </header>

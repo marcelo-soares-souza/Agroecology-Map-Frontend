@@ -1,13 +1,13 @@
 :root {
-  --space-0: 8px;
-  --space-1: 12px;
-  --space-2: 16px;
-  --space-3: 20px;
-  --space-4: 32px;
-  --space-5: 52px;
-  --space-6: 84px;
-  --space-7: 136px;
-  --space-8: 220px;
+  --space-0: 0.4rem; /* 8px; */
+  --space-1: 0.6rem; /* 12px; */
+  --space-2: 0.8rem; /* 16px; */
+  --space-3: 1rem; /* 20px; */
+  --space-4: 1.6rem; /* 32px; */
+  --space-5: 2.6rem; /* 52px; */
+  --space-6: 4.2rem; /* 84px; */
+  --space-7: 6.8rem; /* 136px; */
+  --space-8: 11rem; /* 220px; */
 }
 
 @media (max-width: 920px) {
@@ -33,7 +33,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background);
-  color: var(--primary);
+  color: var(--foreground);
   overflow: hidden auto;
 }
 
