@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import classes from "../../pages/Profile.module.css";
-import { Button } from "../UI/Button";
+import { PrevNextButtons } from "./PrevNextButtons";
 
 interface IAboutYou {
   pronouns: string;
@@ -72,27 +72,10 @@ const AboutYou = (props: IAboutYou) => {
           />
         </div>
 
-        <div
-          className="contain-center"
-          style={{
-            alignSelf: "stretch",
-            justifyContent: "flex-start",
-            gap: "1rem"
-          }}
-        >
-          <Button
-            icon="<"
-            color="1"
-            fill="outline"
-            onClick={previousPageHandler}
-          >
-            Back
-          </Button>
-
-          <Button icon={">"} color="1" fill="normal" onClick={nextPageHandler}>
-            Next
-          </Button>
-        </div>
+        <PrevNextButtons
+          previousPageHandler={previousPageHandler}
+          nextPageHandler={nextPageHandler}
+        />
       </div>
     </>
   );

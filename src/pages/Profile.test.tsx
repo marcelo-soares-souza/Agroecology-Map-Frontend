@@ -26,7 +26,13 @@ describe("<Profile />", () => {
   it("should render AboutYou without errors", () => {
     expect(() =>
       render(
-        <AboutYou shortBio="" changePage={() => {}} onShortBioChange={() => {}} />
+        <AboutYou
+          pronouns=""
+          shortBio=""
+          changePage={() => {}}
+          onShortBioChange={() => {}}
+          onPronounsChange={() => {}}
+        />
       )
     ).not.toThrow();
   });

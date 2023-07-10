@@ -4,6 +4,7 @@ import { CheckboxItem } from "../../components/CheckboxItem";
 
 import classes from "../../pages/Profile.module.css";
 import { Button } from "../UI/Button";
+import { PrevNextButtons } from "./PrevNextButtons";
 
 interface IRequiredProfileInformation {
   accountName: string;
@@ -123,11 +124,7 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
           </span>
         </CheckboxItem>
 
-        <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <Button color="1" fill="normal" icon=">" onClick={nextPageHandler}>
-            Next
-          </Button>
-        </div>
+        <PrevNextButtons nextPageHandler={nextPageHandler} />
       </div>
     </>
   );

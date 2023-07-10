@@ -11,6 +11,7 @@ import Select, { ActionMeta } from "react-select";
 
 import classes from "../../pages/Profile.module.css";
 import { Button } from "../UI/Button";
+import { PrevNextButtons } from "./PrevNextButtons";
 
 interface IWhereAreYouFrom {
   country: string;
@@ -178,16 +179,10 @@ const WhereAreYouFrom = (props: IWhereAreYouFrom) => {
           />
         </div>
 
-        <div className="contain-center" style={{ alignSelf: "stretch" }}>
-          <Button
-            color="1"
-            fill="outline"
-            icon="<"
-            onClick={previousPageHandler}
-          >
-            Previous
-          </Button>
-        </div>
+        <PrevNextButtons
+          previousPageHandler={previousPageHandler}
+          nextPageHandler={() => {}}
+        />
       </div>
     </>
   );
