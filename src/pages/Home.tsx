@@ -8,6 +8,7 @@ import plantBL from "../assets/plant1.svg";
 import plantTL from "../assets/plant2.svg";
 import plantBR from "../assets/plant3.svg";
 import plantTR from "../assets/plant4.svg";
+import { Button } from "../components/UI/Button";
 
 const Home = () => {
   return (
@@ -26,14 +27,14 @@ const Home = () => {
           </p>
           <div className={classes.ctaButtonsContainer}>
             <Link to={"/"}>
-              <button className="btn-long">
+              <button style={{ color: "#4D4D4D" }}>
                 <Translator path="home.discoverCTA" />
               </button>
             </Link>
             <Link to={"/register"}>
-              <button className="btn-long btn-highlight-2">
+              <Button color="2" fill="normal">
                 <Translator path="home.registerCTA" />
-              </button>
+              </Button>
             </Link>
           </div>
         </div>
