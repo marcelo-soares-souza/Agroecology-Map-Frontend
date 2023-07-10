@@ -18,7 +18,7 @@ const Register = () => {
             <h1>
               <Translator path="register.heading" />
             </h1>
-            <p className="light-text">
+            <p className="text-light">
               <Translator path="register.description" />
             </p>
             <form className={classes.form} method="POST" action="/register">

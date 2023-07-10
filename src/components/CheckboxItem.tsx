@@ -9,7 +9,7 @@ interface CheckboxItemProps {
 
 export const CheckboxItem = (props: CheckboxItemProps) => {
   return (
-    <label className={classes.container + " light-text input-description"}>
+    <label className={classes.container + " text-light input-description"}>
       <input
         type="checkbox"
         checked={props.checked}

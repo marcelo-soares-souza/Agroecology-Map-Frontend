@@ -13,7 +13,7 @@ import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
-import WhereAreYouFrom from "../components/Profile/WhereAreYouFrom";
+import Location from "../components/Profile/Location";
 
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
@@ -109,7 +109,7 @@ const Profile = () => {
           )}
 
           {whichPage === "WhereAreYouFrom" && (
-            <WhereAreYouFrom
+            <Location
               country={profile?.location?.country ?? ""}
               state={profile?.location?.state ?? ""}
               city={profile?.location?.city ?? ""}

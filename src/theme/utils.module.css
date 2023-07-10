@@ -28,3 +28,6 @@
 .flex-1 {
     flex: 1;
 }
+.break-words {
+    white-space: pre-wrap;
+}

@@ -63,18 +63,20 @@ h1 {
   font-weight: 800;
 }
 
-.light-text {
+.text-light {
   color: var(--neutral-light);
 }
 
 h2 {
   font-size: var(--text-2xl);
   font-weight: 700;
+  margin-bottom: var(--space-0);
 }
 
 h3 {
   font-size: var(--text-lg);
   font-weight: 700;
+  margin-bottom: var(--space-0);
 }
 
 a {

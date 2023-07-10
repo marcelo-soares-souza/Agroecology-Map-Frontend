@@ -22,7 +22,7 @@ const Home = () => {
               <Translator path="home.titleLine2" />
             </span>
           </h1>
-          <p data-testid="subtitle" className={"light-text"}>
+          <p data-testid="subtitle" className={"text-light"}>
             <Translator path="home.subtitle" />
           </p>
           <div className={classes.ctaButtonsContainer}>
