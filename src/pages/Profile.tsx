@@ -27,6 +27,7 @@ const Profile = () => {
       displayName: "",
       fullName: "",
       isFullNameVisible: true,
+      pronouns: "",
       shortBio: "",
       location: {
         country: "",
@@ -46,6 +47,10 @@ const Profile = () => {
 
   const onFullNameChangeHandler = (fullName: string) => {
     setProfile((prevProfile) => ({ ...prevProfile, fullName }));
+  };
+
+  const onPronounsChangeHandler = (pronouns: string) => {
+    setProfile((prevProfile) => ({ ...prevProfile, pronouns }));
   };
 
   const onShortBioChangeHandler = (shortBio: string) => {
@@ -95,9 +100,11 @@ const Profile = () => {
 
           {whichPage === "AboutYou" && (
             <AboutYou
+              pronouns={profile?.pronouns ?? ""}
               shortBio={profile?.shortBio ?? ""}
               changePage={changePageHandler}
               onShortBioChange={onShortBioChangeHandler}
+              onPronounsChange={onPronounsChangeHandler}
             />
           )}
 

@@ -20,7 +20,7 @@ const ProfileView = (props: IAccount) => {
   const [hasAboutMe, setHasAboutMe] = useState(false);
   const [hasHighLights, setHasHighLights] = useState(false);
   const [hasServices, setHasServices] = useState(false);
-  const [hasRelatetLocations, setHasRelatedLocations] = useState(false);
+  const [hasRelatedLocations, setHasRelatedLocations] = useState(false);
   const [hasRelatedExperiences, sethasRelatedExperiences] = useState(false);
   const [hasFullNameVisible, setHasFullNameVisible] = useState(true);
   const [hasCountryVisible, setHasCountryVisible] = useState(false);
@@ -31,6 +31,7 @@ const ProfileView = (props: IAccount) => {
     setHasCountryVisible(
       props.location?.country?.length ?? 0 > 0 ? true : false
     );
+    setHasPronouns(props.pronouns?.length ?? 0 > 0 ? true : false);
   }, [props]);
 
   return (
@@ -57,7 +58,7 @@ const ProfileView = (props: IAccount) => {
           <p>
             <strong>{"@" + props.accountName}</strong>
           </p>
-          {hasPronouns && <p>{"(he/him)"}</p>}
+          {hasPronouns && <p>{props.pronouns}</p>}
           <ul className={classes.details}>
             {hasCountryVisible && props.location && (
               <li>
@@ -101,7 +102,7 @@ const ProfileView = (props: IAccount) => {
           </div>
         )}
 
-        {hasRelatetLocations && (
+        {hasRelatedLocations && (
           <div>
             <h2>Related Locations</h2>
             <div>
