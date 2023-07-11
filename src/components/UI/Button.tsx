@@ -12,6 +12,7 @@ type ButtonProps = {
   fill: "normal" | "outline";
   children: React.ReactNode;
   icon?: ButtonIconTypes;
+  disabled?: boolean;
 };
 
 export const Button = ({
@@ -19,7 +20,8 @@ export const Button = ({
   onClick,
   color = "1",
   fill = "normal",
-  icon
+  icon,
+  disabled = false
 }: ButtonProps) => {
   if (!icon)
     return (
@@ -27,6 +29,7 @@ export const Button = ({
         className={`btn-${color}-${fill}`}
         style={{ position: "relative" }}
         onClick={onClick}
+        disabled={disabled}
       >
         {children}
       </button>
@@ -37,6 +40,7 @@ export const Button = ({
       className={`btn-${color}-${fill}`}
       style={{ position: "relative" }}
       onClick={onClick}
+      disabled={disabled}
     >
       {icon === "<" ? <Icon type="<" /> : null}
       {children}

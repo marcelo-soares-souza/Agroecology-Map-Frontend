@@ -13,6 +13,7 @@ interface IRequiredProfileInformation {
   onAccountNameChange: Function;
   onFullNameChange: Function;
   onFullNameVisibleChange: Function;
+  agreedToTerms: boolean;
 }
 
 const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
@@ -22,10 +23,13 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   const [fullName, setFullName] = useState("");
   const [isFullNameVisible, setIsFullNameVisible] = useState(true);
 
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
+
   useEffect(() => {
     setAccountName(props.accountName);
     setFullName(props.fullName);
     setIsFullNameVisible(props.isFullNameVisible);
+    setAgreedToTerms(props.agreedToTerms);
   }, [props]);
 
   const nextPageHandler = () => {
@@ -64,6 +68,12 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
     const value = !isFullNameVisible;
     setIsFullNameVisible(value);
     props.onFullNameVisibleChange(value);
+  };
+
+  const agreedToTermsChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setAgreedToTerms(event.target.checked);
   };
 
   return (
@@ -114,7 +124,10 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
           </div>
         </div>
 
-        <CheckboxItem>
+        <CheckboxItem
+          checked={agreedToTerms}
+          onChange={agreedToTermsChangeHandler}
+        >
           <span>
             {"I have read and agree with Agroecology Map's "}
             <a href="#">{"terms of use"}</a>
@@ -123,7 +136,10 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
           </span>
         </CheckboxItem>
 
-        <PrevNextButtons nextPageHandler={nextPageHandler} />
+        <PrevNextButtons
+          disableNext={!agreedToTerms}
+          nextPageHandler={nextPageHandler}
+        />
       </div>
     </>
   );
