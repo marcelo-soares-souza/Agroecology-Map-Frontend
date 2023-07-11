@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
 import { CheckboxItem } from "../../components/CheckboxItem";
+import { PrevNextButtons } from "./PrevNextButtons";
 
 import classes from "../../pages/Profile.module.css";
-import { Button } from "../UI/Button";
-import { PrevNextButtons } from "./PrevNextButtons";
 
 interface IRequiredProfileInformation {
   accountName: string;

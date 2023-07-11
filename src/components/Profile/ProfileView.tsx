@@ -56,10 +56,18 @@ const ProfileView = (props: IAccount) => {
         <div>
           <div className="d-flex">
             <div>
-              {hasFullNameVisible && <h1>{props.fullName}</h1>}
-              <p>
-                <strong>{"@" + props.accountName}</strong>
-              </p>
+              {
+                <h1>
+                  {hasFullNameVisible && props.fullName
+                    ? props.fullName
+                    : "@" + props.accountName}
+                </h1>
+              }
+              {hasFullNameVisible && props.fullName && (
+                <p>
+                  <strong>{"@" + props.accountName}</strong>
+                </p>
+              )}
             </div>
             {hasPronouns && (
               <small style={{ margin: "0.15rem 0.25rem" }}>
