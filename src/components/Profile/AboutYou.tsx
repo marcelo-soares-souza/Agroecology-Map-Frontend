@@ -21,7 +21,7 @@ const AboutYou = (props: IAboutYou) => {
   }, []);
 
   const nextPageHandler = () => {
-    props.changePage("WhereAreYouFrom");
+    props.changePage("Location");
   };
 
   const previousPageHandler = () => {

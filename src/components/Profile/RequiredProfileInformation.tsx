@@ -9,11 +9,12 @@ interface IRequiredProfileInformation {
   accountName: string;
   fullName: string;
   isFullNameVisible: boolean;
+  agreedToTerms: boolean;
   changePage: Function;
   onAccountNameChange: Function;
   onFullNameChange: Function;
   onFullNameVisibleChange: Function;
-  agreedToTerms: boolean;
+  onAgreedToTermsChange: Function;
 }
 
 const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
@@ -73,7 +74,9 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   const agreedToTermsChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setAgreedToTerms(event.target.checked);
+    const value = event.target.checked;
+    setAgreedToTerms(value);
+    props.onAgreedToTermsChange(value);
   };
 
   return (

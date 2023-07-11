@@ -54,3 +54,39 @@
 .react_select {
   min-width: 256px;
 }
+
+.banner {
+  background-color: var(--neutral-light);
+  height: 8rem;
+  max-height: 8rem;
+  margin-bottom: -3rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.avatar {
+  background-color: var(--background);
+  width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 3px solid var(--background);
+  overflow: hidden;
+  margin-left: 1rem;
+}
+
+.avatar img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.avatarMock {
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+}

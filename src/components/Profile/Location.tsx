@@ -12,7 +12,7 @@ import Select, { ActionMeta } from "react-select";
 import classes from "../../pages/Profile.module.css";
 import { PrevNextButtons } from "./PrevNextButtons";
 
-interface IWhereAreYouFrom {
+interface ILocation {
   country: string;
   state: string;
   city: string;
@@ -22,7 +22,7 @@ interface IWhereAreYouFrom {
   onCityChange: Function;
 }
 
-const Location = (props: IWhereAreYouFrom) => {
+const Location = (props: ILocation) => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
@@ -89,6 +89,10 @@ const Location = (props: IWhereAreYouFrom) => {
 
   const previousPageHandler = () => {
     props.changePage("AboutYou");
+  };
+
+  const nextPageHandler = () => {
+    props.changePage("ImageSelection");
   };
 
   const countryChangedHandler = (
@@ -182,7 +186,7 @@ const Location = (props: IWhereAreYouFrom) => {
 
         <PrevNextButtons
           previousPageHandler={previousPageHandler}
-          nextPageHandler={() => {}}
+          nextPageHandler={nextPageHandler}
         />
       </div>
     </>

@@ -24,4 +24,5 @@ export interface IAccount {
     avatar: string;
     banner: string;
   };
+  agreedToTerms?: boolean;
 }

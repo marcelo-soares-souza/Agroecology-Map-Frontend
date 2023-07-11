@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 // Components
-import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
 import AboutYou from "../components/Profile/AboutYou";
-import ProfilePreview from "../components/Profile/ProfilePreview";
 import Location from "../components/Profile/Location";
+import ImageSelection from "../components/Profile/ImageSelection";
+import ProfilePreview from "../components/Profile/ProfilePreview";
+import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
 
 // Mock Data
 import { mockAccount } from "../mocks/mock-account";
@@ -39,7 +40,8 @@ const Profile = () => {
         country: "",
         state: "",
         city: ""
-      }
+      },
+      agreedToTerms: false
     });
   }, []);
 
@@ -88,6 +90,13 @@ const Profile = () => {
     setProfile((prevProfile) => ({ ...prevProfile, isFullNameVisible }));
   };
 
+  const onAgreedToTermsChangeHandler = (hasAgreed: boolean) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      agreedToTerms: hasAgreed
+    }));
+  };
+
   return (
     <div className="column-justify-center">
       <div className={classes.columnsContainer + " two-columns"}>
@@ -101,6 +110,8 @@ const Profile = () => {
               onAccountNameChange={onAccountNameChangeHandler}
               onFullNameChange={onFullNameChangeHandler}
               onFullNameVisibleChange={onIsFullNameVisibleHandler}
+              agreedToTerms={profile?.agreedToTerms ?? false}
+              onAgreedToTermsChange={onAgreedToTermsChangeHandler}
             />
           )}
 
@@ -114,7 +125,7 @@ const Profile = () => {
             />
           )}
 
-          {whichPage === "WhereAreYouFrom" && (
+          {whichPage === "Location" && (
             <Location
               country={profile?.location?.country ?? ""}
               state={profile?.location?.state ?? ""}
@@ -123,6 +134,14 @@ const Profile = () => {
               onCountryChange={onCountryChangeHandler}
               onStateChange={onStateChangeHandler}
               onCityChange={onCityChangeHandler}
+            />
+          )}
+
+          {whichPage === "ImageSelection" && (
+            <ImageSelection
+              avatar={profile?.images?.avatar ?? ""}
+              banner={profile?.images?.banner ?? ""}
+              changePage={changePageHandler}
             />
           )}
         </div>
