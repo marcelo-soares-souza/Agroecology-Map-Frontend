@@ -39,6 +39,11 @@ p {
   margin: 0.2rem 0;
 }
 
+small p {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
 .h-group {
   line-height: normal;
 }

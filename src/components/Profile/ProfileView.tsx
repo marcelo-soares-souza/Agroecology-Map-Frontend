@@ -9,11 +9,11 @@ import { HiOutlineMapPin } from "react-icons/hi2";
 import { FiMail } from "react-icons/fi";
 
 // components
+import { Button } from "../UI/Button";
 import { FormattedLocation } from "./FormattedLocation";
 
 // styles
 import classes from "./ProfileView.module.css";
-import { Button } from "../UI/Button";
 
 const ProfileView = (props: IAccount) => {
   const [hasPronouns, setHasPronouns] = useState(false);
@@ -37,12 +37,12 @@ const ProfileView = (props: IAccount) => {
   return (
     <div className={classes.container}>
       <div className={classes.banner}>
-        {/* <img src="#" alt="Profile Banner" /> */}
+        <img src={props.images?.banner} alt="Profile Banner" />
       </div>
       <div className={classes.avatarCtaContainer}>
         <div className={classes.avatar}>
-          <div className={classes.avatarMock} />
-          {/* <img src="#" alt="Profile Avatar" /> */}
+          {/* <div className={classes.avatarMock} /> */}
+          <img src={props.images?.avatar} alt="Profile Avatar" />
         </div>
         <div className={classes.ctaContainer + " mb-0"}>
           <Button color="2" fill="normal">
@@ -54,11 +54,19 @@ const ProfileView = (props: IAccount) => {
       </div>
       <div className={classes.textContainer}>
         <div>
-          {hasFullNameVisible && <h1>{props.fullName}</h1>}
-          <p>
-            <strong>{"@" + props.accountName}</strong>
-          </p>
-          {hasPronouns && <p>{props.pronouns}</p>}
+          <div className="d-flex">
+            <div>
+              {hasFullNameVisible && <h1>{props.fullName}</h1>}
+              <p>
+                <strong>{"@" + props.accountName}</strong>
+              </p>
+            </div>
+            {hasPronouns && (
+              <small style={{ margin: "0.15rem 0.25rem" }}>
+                <p>{"(" + props.pronouns + ")"}</p>
+              </small>
+            )}
+          </div>
           <ul className={classes.details}>
             {hasCountryVisible && props.location && (
               <li>

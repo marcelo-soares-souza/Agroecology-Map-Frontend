@@ -9,7 +9,15 @@
 .banner {
   background-color: var(--neutral-light);
   height: 8rem;
+  max-height: 8rem;
   margin-bottom: -3rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 .avatarCtaContainer {
@@ -37,6 +45,12 @@
   border: 3px solid var(--background);
   overflow: hidden;
   margin-left: 1rem;
+}
+
+.avatar img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .avatarMock {

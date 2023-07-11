@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
 import AboutYou from "../components/Profile/AboutYou";
 import ProfilePreview from "../components/Profile/ProfilePreview";
+import Location from "../components/Profile/Location";
 
 // Mock Data
 import { mockAccount } from "../mocks/mock-account";
+import avatar from "../assets/mock/placeholder-avatar-pic.jpg";
+import banner from "../assets/mock/placeholder-avatar-banner.jpg";
 
 // CSS
 import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
-import Location from "../components/Profile/Location";
 
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
@@ -29,6 +31,10 @@ const Profile = () => {
       isFullNameVisible: true,
       pronouns: "",
       shortBio: "",
+      images: {
+        avatar: avatar,
+        banner: banner
+      },
       location: {
         country: "",
         state: "",

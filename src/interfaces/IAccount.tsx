@@ -6,6 +6,7 @@ export interface IAccount {
   isFullNameVisible?: boolean;
   displayName?: string;
   pronouns?: string;
+  shortBio?: string;
   location?: {
     country?: string;
     state?: string;
@@ -19,5 +20,8 @@ export interface IAccount {
     profession?: string;
     services?: string;
   };
-  shortBio?: string;
+  images?: {
+    avatar: string;
+    banner: string;
+  };
 }

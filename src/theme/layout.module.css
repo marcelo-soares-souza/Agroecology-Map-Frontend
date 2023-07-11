@@ -96,6 +96,10 @@ main > * {
   justify-content: center;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
