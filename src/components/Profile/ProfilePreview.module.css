@@ -5,9 +5,13 @@
   align-items: center;
   justify-content: flex-end;
   background-color: #666;
+  background-image: url("../../assets/worldmap.jpg");
+  background-position: 80% 0;
+  background-size: cover;
   /* max-height: min(780px, 100vh); */
   min-height: min(100%, 720px);
   padding: 0 var(--space-0);
+  box-shadow: inset 0 0 12px -4px rgba(0,0,0,0.6);
 }
 
 .profilePreviewContainer > * {

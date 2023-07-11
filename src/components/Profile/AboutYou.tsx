@@ -48,7 +48,7 @@ const AboutYou = (props: IAboutYou) => {
     <>
       <div className={classes.firstColumn}>
         <div className="h-group">
-          <h1 className={classes.title}>About You</h1>
+          <h1 className={classes.title}>About you...</h1>
           <p className="text-light">
             Every detail counts for you to be found by future clients or
             partners, enthusiasts and researchers!
