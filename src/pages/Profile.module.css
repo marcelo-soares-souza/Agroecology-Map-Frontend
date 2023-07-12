@@ -90,3 +90,19 @@
   width: 100%;
   background-color: gray;
 }
+
+.tags {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tags button {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  padding: 0 2rem 0 1rem;
+  width: max-content;
+  height: 1.5rem;
+}

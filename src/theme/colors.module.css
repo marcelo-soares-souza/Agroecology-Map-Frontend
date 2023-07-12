@@ -8,6 +8,7 @@
     --lime: #CCDA46;
     --olive: #697C37;
     --forest: #33420B;
+    --dark-forest: #1C2406;
     --off-black: #0F0F0F;
     --gray: #4D4D4D;
     --gray-lighter: #C3C3C3;
@@ -16,10 +17,10 @@
     --foreground: var(--off-black);
     --highlight-1: var(--orange);
     --highlight-1-dark: var(--dark-orange);
-    --highlight-1-darker: var(--forest);
     --highlight-1-darker: var(--brown);
     --highlight-2: var(--lime);
     --highlight-2-dark: var(--olive);
+    --highlight-2-darker: var(--forest);
     --neutral-lighter: var(--gray-lighter);
     --neutral-light: var(--gray-light);
     --neutral: var(--gray);

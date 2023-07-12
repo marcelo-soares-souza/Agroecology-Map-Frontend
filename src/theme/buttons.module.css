@@ -94,6 +94,19 @@ button:disabled:hover {
   box-shadow: 0 0 18px var(--neutral-lighter);
 }
 
+.btn-2-outline {
+  background-color: transparent;
+  color: var(--highlight-2-dark);
+  border: 1px solid var(--highlight-2-dark);
+  transition: all linear 120ms;
+}
+
+.btn-2-outline:hover {
+  background-color: var(--highlight-2-darker);
+  border: 1px solid var(--highlight-2-darker);
+  color: var(--background);
+}
+
 .btn-long {
   min-width: 12rem;
 }

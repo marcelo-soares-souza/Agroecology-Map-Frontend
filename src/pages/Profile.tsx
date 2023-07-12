@@ -17,11 +17,12 @@ import classes from "./Profile.module.css";
 
 // Interfaces
 import { IAccount } from "../interfaces/IAccount";
+import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
 
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
 
-  const [whichPage, setWhichPage] = useState("RequiredProfileInformation");
+  const [whichPage, setWhichPage] = useState("ProfessionalInformation");
   const [profile, setProfile] = useState<IAccount>();
 
   useEffect(() => {
@@ -141,6 +142,17 @@ const Profile = () => {
             <ImageSelection
               avatar={profile?.images?.avatar ?? ""}
               banner={profile?.images?.banner ?? ""}
+              changePage={changePageHandler}
+            />
+          )}
+
+          {whichPage === "ProfessionalInformation" && (
+            <ProfessionalInformation
+              professionalDetails={
+                profile
+                  ? { ...profile.professionalDetails }
+                  : { services: "", profession: "" }
+              }
               changePage={changePageHandler}
             />
           )}

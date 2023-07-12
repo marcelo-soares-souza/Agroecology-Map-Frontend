@@ -16,6 +16,10 @@ const ImageSelection = (props: IImageSelection) => {
     props.changePage("Location");
   };
 
+  const nextPageHandler = () => {
+    props.changePage("ProfessionalInformation");
+  };
+
   return (
     <div className={classes.firstColumn}>
       <div>
@@ -56,8 +60,7 @@ const ImageSelection = (props: IImageSelection) => {
       <div>
         <PrevNextButtons
           previousPageHandler={previousPageHandler}
-          nextPageHandler={() => {}}
-          disableNext={true}
+          nextPageHandler={nextPageHandler}
         />
         {/* <small
           style={{
