@@ -27,9 +27,9 @@ const Home = () => {
           </p>
           <div className={classes.ctaButtonsContainer}>
             <Link to={"/"}>
-              <button style={{ color: "#4D4D4D" }}>
+              <Button color="0" fill="outline">
                 <Translator path="home.discoverCTA" />
-              </button>
+              </Button>
             </Link>
             <Link to={"/register"}>
               <Button color="2" fill="normal">
@@ -40,11 +40,36 @@ const Home = () => {
         </div>
         <div className={classes.illustrationContainer + " contain-center"}>
           <div className={classes.illustration}>
-            <img src={plantBL} className={classes.plantBL} alt="Illustration" />
-            <img src={plantTL} className={classes.plantTL} alt="Illustration" />
-            <img src={plantBR} className={classes.plantBR} alt="Illustration" />
-            <img src={iphone} className={classes.iphone} alt="Illustration" />
-            <img src={plantTR} className={classes.plantTR} alt="Illustration" />
+            <img
+              src={plantBL}
+              className={classes.plantBL}
+              alt=""
+              aria-hidden={true}
+            />
+            <img
+              src={plantTL}
+              className={classes.plantTL}
+              alt=""
+              aria-hidden={true}
+            />
+            <img
+              src={plantBR}
+              className={classes.plantBR}
+              alt=""
+              aria-hidden={true}
+            />
+            <img
+              src={iphone}
+              className={classes.iphone}
+              alt=""
+              aria-hidden={true}
+            />
+            <img
+              src={plantTR}
+              className={classes.plantTR}
+              alt=""
+              aria-hidden={true}
+            />
           </div>
         </div>
       </div>

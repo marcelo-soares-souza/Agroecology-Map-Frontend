@@ -8,7 +8,7 @@ import { FiMail } from "react-icons/fi";
 
 type ButtonProps = {
   onClick?: MouseEventHandler;
-  color: "1" | "2";
+  color: "0" | "1" | "2";
   fill: "normal" | "outline";
   children: React.ReactNode;
   icon?: ButtonIconTypes;

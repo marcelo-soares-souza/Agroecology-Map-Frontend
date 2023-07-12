@@ -44,6 +44,17 @@ button:disabled:hover {
   pointer-events: none;
 }
 
+.btn-0-outline {
+  background-color: transparent;
+  color: var(--neutral-light);
+  border: 1px solid var(--neutral);
+  transition: all linear 120ms;
+}
+
+.btn-0-outline:hover {
+  color: var(--foreground);
+}
+
 .btn-1-normal {
   background-color: var(--highlight-1);
   color: var(--background);
@@ -52,7 +63,7 @@ button:disabled:hover {
 }
 
 .btn-1-normal:hover {
-  background-color: #AA6E16;
+  background-color: var(--highlight-1-dark);
   color: var(--background);
 }
 
@@ -64,7 +75,7 @@ button:disabled:hover {
 }
 
 .btn-1-outline:hover {
-  background-color: #AA6E16;
+  background-color: var(--highlight-1-dark);
   color: var(--background);
 }
 
