@@ -52,8 +52,8 @@ export const Button = ({
 type ButtonIconTypes = ">" | "<" | "+" | "x" | "contact";
 
 const Icon = ({ type }: { type: ButtonIconTypes }) => {
-  const absLeft: CSSProperties = { position: "absolute", left: "10%" };
-  const absRight: CSSProperties = { position: "absolute", right: "10%" };
+  const absLeft: CSSProperties = { position: "absolute", left: "0.8rem" };
+  const absRight: CSSProperties = { position: "absolute", right: "0.8rem" };
 
   switch (type) {
     case ">":

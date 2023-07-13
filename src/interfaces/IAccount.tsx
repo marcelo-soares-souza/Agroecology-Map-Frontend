@@ -18,7 +18,7 @@ export interface IAccount {
   };
   professionalDetails?: {
     profession?: string;
-    services?: string;
+    services?: string[];
   };
   images?: {
     avatar: string;

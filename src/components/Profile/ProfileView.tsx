@@ -85,11 +85,13 @@ const ProfileView = (props: IAccount) => {
                 </p>
               </li>
             )}
-            <li>
-              <BsPersonLinesFill />
-              &nbsp;
-              <p>Farmer</p>
-            </li>
+            {props.professionalDetails?.profession && (
+              <li>
+                <BsPersonLinesFill />
+                &nbsp;
+                <p>{props.professionalDetails.profession}</p>
+              </li>
+            )}
           </ul>
         </div>
         {hasAboutMe && (

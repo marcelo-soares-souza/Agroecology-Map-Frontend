@@ -11,36 +11,6 @@ export const PrevNextButtons = ({
   isFinal?: boolean;
   disableNext?: boolean;
 }) => {
-  if (isFinal)
-    return (
-      <div className="contain-center" style={{ alignSelf: "stretch" }}>
-        <Button
-          icon=">"
-          color="2"
-          fill="normal"
-          onClick={nextPageHandler}
-          disabled={disableNext}
-        >
-          Submit
-        </Button>
-      </div>
-    );
-
-  if (!previousPageHandler)
-    return (
-      <div className="contain-center" style={{ alignSelf: "stretch" }}>
-        <Button
-          icon=">"
-          color="1"
-          fill="normal"
-          onClick={nextPageHandler}
-          disabled={disableNext}
-        >
-          Next
-        </Button>
-      </div>
-    );
-
   return (
     <div
       className="contain-center"
@@ -55,10 +25,19 @@ export const PrevNextButtons = ({
           Back
         </Button>
       )}
-
-      {nextPageHandler && (
+      {isFinal ? (
         <Button
-          icon={">"}
+          icon=">"
+          color="2"
+          fill="normal"
+          onClick={nextPageHandler}
+          disabled={disableNext}
+        >
+          Submit
+        </Button>
+      ) : (
+        <Button
+          icon=">"
           color="1"
           fill="normal"
           onClick={nextPageHandler}

@@ -22,8 +22,8 @@ import ProfessionalInformation from "../components/Profile/ProfessionalInformati
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
 
-  const [whichPage, setWhichPage] = useState("ProfessionalInformation");
-  const [profile, setProfile] = useState<IAccount>();
+  const [whichPage, setWhichPage] = useState("RequiredProfileInformation");
+  const [profile, setProfile] = useState<IAccount>({});
 
   useEffect(() => {
     setProfile({
@@ -41,6 +41,10 @@ const Profile = () => {
         country: "",
         state: "",
         city: ""
+      },
+      professionalDetails: {
+        services: [],
+        profession: ""
       },
       agreedToTerms: false
     });
@@ -69,21 +73,21 @@ const Profile = () => {
   const onCountryChangeHandler = (country: string) => {
     setProfile((prevProfile) => ({
       ...prevProfile,
-      location: { ...prevProfile?.location, country: country }
+      location: { ...prevProfile.location, country: country }
     }));
   };
 
   const onStateChangeHandler = (state: string) => {
     setProfile((prevProfile) => ({
       ...prevProfile,
-      location: { ...prevProfile?.location, state: state }
+      location: { ...prevProfile.location, state: state }
     }));
   };
 
   const onCityChangeHandler = (city: string) => {
     setProfile((prevProfile) => ({
       ...prevProfile,
-      location: { ...prevProfile?.location, city: city }
+      location: { ...prevProfile.location, city: city }
     }));
   };
 
@@ -95,6 +99,25 @@ const Profile = () => {
     setProfile((prevProfile) => ({
       ...prevProfile,
       agreedToTerms: hasAgreed
+    }));
+  };
+
+  const onProfessionChangeHandler = (profession: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      professionalDetails: {
+        ...prevProfile.professionalDetails,
+        profession: profession
+      }
+    }));
+  };
+  const onServicesChangeHandler = (services: string[]) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      professionalDetails: {
+        ...prevProfile.professionalDetails,
+        services: services
+      }
     }));
   };
 
@@ -148,11 +171,12 @@ const Profile = () => {
 
           {whichPage === "ProfessionalInformation" && (
             <ProfessionalInformation
-              professionalDetails={
-                profile
-                  ? { ...profile.professionalDetails }
-                  : { services: "", profession: "" }
-              }
+              onProfessionChange={onProfessionChangeHandler}
+              onServicesChange={onServicesChangeHandler}
+              professionalDetails={{
+                profession: profile.professionalDetails?.profession || "",
+                services: profile.professionalDetails?.services || []
+              }}
               changePage={changePageHandler}
             />
           )}
