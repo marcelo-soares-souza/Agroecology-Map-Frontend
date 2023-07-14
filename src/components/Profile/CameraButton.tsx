@@ -1,32 +1,45 @@
 import { FiCamera } from "react-icons/fi";
 
-export const CameraButton = () => (
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      right: 0,
-      left: 0,
-      bottom: 0,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      opacity: 0.6
-    }}
-  >
+interface ICameraButton {
+  addMainPhotoChangedHandler: Function;
+}
+
+const CameraButton = (props: ICameraButton) => {
+  const addMainPhotoChangedHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    props.addMainPhotoChangedHandler(event);
+  };
+
+  return (
     <div
       style={{
-        backgroundColor: "#4D4D4D",
-        padding: "0.4rem",
-        margin: 0,
-        lineHeight: 0,
+        position: "absolute",
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: "50%"
+        opacity: 0.6
       }}
     >
-      <FiCamera color="#dddddd" size={24} />
+      <label htmlFor="file-input">
+        <div>
+          <FiCamera color="#dddddd" size={24} />
+          <input
+            id="file"
+            type="file"
+            name="file"
+            accept="image/x-png, image/jpeg"
+            onChange={addMainPhotoChangedHandler}
+            style={{}}
+          />
+        </div>
+      </label>
     </div>
-  </div>
-);
+  );
+};
+
+export default CameraButton;

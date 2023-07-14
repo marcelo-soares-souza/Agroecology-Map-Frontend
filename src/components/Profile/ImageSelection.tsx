@@ -1,7 +1,8 @@
 import { PrevNextButtons } from "./PrevNextButtons";
 
 import classes from "../../pages/Profile.module.css";
-import { CameraButton } from "./CameraButton";
+import CameraButton from "./CameraButton";
+import { useEffect, useState } from "react";
 
 interface IImageSelection {
   avatar: string;
@@ -12,12 +13,26 @@ interface IImageSelection {
 }
 
 const ImageSelection = (props: IImageSelection) => {
+  useEffect(() => {
+    setFile(props.avatar);
+  }, [props]);
+
   const previousPageHandler = () => {
     props.changePage("Location");
   };
 
   const nextPageHandler = () => {
     props.changePage("ProfessionalInformation");
+  };
+
+  const [file, setFile] = useState("");
+
+  const addMainPhotoHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.files;
+    if (value) {
+      const image = URL.createObjectURL(value[0]);
+      setFile(image);
+    }
   };
 
   return (
@@ -42,7 +57,7 @@ const ImageSelection = (props: IImageSelection) => {
           }}
         >
           <img src={props.banner} alt="Profile Banner" />
-          <CameraButton />
+          {/* <CameraButton /> */}
         </div>
         <div>
           <div
@@ -52,8 +67,8 @@ const ImageSelection = (props: IImageSelection) => {
               cursor: "pointer"
             }}
           >
-            <img src={props.avatar} alt="Profile Avatar" />
-            <CameraButton />
+            <img src={file} alt="Profile Avatar" />
+            <CameraButton addMainPhotoChangedHandler={addMainPhotoHandler} />
           </div>
         </div>
       </div>
