@@ -19,11 +19,15 @@ const ProfileView = (props: IAccount) => {
   const [hasPronouns, setHasPronouns] = useState(false);
   const [hasAboutMe, setHasAboutMe] = useState(false);
   const [hasHighLights, setHasHighLights] = useState(false);
-  const [hasServices, setHasServices] = useState(false);
   const [hasRelatedLocations, setHasRelatedLocations] = useState(false);
   const [hasRelatedExperiences, sethasRelatedExperiences] = useState(false);
   const [hasFullNameVisible, setHasFullNameVisible] = useState(true);
   const [hasCountryVisible, setHasCountryVisible] = useState(false);
+
+  const services = props.professionalDetails?.services ?? [];
+  const hasServices = Boolean(
+    props.professionalDetails?.services && services.length > 0
+  );
 
   useEffect(() => {
     setHasAboutMe(props.shortBio?.length ?? 0 > 0 ? true : false);
@@ -110,12 +114,16 @@ const ProfileView = (props: IAccount) => {
         )}
 
         {hasServices && (
-          <div>
+          <div className={classes.servicesDiv}>
             <h2>Services</h2>
-            <ul>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Consectetur adipisicing elit. </li>
-              <li>Atque quis officiis repudiandae. </li>
+            <ul
+              style={{
+                columns: services.length >= 5 ? "2" : "1"
+              }}
+            >
+              {props.professionalDetails?.services?.map((service) => (
+                <li>{service}</li>
+              ))}
             </ul>
           </div>
         )}
