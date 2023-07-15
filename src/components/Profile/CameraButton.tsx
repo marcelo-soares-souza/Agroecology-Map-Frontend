@@ -1,14 +1,14 @@
 import { FiCamera } from "react-icons/fi";
 
 interface ICameraButton {
-  addMainPhotoChangedHandler: Function;
+  addPhoto: Function;
 }
 
 const CameraButton = (props: ICameraButton) => {
-  const addMainPhotoChangedHandler = (
+  const addPhotoChangedHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    props.addMainPhotoChangedHandler(event);
+    props.addPhoto(event);
   };
 
   return (
@@ -33,7 +33,7 @@ const CameraButton = (props: ICameraButton) => {
             type="file"
             name="file"
             accept="image/x-png, image/jpeg"
-            onChange={addMainPhotoChangedHandler}
+            onChange={addPhotoChangedHandler}
             style={{}}
           />
         </div>

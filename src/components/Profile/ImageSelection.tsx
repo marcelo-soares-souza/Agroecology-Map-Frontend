@@ -13,8 +13,12 @@ interface IImageSelection {
 }
 
 const ImageSelection = (props: IImageSelection) => {
+  const [avatarImageFile, setAvatarImageFile] = useState("");
+  const [bannerImageFile, setBannerImageFile] = useState("");
+
   useEffect(() => {
-    setFile(props.avatar);
+    setAvatarImageFile(props.avatar);
+    setBannerImageFile(props.banner);
   }, [props]);
 
   const previousPageHandler = () => {
@@ -25,13 +29,23 @@ const ImageSelection = (props: IImageSelection) => {
     props.changePage("ProfessionalInformation");
   };
 
-  const [file, setFile] = useState("");
-
-  const addMainPhotoHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const addAvatarPhotoHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const value = event.target.files;
-    if (value) {
+    if (value && value[0]) {
       const image = URL.createObjectURL(value[0]);
-      setFile(image);
+      setAvatarImageFile(image);
+    }
+  };
+
+  const addBannerPhotoHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.files;
+    if (value && value[0]) {
+      const image = URL.createObjectURL(value[0]);
+      setBannerImageFile(image);
     }
   };
 
@@ -56,8 +70,8 @@ const ImageSelection = (props: IImageSelection) => {
             cursor: "pointer"
           }}
         >
-          <img src={props.banner} alt="Profile Banner" />
-          {/* <CameraButton /> */}
+          <img src={bannerImageFile} alt="Profile Avatar" />
+          <CameraButton addPhoto={addBannerPhotoHandler} />
         </div>
         <div>
           <div
@@ -67,8 +81,8 @@ const ImageSelection = (props: IImageSelection) => {
               cursor: "pointer"
             }}
           >
-            <img src={file} alt="Profile Avatar" />
-            <CameraButton addMainPhotoChangedHandler={addMainPhotoHandler} />
+            <img src={avatarImageFile} alt="Profile Avatar" />
+            <CameraButton addPhoto={addAvatarPhotoHandler} />
           </div>
         </div>
       </div>
