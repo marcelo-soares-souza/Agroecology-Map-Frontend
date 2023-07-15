@@ -5,8 +5,14 @@ import "../i18n";
 import AboutYou from "../components/Profile/AboutYou";
 import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
 import ProfilePreview from "../components/Profile/ProfilePreview";
+import Location from "../components/Profile/Location";
+import ImageSelection from "../components/Profile/ImageSelection";
+import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
 
 describe("<Profile />", () => {
+  const changePage = () => {};
+  const onChangeAny = () => {};
+
   it("should render RequiredProfileInformation without errors", () => {
     expect(() =>
       render(
@@ -18,6 +24,8 @@ describe("<Profile />", () => {
           onAccountNameChange={() => {}}
           onFullNameChange={() => {}}
           onFullNameVisibleChange={() => {}}
+          agreedToTerms={true}
+          onAgreedToTermsChange={() => {}}
         />
       )
     ).not.toThrow();
@@ -29,14 +37,53 @@ describe("<Profile />", () => {
         <AboutYou
           pronouns=""
           shortBio=""
-          changePage={() => {}}
-          onShortBioChange={() => {}}
-          onPronounsChange={() => {}}
+          changePage={changePage}
+          onShortBioChange={onChangeAny}
+          onPronounsChange={onChangeAny}
         />
       )
     ).not.toThrow();
   });
-
+  it("should render Location without errors", () => {
+    expect(() =>
+      render(
+        <Location
+          changePage={changePage}
+          city=""
+          state=""
+          country=""
+          onCityChange={onChangeAny}
+          onCountryChange={onChangeAny}
+          onStateChange={onChangeAny}
+        />
+      )
+    ).not.toThrow();
+  });
+  it("should render ImageSelection without errors", () => {
+    expect(() =>
+      render(
+        <ImageSelection
+          changePage={changePage}
+          avatar=""
+          banner=""
+          onAvatarChange={onChangeAny}
+          onBannerChange={onChangeAny}
+        />
+      )
+    ).not.toThrow();
+  });
+  it("should render ProfessionalInformation without errors", () => {
+    expect(() =>
+      render(
+        <ProfessionalInformation
+          changePage={changePage}
+          onProfessionChange={onChangeAny}
+          onServicesChange={onChangeAny}
+          professionalDetails={{ profession: "", services: [] }}
+        />
+      )
+    ).not.toThrow();
+  });
   it("should render ProfilePreview without errors", () => {
     expect(() => render(<ProfilePreview />)).not.toThrow();
   });
