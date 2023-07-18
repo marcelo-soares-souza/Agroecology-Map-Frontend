@@ -33,6 +33,7 @@ const ProfessionalInformation = (props: IProfessionalInformation) => {
   };
 
   const previousPageHandler = () => props.changePage("ImageSelection");
+  const nextPageHandler = () => props.changePage("ContactInformation");
 
   return (
     <div className={classes.firstColumn}>
@@ -83,9 +84,7 @@ const ProfessionalInformation = (props: IProfessionalInformation) => {
       </div>
       <PrevNextButtons
         previousPageHandler={previousPageHandler}
-        nextPageHandler={() => {}}
-        isFinal
-        disableNext
+        nextPageHandler={nextPageHandler}
       />
     </div>
   );

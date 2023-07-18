@@ -8,6 +8,7 @@ import ProfilePreview from "../components/Profile/ProfilePreview";
 import Location from "../components/Profile/Location";
 import ImageSelection from "../components/Profile/ImageSelection";
 import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
+import ContactInformation from "../components/Profile/ContactInformation";
 
 describe("<Profile />", () => {
   const changePage = () => {};
@@ -80,6 +81,19 @@ describe("<Profile />", () => {
           onProfessionChange={onChangeAny}
           onServicesChange={onChangeAny}
           professionalDetails={{ profession: "", services: [] }}
+        />
+      )
+    ).not.toThrow();
+  });
+  it("should render ContactInformation without errors", () => {
+    expect(() =>
+      render(
+        <ContactInformation
+          contact={{}}
+          onContactMethodChange={onChangeAny}
+          changePage={changePage}
+          onContactChange={onChangeAny}
+          onContactVisibilityChange={onChangeAny}
         />
       )
     ).not.toThrow();

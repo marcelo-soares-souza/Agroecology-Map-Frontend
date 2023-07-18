@@ -13,8 +13,9 @@ export interface IAccount {
     city?: string;
   };
   contact?: {
-    contactMethod?: string;
+    contactMethod?: ContactMethods;
     contactInfo?: string;
+    isContactVisible?: boolean;
   };
   professionalDetails?: {
     profession?: string;
@@ -26,3 +27,5 @@ export interface IAccount {
   };
   agreedToTerms?: boolean;
 }
+
+export type ContactMethods = "WhatsApp" | "Email" | "Phone" | "Social";

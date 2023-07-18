@@ -16,8 +16,9 @@ import banner from "../assets/mock/placeholder-avatar-banner.jpg";
 import classes from "./Profile.module.css";
 
 // Interfaces
-import { IAccount } from "../interfaces/IAccount";
+import { ContactMethods, IAccount } from "../interfaces/IAccount";
 import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
+import ContactInformation from "../components/Profile/ContactInformation";
 
 const Profile = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
@@ -45,6 +46,11 @@ const Profile = () => {
       professionalDetails: {
         services: [],
         profession: ""
+      },
+      contact: {
+        contactInfo: "",
+        contactMethod: "Email",
+        isContactVisible: true
       },
       agreedToTerms: false
     });
@@ -116,7 +122,36 @@ const Profile = () => {
       ...prevProfile,
       professionalDetails: {
         ...prevProfile.professionalDetails,
-        services: services
+        services
+      }
+    }));
+  };
+
+  const contactInfoChangeHandler = (contactInfo: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      contact: {
+        ...prevProfile.contact,
+        contactInfo
+      }
+    }));
+  };
+  const contactMethodChangeHandler = (contactMethod: ContactMethods) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      contact: {
+        ...prevProfile.contact,
+        contactMethod
+      }
+    }));
+  };
+
+  const contactVisibilityChangeHandler = (isVisible: boolean) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      contact: {
+        ...prevProfile.contact,
+        isContactVisible: isVisible
       }
     }));
   };
@@ -178,6 +213,15 @@ const Profile = () => {
                 services: profile.professionalDetails?.services || []
               }}
               changePage={changePageHandler}
+            />
+          )}
+          {whichPage === "ContactInformation" && (
+            <ContactInformation
+              contact={profile.contact ?? {}}
+              changePage={changePageHandler}
+              onContactChange={contactInfoChangeHandler}
+              onContactVisibilityChange={contactVisibilityChangeHandler}
+              onContactMethodChange={contactMethodChangeHandler}
             />
           )}
         </div>

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 // types
-import { IAccount } from "../../interfaces/IAccount";
+import { ContactMethods, IAccount } from "../../interfaces/IAccount";
 
 // icons
-import { BsPersonLinesFill } from "react-icons/bs";
+import { BsPersonLinesFill, BsWhatsapp } from "react-icons/bs";
 import { HiOutlineMapPin } from "react-icons/hi2";
-import { FiMail } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
+import { BiWindows } from "react-icons/bi";
 
 // components
 import { Button } from "../UI/Button";
@@ -29,6 +30,10 @@ const ProfileView = (props: IAccount) => {
     props.professionalDetails?.services && services.length > 0
   );
 
+  const contactMethod: ContactMethods = props.contact?.contactMethod ?? "Email";
+  const contactIsVisible: boolean = props.contact?.isContactVisible ?? true;
+  const contactInfo: string = props.contact?.contactInfo ?? "";
+
   useEffect(() => {
     setHasAboutMe(props.shortBio?.length ?? 0 > 0 ? true : false);
     setHasFullNameVisible(props.isFullNameVisible ?? true);
@@ -49,11 +54,23 @@ const ProfileView = (props: IAccount) => {
           <img src={props.images?.avatar} alt="Profile Avatar" />
         </div>
         <div className={classes.ctaContainer + " mb-0"}>
-          <Button color="2" fill="normal">
-            <FiMail size={32} />
-            &nbsp;
-            {"Contact me"}
-          </Button>
+          {contactIsVisible && (
+            <Button color="2" fill="normal">
+              {contactMethod == "Email" ? (
+                <FiMail size={30} />
+              ) : contactMethod == "Phone" ? (
+                <FiPhone size={30} />
+              ) : contactMethod == "Social" ? (
+                <BiWindows size={30} />
+              ) : contactMethod == "WhatsApp" ? (
+                <BsWhatsapp size={30} />
+              ) : (
+                false
+              )}
+              &nbsp;
+              {"Contact me"}
+            </Button>
+          )}
         </div>
       </div>
       <div className={classes.textContainer}>

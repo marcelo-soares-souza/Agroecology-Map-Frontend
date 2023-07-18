@@ -14,6 +14,7 @@ export const CheckboxItem = (props: CheckboxItemProps) => {
         type="checkbox"
         checked={props.checked}
         onChange={props.onChange}
+        style={{ cursor: "pointer" }}
       />
       {props.label || props.children}
     </label>
