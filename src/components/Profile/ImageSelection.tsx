@@ -1,7 +1,8 @@
 import { PrevNextButtons } from "./PrevNextButtons";
 
 import classes from "../../pages/Profile.module.css";
-import { CameraButton } from "./CameraButton";
+import CameraButton from "./CameraButton";
+import { useEffect, useState } from "react";
 
 interface IImageSelection {
   avatar: string;
@@ -12,12 +13,40 @@ interface IImageSelection {
 }
 
 const ImageSelection = (props: IImageSelection) => {
+  const [avatarImageFile, setAvatarImageFile] = useState("");
+  const [bannerImageFile, setBannerImageFile] = useState("");
+
+  useEffect(() => {
+    setAvatarImageFile(props.avatar);
+    setBannerImageFile(props.banner);
+  }, [props]);
+
   const previousPageHandler = () => {
     props.changePage("Location");
   };
 
   const nextPageHandler = () => {
     props.changePage("ProfessionalInformation");
+  };
+
+  const addAvatarPhotoHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.files;
+    if (value && value[0]) {
+      const image = URL.createObjectURL(value[0]);
+      setAvatarImageFile(image);
+    }
+  };
+
+  const addBannerPhotoHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.files;
+    if (value && value[0]) {
+      const image = URL.createObjectURL(value[0]);
+      setBannerImageFile(image);
+    }
   };
 
   return (
@@ -41,8 +70,8 @@ const ImageSelection = (props: IImageSelection) => {
             cursor: "pointer"
           }}
         >
-          <img src={props.banner} alt="Profile Banner" />
-          <CameraButton />
+          <img src={bannerImageFile} alt="Profile Avatar" />
+          <CameraButton addPhoto={addBannerPhotoHandler} />
         </div>
         <div>
           <div
@@ -52,8 +81,8 @@ const ImageSelection = (props: IImageSelection) => {
               cursor: "pointer"
             }}
           >
-            <img src={props.avatar} alt="Profile Avatar" />
-            <CameraButton />
+            <img src={avatarImageFile} alt="Profile Avatar" />
+            <CameraButton addPhoto={addAvatarPhotoHandler} />
           </div>
         </div>
       </div>
