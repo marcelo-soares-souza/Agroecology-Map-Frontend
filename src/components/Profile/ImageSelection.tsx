@@ -91,19 +91,6 @@ const ImageSelection = (props: IImageSelection) => {
           previousPageHandler={previousPageHandler}
           nextPageHandler={nextPageHandler}
         />
-        {/* <small
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            margin: 0,
-            alignItems: "center",
-            width: "100%"
-          }}
-        >
-          <a href="#">
-            <p>Skip for now</p>
-          </a>
-        </small> */}
       </div>
     </div>
   );

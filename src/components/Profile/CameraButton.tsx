@@ -5,6 +5,8 @@ interface ICameraButton {
 }
 
 const CameraButton = (props: ICameraButton) => {
+  const rand = Math.floor(Math.random() * 1000);
+
   const addPhotoChangedHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -12,33 +14,50 @@ const CameraButton = (props: ICameraButton) => {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        right: 0,
-        left: 0,
-        bottom: 0,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        opacity: 0.6
-      }}
-    >
-      <label htmlFor="file-input">
-        <div>
-          <FiCamera color="#dddddd" size={24} />
-          <input
-            id="file"
-            type="file"
-            name="file"
-            accept="image/x-png, image/jpeg"
-            onChange={addPhotoChangedHandler}
-            style={{}}
-          />
+    <label htmlFor={`file-input-${rand}`} style={{ cursor: "pointer" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <div
+          style={{
+            width: "48px",
+            height: "48px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(100,100,100, 0.2)",
+            borderRadius: "50%",
+            backdropFilter: "blur(3px)",
+            boxShadow: "0 0 8px 0 rgba(50,50,50,0.5)"
+          }}
+        >
+          <FiCamera color="#EEE" size={32} />
         </div>
-      </label>
-    </div>
+        <input
+          id={`file-input-${rand}`}
+          type="file"
+          name="file"
+          accept="image/x-png, image/jpeg"
+          onChange={addPhotoChangedHandler}
+          style={{
+            all: "unset",
+            opacity: 0,
+            position: "absolute",
+            zIndex: "-1",
+            top: "-1000rem"
+          }}
+        />
+      </div>
+    </label>
   );
 };
 
