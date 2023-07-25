@@ -8,8 +8,8 @@ interface IImageSelection {
   avatar: string;
   banner: string;
   changePage: Function;
-  onAvatarChange?: Function;
-  onBannerChange?: Function;
+  onAvatarChange: Function;
+  onBannerChange: Function;
 }
 
 const ImageSelection = (props: IImageSelection) => {
@@ -19,7 +19,7 @@ const ImageSelection = (props: IImageSelection) => {
   useEffect(() => {
     setAvatarImageFile(props.avatar);
     setBannerImageFile(props.banner);
-  }, [props]);
+  }, [props.avatar, props.banner]);
 
   const previousPageHandler = () => {
     props.changePage("Location");
@@ -36,6 +36,7 @@ const ImageSelection = (props: IImageSelection) => {
     if (value && value[0]) {
       const image = URL.createObjectURL(value[0]);
       setAvatarImageFile(image);
+      props.onAvatarChange(image);
     }
   };
 
@@ -46,6 +47,7 @@ const ImageSelection = (props: IImageSelection) => {
     if (value && value[0]) {
       const image = URL.createObjectURL(value[0]);
       setBannerImageFile(image);
+      props.onBannerChange(image);
     }
   };
 

@@ -156,6 +156,25 @@ const Profile = () => {
     }));
   };
 
+  const onAvatarChangeHandler = (avatar: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      images: {
+        avatar: avatar,
+        banner: prevProfile.images?.banner ?? ""
+      }
+    }));
+  };
+  const onBannerChangeHandler = (banner: string) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      images: {
+        avatar: prevProfile.images?.avatar ?? "",
+        banner: banner
+      }
+    }));
+  };
+
   return (
     <div className="column-justify-center">
       <div className={classes.columnsContainer + " two-columns"}>
@@ -200,6 +219,8 @@ const Profile = () => {
             <ImageSelection
               avatar={profile?.images?.avatar ?? ""}
               banner={profile?.images?.banner ?? ""}
+              onAvatarChange={onAvatarChangeHandler}
+              onBannerChange={onBannerChangeHandler}
               changePage={changePageHandler}
             />
           )}
