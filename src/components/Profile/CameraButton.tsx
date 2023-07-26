@@ -1,5 +1,7 @@
 import { FiCamera } from "react-icons/fi";
 
+import { inputImage } from "./CameraButton.module.css";
+
 interface ICameraButton {
   addPhoto: Function;
 }
@@ -15,18 +17,7 @@ const CameraButton = (props: ICameraButton) => {
 
   return (
     <label htmlFor={`file-input-${rand}`} style={{ cursor: "pointer" }}>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          left: 0,
-          bottom: 0,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
+      <div className={inputImage}>
         <div
           style={{
             width: "48px",
