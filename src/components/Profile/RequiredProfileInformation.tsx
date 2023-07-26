@@ -83,14 +83,14 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
     <>
       <div className={classes.firstColumn}>
         <div className="h-group">
-          <h1 className={classes.title}>Required Profile Information</h1>
+          <h1>Required Profile Information</h1>
           <p className="text-light">
             Your profile will only be public after you fill this basic details.
           </p>
         </div>
         <div>
           <h3>Account name</h3>
-          <p className={"input-description text-light " + classes.mbSm}>
+          <p className={"input-description text-light"}>
             {
               "This will help you be easily found. Just like the instagram/twitter @username."
             }
@@ -107,12 +107,12 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
 
         <div>
           <h3>Full name</h3>
-          <p className={"input-description text-light " + classes.mbSm}>
+          <p className={"input-description text-light"}>
             {
               "Please, fill your full name bellow. You can hide this from the profile if you want."
             }
           </p>
-          <div className={classes.smallGap + " flex-row"}>
+          <div className={"mb-2 flex-row"} style={{ gap: "0.8rem" }}>
             <input
               type="text"
               placeholder="Type here your full name..."

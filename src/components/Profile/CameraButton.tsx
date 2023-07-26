@@ -1,6 +1,6 @@
 import { FiCamera } from "react-icons/fi";
 
-import { inputImage } from "./CameraButton.module.css";
+import classes from "./CameraButton.module.css";
 
 interface ICameraButton {
   addPhoto: Function;
@@ -17,20 +17,8 @@ const CameraButton = (props: ICameraButton) => {
 
   return (
     <label htmlFor={`file-input-${rand}`} style={{ cursor: "pointer" }}>
-      <div className={inputImage}>
-        <div
-          style={{
-            width: "48px",
-            height: "48px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(100,100,100, 0.2)",
-            borderRadius: "50%",
-            backdropFilter: "blur(3px)",
-            boxShadow: "0 0 8px 0 rgba(50,50,50,0.5)"
-          }}
-        >
+      <div className={classes.inputImage}>
+        <div className={classes.cameraIcon}>
           <FiCamera color="#EEE" size={32} />
         </div>
         <input
@@ -39,13 +27,6 @@ const CameraButton = (props: ICameraButton) => {
           name="file"
           accept="image/x-png, image/jpeg"
           onChange={addPhotoChangedHandler}
-          style={{
-            all: "unset",
-            opacity: 0,
-            position: "absolute",
-            zIndex: "-1",
-            top: "-1000rem"
-          }}
         />
       </div>
     </label>

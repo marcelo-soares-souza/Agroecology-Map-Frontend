@@ -122,7 +122,7 @@ const ProfileView = (props: IAccount) => {
           </div>
         )}
         {hasHighLights && (
-          <div className={classes.highlightsContainer}>
+          <div>
             <h2>My highlights</h2>
             <div className={classes.hlContainer}>
               <div className={classes.hlCard}>card</div>

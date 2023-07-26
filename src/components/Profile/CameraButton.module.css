@@ -1,14 +1,3 @@
-/*
-position: "absolute",
-top: 0,
-right: 0,
-left: 0,
-bottom: 0,
-display: "flex",
-justifyContent: "center",
-alignItems: "center"
-*/
-
 .inputImage {
     display: flex;
     justify-content: center;
@@ -18,4 +7,35 @@ alignItems: "center"
     right: 0;
     left: 0;
     bottom: 0;
+    background-color: transparent;
+    transition: background-color 200ms linear;
+}
+
+.inputImage:hover {
+    background-color: rgba(50, 50, 50, 0.2);
+}
+
+.inputImage:hover .cameraIcon {
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.cameraIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(100, 100, 100, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 8px 0 rgba(50,50,50,0.5);
+    transition: all 150ms linear;
+}
+
+.inputImage input {
+    all: unset;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: -1000rem;
 }

@@ -144,7 +144,7 @@ const Location = (props: ILocation) => {
     <>
       <div className={classes.firstColumn}>
         <div>
-          <h1 className={classes.title}>Location</h1>
+          <h1>Location</h1>
           <p className="text-light break-words">
             {
               "Share your location to find people nearby\nand have an even better experience!"
