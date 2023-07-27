@@ -4,7 +4,7 @@ import classes from "./MainHeader.module.css";
 
 import logo from "../assets/logo-agroecologymap.svg";
 import Translator from "./i18n/Translator";
-import { Button } from "./UI/Button";
+import Button from "./UI/Button";
 
 const MainHeader = () => {
   return (

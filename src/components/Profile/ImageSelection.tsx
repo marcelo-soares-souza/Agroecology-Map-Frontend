@@ -1,8 +1,10 @@
-import { PrevNextButtons } from "./PrevNextButtons";
-
-import classes from "../../pages/Profile.module.css";
-import CameraButton from "./CameraButton";
 import { useEffect, useState } from "react";
+
+import CameraButton from "./CameraButton";
+import PrevNextButtons from "./PrevNextButtons";
+
+import { firstColumn } from "../../pages/Profile.module.css";
+import classes from "./ImageSelection.module.css";
 
 interface IImageSelection {
   avatar: string;
@@ -52,8 +54,8 @@ const ImageSelection = (props: IImageSelection) => {
   };
 
   return (
-    <div className={classes.firstColumn}>
-      <div>
+    <div className={firstColumn}>
+      <div className="h-group">
         <h1>{"Personalize your profile"}</h1>
         <p className="text-light break-words">
           {
@@ -62,38 +64,19 @@ const ImageSelection = (props: IImageSelection) => {
         </p>
       </div>
       <div className="w-full mb-3">
-        <div
-          className={classes.banner}
-          style={{
-            width: "100%",
-            borderRadius: "12px",
-            position: "relative",
-            overflow: "hidden",
-            cursor: "pointer"
-          }}
-        >
+        <div className={classes.banner}>
           <img src={bannerImageFile} alt="Profile Avatar" />
           <CameraButton addPhoto={addBannerPhotoHandler} />
         </div>
-        <div>
-          <div
-            className={classes.avatar}
-            style={{
-              position: "relative",
-              cursor: "pointer"
-            }}
-          >
-            <img src={avatarImageFile} alt="Profile Avatar" />
-            <CameraButton addPhoto={addAvatarPhotoHandler} />
-          </div>
+        <div className={classes.avatar}>
+          <img src={avatarImageFile} alt="Profile Avatar" />
+          <CameraButton addPhoto={addAvatarPhotoHandler} />
         </div>
       </div>
-      <div>
-        <PrevNextButtons
-          previousPageHandler={previousPageHandler}
-          nextPageHandler={nextPageHandler}
-        />
-      </div>
+      <PrevNextButtons
+        previousPageHandler={previousPageHandler}
+        nextPageHandler={nextPageHandler}
+      />
     </div>
   );
 };

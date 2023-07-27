@@ -1,6 +1,6 @@
-import { Button } from "../UI/Button";
+import Button from "../UI/Button";
 
-export const PrevNextButtons = ({
+const PrevNextButtons = ({
   nextPageHandler,
   previousPageHandler,
   isFinal = false,
@@ -49,3 +49,5 @@ export const PrevNextButtons = ({
     </div>
   );
 };
+
+export default PrevNextButtons;

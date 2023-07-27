@@ -1,0 +1,17 @@
+.tags {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags button {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 400;
+    padding: 0 2rem 0 1rem;
+    width: max-content;
+    height: 1.5rem;
+}

@@ -15,7 +15,7 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
-export const Button = ({
+const Button = ({
   children,
   onClick,
   color = "1",
@@ -70,3 +70,5 @@ const Icon = ({ type }: { type: ButtonIconTypes }) => {
       return null;
   }
 };
+
+export default Button;

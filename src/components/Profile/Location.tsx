@@ -7,10 +7,13 @@ import {
   IState,
   ICity
 } from "country-state-city";
-import Select, { ActionMeta } from "react-select";
 
+// Components
+import Select, { ActionMeta } from "react-select";
+import PrevNextButtons from "./PrevNextButtons";
+
+// Styles
 import classes from "../../pages/Profile.module.css";
-import { PrevNextButtons } from "./PrevNextButtons";
 
 interface ILocation {
   country: string;
@@ -141,55 +144,53 @@ const Location = (props: ILocation) => {
   };
 
   return (
-    <>
-      <div className={classes.firstColumn}>
-        <div>
-          <h1>Location</h1>
-          <p className="text-light break-words">
-            {
-              "Share your location to find people nearby\nand have an even better experience!"
-            }
-          </p>
-        </div>
-        <div>
-          <h3>Country</h3>
-          <Select
-            id="country"
-            name="country"
-            options={updatedCountries}
-            onChange={countryChangedHandler}
-            className={classes.react_select}
-          />
-        </div>
-
-        <div>
-          <h3>State or Province</h3>
-          <Select
-            id="state"
-            name="state"
-            onChange={stateChangedHandler}
-            options={updatedStates(cscCountry ? cscCountry : ({} as ICountry))}
-            className={classes.react_select}
-          />
-        </div>
-
-        <div>
-          <h3>City</h3>
-          <Select
-            id="city"
-            name="city"
-            onChange={cityChangedHandler}
-            options={updatedCities(cscState ? cscState : ({} as IState))}
-            className={classes.react_select}
-          />
-        </div>
-
-        <PrevNextButtons
-          previousPageHandler={previousPageHandler}
-          nextPageHandler={nextPageHandler}
+    <div className={classes.firstColumn}>
+      <div className="h-group">
+        <h1>Location</h1>
+        <p className="text-light break-words">
+          {
+            "Share your location to find people nearby \nand have an even better experience!"
+          }
+        </p>
+      </div>
+      <div className="w-full">
+        <h3>Country</h3>
+        <Select
+          id="country"
+          name="country"
+          options={updatedCountries}
+          onChange={countryChangedHandler}
+          className={classes.react_select}
         />
       </div>
-    </>
+
+      <div className="w-full">
+        <h3>State or Province</h3>
+        <Select
+          id="state"
+          name="state"
+          onChange={stateChangedHandler}
+          options={updatedStates(cscCountry ? cscCountry : ({} as ICountry))}
+          className={classes.react_select}
+        />
+      </div>
+
+      <div className="w-full">
+        <h3>City</h3>
+        <Select
+          id="city"
+          name="city"
+          onChange={cityChangedHandler}
+          options={updatedCities(cscState ? cscState : ({} as IState))}
+          className={classes.react_select}
+        />
+      </div>
+
+      <PrevNextButtons
+        previousPageHandler={previousPageHandler}
+        nextPageHandler={nextPageHandler}
+      />
+    </div>
   );
 };
 

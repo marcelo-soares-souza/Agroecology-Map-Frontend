@@ -4,7 +4,7 @@ import Translator from "../components/i18n/Translator";
 import classes from "./Register.module.css";
 
 import { SlLocationPin } from "react-icons/sl";
-import { Button } from "../components/UI/Button";
+import Button from "../components/UI/Button";
 
 const Register = () => {
   return (

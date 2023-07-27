@@ -3,8 +3,8 @@ import { ContactMethods } from "../../interfaces/IAccount";
 
 import classes from "../../pages/Profile.module.css";
 import { CheckboxItem } from "../CheckboxItem";
-import { PrevNextButtons } from "./PrevNextButtons";
-import { Button } from "../UI/Button";
+import PrevNextButtons from "./PrevNextButtons";
+import Button from "../UI/Button";
 
 interface IContactInformationProps {
   contact: {

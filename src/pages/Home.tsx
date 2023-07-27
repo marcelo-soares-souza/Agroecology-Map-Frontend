@@ -8,7 +8,7 @@ import plantBL from "../assets/plant1.svg";
 import plantTL from "../assets/plant2.svg";
 import plantBR from "../assets/plant3.svg";
 import plantTR from "../assets/plant4.svg";
-import { Button } from "../components/UI/Button";
+import Button from "../components/UI/Button";
 
 const Home = () => {
   return (

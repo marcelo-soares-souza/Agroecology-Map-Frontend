@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-import classes from "../../pages/Profile.module.css";
-import { PrevNextButtons } from "./PrevNextButtons";
+import PrevNextButtons from "./PrevNextButtons";
 
+import classes from "../../pages/Profile.module.css";
+import { textArea } from "./AboutYou.module.css";
 interface IAboutYou {
   pronouns: string;
   shortBio: string;
@@ -45,39 +46,37 @@ const AboutYou = (props: IAboutYou) => {
   };
 
   return (
-    <>
-      <div className={classes.firstColumn}>
-        <div className="h-group">
-          <h1>About you...</h1>
-          <p className="text-light">
-            Every detail counts for you to be found by future clients or
-            partners, enthusiasts and researchers!
-          </p>
-        </div>
-        <div className="w-full">
-          <h3 className="mb-1">Pronouns</h3>
-          <input
-            className="w-full"
-            type="text"
-            placeholder="They, She, He, Any"
-            onChange={pronounsChangeHandler}
-          />
-        </div>
-        <div className="w-full">
-          <h3 className="mb-1">Short Bio</h3>
-          <textarea
-            className={classes.textArea + " w-full"}
-            placeholder="What's your experience? What do you do? Tell the community about yourself..."
-            onChange={shortBioChangedHandler}
-          />
-        </div>
-
-        <PrevNextButtons
-          previousPageHandler={previousPageHandler}
-          nextPageHandler={nextPageHandler}
+    <div className={classes.firstColumn}>
+      <div className="h-group">
+        <h1>About you...</h1>
+        <p className="text-light">
+          Every detail counts for you to be found by future clients or partners,
+          enthusiasts and researchers!
+        </p>
+      </div>
+      <div className="w-full">
+        <h3>Pronouns</h3>
+        <input
+          className="w-full"
+          type="text"
+          placeholder="They, She, He, Any"
+          onChange={pronounsChangeHandler}
         />
       </div>
-    </>
+      <div className="w-full">
+        <h3>Short Bio</h3>
+        <textarea
+          className={textArea}
+          placeholder="What's your experience? What do you do? Tell the community about yourself..."
+          onChange={shortBioChangedHandler}
+        />
+      </div>
+
+      <PrevNextButtons
+        previousPageHandler={previousPageHandler}
+        nextPageHandler={nextPageHandler}
+      />
+    </div>
   );
 };
 

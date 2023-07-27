@@ -2,10 +2,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: start;
   gap: var(--space-0);
   margin: 0;
   font-weight: 400;
+}
+
+.container input {
+  height: min-content;
+  margin-top: 0.25rem;
 }
 
 .container:hover {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { CheckboxItem } from "../../components/CheckboxItem";
-import { PrevNextButtons } from "./PrevNextButtons";
+import PrevNextButtons from "./PrevNextButtons";
 
 import classes from "../../pages/Profile.module.css";
 
@@ -80,71 +80,69 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   };
 
   return (
-    <>
-      <div className={classes.firstColumn}>
-        <div className="h-group">
-          <h1>Required Profile Information</h1>
-          <p className="text-light">
-            Your profile will only be public after you fill this basic details.
-          </p>
-        </div>
-        <div>
-          <h3>Account name</h3>
-          <p className={"input-description text-light"}>
-            {
-              "This will help you be easily found. Just like the instagram/twitter @username."
-            }
-          </p>
-          <input
-            type="text"
-            placeholder="e.g.: @some_name_123"
-            onChange={accountNameChangedHandler}
-            value={accountName}
-            onBlur={accountNameBlurHandler}
-            className={`banner ${accountNameHasError ? classes.error : ""}`}
-          />
-        </div>
-
-        <div>
-          <h3>Full name</h3>
-          <p className={"input-description text-light"}>
-            {
-              "Please, fill your full name bellow. You can hide this from the profile if you want."
-            }
-          </p>
-          <div className={"mb-2 flex-row"} style={{ gap: "0.8rem" }}>
-            <input
-              type="text"
-              placeholder="Type here your full name..."
-              onChange={fullNameChangedHandler}
-              value={fullName}
-            />
-            <CheckboxItem
-              label="Visible&nbsp;in profile"
-              onChange={onFullNameVisibleChange}
-              checked={isFullNameVisible}
-            />
-          </div>
-        </div>
-
-        <CheckboxItem
-          checked={agreedToTerms}
-          onChange={agreedToTermsChangeHandler}
-        >
-          <span>
-            {"I have read and agree with Agroecology Map's "}
-            <a href="#">{"terms of use"}</a>
-            {" and "}
-            <a href="#">{"privacy policy."}</a>
-          </span>
-        </CheckboxItem>
-
-        <PrevNextButtons
-          disableNext={!agreedToTerms}
-          nextPageHandler={nextPageHandler}
+    <div className={classes.firstColumn}>
+      <div className="h-group">
+        <h1>Required Profile Information</h1>
+        <p className="text-light">
+          Your profile will only be public after you fill this basic details.
+        </p>
+      </div>
+      <div>
+        <h3>Account name</h3>
+        <p className={"input-description text-light"}>
+          {
+            "This will help you be easily found. Just like the instagram/twitter @username."
+          }
+        </p>
+        <input
+          type="text"
+          placeholder="e.g.: @some_name_123"
+          onChange={accountNameChangedHandler}
+          value={accountName}
+          onBlur={accountNameBlurHandler}
+          className={`banner ${accountNameHasError ? classes.error : ""}`}
         />
       </div>
-    </>
+
+      <div>
+        <h3>Full name</h3>
+        <p className={"input-description text-light"}>
+          {
+            "Please, fill your full name bellow. You can hide this from the profile if you want."
+          }
+        </p>
+        <div className={"flex-row"} style={{ gap: "0.8rem" }}>
+          <input
+            type="text"
+            placeholder="Type here your full name..."
+            onChange={fullNameChangedHandler}
+            value={fullName}
+          />
+          <CheckboxItem
+            label="Visible&nbsp;in profile"
+            onChange={onFullNameVisibleChange}
+            checked={isFullNameVisible}
+          />
+        </div>
+      </div>
+
+      <CheckboxItem
+        checked={agreedToTerms}
+        onChange={agreedToTermsChangeHandler}
+      >
+        <span>
+          {"I have read and agree with Agroecology Map's "}
+          <a href="#">{"terms of use"}</a>
+          {" and "}
+          <a href="#">{"privacy policy."}</a>
+        </span>
+      </CheckboxItem>
+
+      <PrevNextButtons
+        disableNext={!agreedToTerms}
+        nextPageHandler={nextPageHandler}
+      />
+    </div>
   );
 };
 

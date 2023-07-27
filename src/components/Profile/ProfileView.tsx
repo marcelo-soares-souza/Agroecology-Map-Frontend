@@ -10,7 +10,7 @@ import { FiMail, FiPhone } from "react-icons/fi";
 import { BiWindows } from "react-icons/bi";
 
 // components
-import { Button } from "../UI/Button";
+import Button from "../UI/Button";
 import { FormattedLocation } from "./FormattedLocation";
 
 // styles
