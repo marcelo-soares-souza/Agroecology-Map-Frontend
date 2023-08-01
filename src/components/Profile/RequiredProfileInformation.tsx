@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Translator from "../i18n/Translator";
+import { useTranslation } from "react-i18next";
 
 import { CheckboxItem } from "../../components/CheckboxItem";
 import PrevNextButtons from "./PrevNextButtons";
@@ -18,6 +20,8 @@ interface IRequiredProfileInformation {
 }
 
 const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
+  const { t } = useTranslation();
+
   const [accountName, setAccountName] = useState("");
   const [accountNameHasError, setAccountNameHasError] = useState(false);
 
@@ -82,21 +86,25 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   return (
     <div className={classes.firstColumn}>
       <div className="h-group">
-        <h1>Required Profile Information</h1>
+        <h1>
+          <Translator path="profileRegistration.requiredProfileInformation.title" />
+        </h1>
         <p className="text-light">
-          Your profile will only be public after you fill this basic details.
+          <Translator path="profileRegistration.requiredProfileInformation.subtitle" />
         </p>
       </div>
       <div>
-        <h3>Account name</h3>
+        <h3>
+          <Translator path="profileRegistration.requiredProfileInformation.accountNameLabel" />
+        </h3>
         <p className={"input-description text-light"}>
-          {
-            "This will help you be easily found. Just like the instagram/twitter @username."
-          }
+          <Translator path="profileRegistration.requiredProfileInformation.accountNameDesc" />
         </p>
         <input
           type="text"
-          placeholder="e.g.: @some_name_123"
+          placeholder={t(
+            "profileRegistration.requiredProfileInformation.accountNameInputPlaceholder"
+          )}
           onChange={accountNameChangedHandler}
           value={accountName}
           onBlur={accountNameBlurHandler}
@@ -105,21 +113,25 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
       </div>
 
       <div>
-        <h3>Full name</h3>
+        <h3>
+          <Translator path="profileRegistration.requiredProfileInformation.fullNameLabel" />
+        </h3>
         <p className={"input-description text-light"}>
-          {
-            "Please, fill your full name bellow. You can hide this from the profile if you want."
-          }
+          <Translator path="profileRegistration.requiredProfileInformation.fullNameDesc" />
         </p>
         <div className={"flex-row"} style={{ gap: "0.8rem" }}>
           <input
             type="text"
-            placeholder="Type here your full name..."
+            placeholder={t(
+              "profileRegistration.requiredProfileInformation.fullNameInputPlaceholder"
+            )}
             onChange={fullNameChangedHandler}
             value={fullName}
           />
           <CheckboxItem
-            label="Visible&nbsp;in profile"
+            label={t(
+              "profileRegistration.requiredProfileInformation.fullNameVisible"
+            )}
             onChange={onFullNameVisibleChange}
             checked={isFullNameVisible}
           />
@@ -131,10 +143,14 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
         onChange={agreedToTermsChangeHandler}
       >
         <span>
-          {"I have read and agree with Agroecology Map's "}
-          <a href="#">{"terms of use"}</a>
-          {" and "}
-          <a href="#">{"privacy policy."}</a>
+          <Translator path="profileRegistration.requiredProfileInformation.agreedToTerms1" />
+          <a href="#">
+            <Translator path="profileRegistration.requiredProfileInformation.termsOfUseLink" />
+          </a>
+          <Translator path="profileRegistration.requiredProfileInformation.agreedToTerms2" />
+          <a href="#">
+            <Translator path="profileRegistration.requiredProfileInformation.privacyPolicyLink" />
+          </a>
         </span>
       </CheckboxItem>
 
