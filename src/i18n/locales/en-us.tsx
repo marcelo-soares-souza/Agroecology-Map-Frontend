@@ -18,6 +18,11 @@ export default {
       submit: "Submit"
     },
     profileRegistration: {
+      prevNextButtons: {
+        previous: "Back",
+        next: "Next",
+        final: "Submit"
+      },
       requiredProfileInformation: {
         title: "Required Profile Information",
         subtitle:

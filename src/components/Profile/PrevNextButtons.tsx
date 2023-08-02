@@ -1,3 +1,4 @@
+import Translator from "../i18n/Translator";
 import Button from "../UI/Button";
 
 const PrevNextButtons = ({
@@ -22,7 +23,7 @@ const PrevNextButtons = ({
     >
       {previousPageHandler && (
         <Button icon="<" color="1" fill="outline" onClick={previousPageHandler}>
-          Back
+          <Translator path="profileRegistration.prevNextButtons.previous" />
         </Button>
       )}
       {isFinal ? (
@@ -33,7 +34,7 @@ const PrevNextButtons = ({
           onClick={nextPageHandler}
           disabled={disableNext}
         >
-          Submit
+          <Translator path="profileRegistration.prevNextButtons.final" />
         </Button>
       ) : (
         <Button
@@ -43,7 +44,7 @@ const PrevNextButtons = ({
           onClick={nextPageHandler}
           disabled={disableNext}
         >
-          Next
+          <Translator path="profileRegistration.prevNextButtons.next" />
         </Button>
       )}
     </div>
