@@ -40,6 +40,16 @@ export default {
         termsOfUseLink: "terms of use",
         agreedToTerms2: " and ",
         privacyPolicyLink: "privacy policy."
+      },
+      aboutYou: {
+        title: "About you...",
+        subtitle:
+          "Every detail counts for you to be found by future clients or partners, enthusiasts and researchers!",
+        pronounsLabel: "Pronouns",
+        pronounsInputPlaceholder: "They, She, He, Any",
+        shortBioLabel: "Short Bio",
+        shortBioInputPlaceholder:
+          "What's your experience? What do you do? Tell the community about yourself..."
       }
     },
     register: {

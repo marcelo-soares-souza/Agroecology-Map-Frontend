@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Translator from "../i18n/Translator";
+import { useTranslation } from "react-i18next";
 import PrevNextButtons from "./PrevNextButtons";
 
 import classes from "../../pages/Profile.module.css";
@@ -13,6 +15,8 @@ interface IAboutYou {
 }
 
 const AboutYou = (props: IAboutYou) => {
+  const { t } = useTranslation();
+
   const [shortBio, setShortBio] = useState("");
   const [pronouns, setPronouns] = useState("");
 
@@ -48,26 +52,35 @@ const AboutYou = (props: IAboutYou) => {
   return (
     <div className={classes.firstColumn}>
       <div className="h-group">
-        <h1>About you...</h1>
+        <h1>
+          <Translator path="profileRegistration.aboutYou.title" />
+        </h1>
         <p className="text-light">
-          Every detail counts for you to be found by future clients or partners,
-          enthusiasts and researchers!
+          <Translator path="profileRegistration.aboutYou.subtitle" />
         </p>
       </div>
       <div className="w-full">
-        <h3>Pronouns</h3>
+        <h3>
+          <Translator path="profileRegistration.aboutYou.pronounsLabel" />
+        </h3>
         <input
           className="w-full"
           type="text"
-          placeholder="They, She, He, Any"
+          placeholder={t(
+            "profileRegistration.aboutYou.pronounsInputPlaceholder"
+          )}
           onChange={pronounsChangeHandler}
         />
       </div>
       <div className="w-full">
-        <h3>Short Bio</h3>
+        <h3>
+          <Translator path="profileRegistration.aboutYou.shortBioLabel" />
+        </h3>
         <textarea
           className={textArea}
-          placeholder="What's your experience? What do you do? Tell the community about yourself..."
+          placeholder={t(
+            "profileRegistration.aboutYou.shortBioInputPlaceholder"
+          )}
           onChange={shortBioChangedHandler}
         />
       </div>
