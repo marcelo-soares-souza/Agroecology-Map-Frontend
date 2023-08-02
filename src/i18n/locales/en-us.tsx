@@ -50,6 +50,14 @@ export default {
         shortBioLabel: "Short Bio",
         shortBioInputPlaceholder:
           "What's your experience? What do you do? Tell the community about yourself..."
+      },
+      location: {
+        title: "Location",
+        subtitle:
+          "Share your location to find people nearby \nand have an even better experience!",
+        countryLabel: "Country",
+        stateLabel: "State or Province",
+        cityLabel: "City"
       }
     },
     register: {
@@ -61,6 +69,11 @@ export default {
     error: {
       something_went_wrong: "Something went wrong",
       could_not_find_resource_or_page: "Could not find resource or page."
+    },
+    ui: {
+      select: {
+        selectOne: "Select one..."
+      }
     }
   }
 };

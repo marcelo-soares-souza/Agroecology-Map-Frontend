@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Country,
   State,
@@ -9,6 +10,7 @@ import {
 } from "country-state-city";
 
 // Components
+import Translator from "../i18n/Translator";
 import Select, { ActionMeta } from "react-select";
 import PrevNextButtons from "./PrevNextButtons";
 
@@ -26,6 +28,8 @@ interface ILocation {
 }
 
 const Location = (props: ILocation) => {
+  const { t } = useTranslation();
+
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
@@ -146,18 +150,21 @@ const Location = (props: ILocation) => {
   return (
     <div className={classes.firstColumn}>
       <div className="h-group">
-        <h1>Location</h1>
+        <h1>
+          <Translator path="profileRegistration.location.title" />
+        </h1>
         <p className="text-light break-words">
-          {
-            "Share your location to find people nearby \nand have an even better experience!"
-          }
+          <Translator path="profileRegistration.location.subtitle" />
         </p>
       </div>
       <div className="w-full">
-        <h3>Country</h3>
+        <h3>
+          <Translator path="profileRegistration.location.countryLabel" />
+        </h3>
         <Select
           id="country"
           name="country"
+          placeholder={t("ui.select.selectOne")}
           options={updatedCountries}
           onChange={countryChangedHandler}
           className={classes.react_select}
@@ -165,10 +172,13 @@ const Location = (props: ILocation) => {
       </div>
 
       <div className="w-full">
-        <h3>State or Province</h3>
+        <h3>
+          <Translator path="profileRegistration.location.stateLabel" />
+        </h3>
         <Select
           id="state"
           name="state"
+          placeholder={t("ui.select.selectOne")}
           onChange={stateChangedHandler}
           options={updatedStates(cscCountry ? cscCountry : ({} as ICountry))}
           className={classes.react_select}
@@ -176,10 +186,13 @@ const Location = (props: ILocation) => {
       </div>
 
       <div className="w-full">
-        <h3>City</h3>
+        <h3>
+          <Translator path="profileRegistration.location.cityLabel" />
+        </h3>
         <Select
           id="city"
           name="city"
+          placeholder={t("ui.select.selectOne")}
           onChange={cityChangedHandler}
           options={updatedCities(cscState ? cscState : ({} as IState))}
           className={classes.react_select}
