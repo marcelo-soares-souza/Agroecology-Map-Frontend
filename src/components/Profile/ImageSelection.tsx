@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
+import Translator from "../i18n/Translator";
 import CameraButton from "./CameraButton";
 import PrevNextButtons from "./PrevNextButtons";
 
@@ -15,6 +17,8 @@ interface IImageSelection {
 }
 
 const ImageSelection = (props: IImageSelection) => {
+  const { t } = useTranslation();
+
   const [avatarImageFile, setAvatarImageFile] = useState("");
   const [bannerImageFile, setBannerImageFile] = useState("");
 
@@ -56,20 +60,26 @@ const ImageSelection = (props: IImageSelection) => {
   return (
     <div className={firstColumn}>
       <div className="h-group">
-        <h1>{"Personalize your profile"}</h1>
+        <h1>
+          <Translator path="profileRegistration.imageSelection.title" />
+        </h1>
         <p className="text-light break-words">
-          {
-            "Do it your way! Choose a profile photo and cover - \nthat's how the world will see you ;)"
-          }
+          <Translator path="profileRegistration.imageSelection.subtitle" />
         </p>
       </div>
       <div className="w-full mb-3">
         <div className={classes.banner}>
-          <img src={bannerImageFile} alt="Profile Avatar" />
+          <img
+            src={bannerImageFile}
+            alt={t("userAccountProfile.bannerImgAlt")}
+          />
           <CameraButton addPhoto={addBannerPhotoHandler} />
         </div>
         <div className={classes.avatar}>
-          <img src={avatarImageFile} alt="Profile Avatar" />
+          <img
+            src={avatarImageFile}
+            alt={t("userAccountProfile.avatarImgAlt")}
+          />
           <CameraButton addPhoto={addAvatarPhotoHandler} />
         </div>
       </div>

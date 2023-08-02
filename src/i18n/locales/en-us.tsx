@@ -58,6 +58,11 @@ export default {
         countryLabel: "Country",
         stateLabel: "State or Province",
         cityLabel: "City"
+      },
+      imageSelection: {
+        title: "Personalize your profile",
+        subtitle:
+          "Do it your way! Choose a profile photo and cover - \nthat's how the world will see you ;)"
       }
     },
     register: {
@@ -74,6 +79,10 @@ export default {
       select: {
         selectOne: "Select one..."
       }
+    },
+    userAccountProfile: {
+      avatarImgAlt: "Profile Photo",
+      bannerImgAlt: "Profile Background Banner"
     }
   }
 };
