@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // types
 import { ContactMethods, IAccount } from "../../interfaces/IAccount";
@@ -10,6 +11,7 @@ import { FiMail, FiPhone } from "react-icons/fi";
 import { BiWindows } from "react-icons/bi";
 
 // components
+import Translator from "../i18n/Translator";
 import Button from "../UI/Button";
 import { FormattedLocation } from "./FormattedLocation";
 
@@ -17,6 +19,8 @@ import { FormattedLocation } from "./FormattedLocation";
 import classes from "./ProfileView.module.css";
 
 const ProfileView = (props: IAccount) => {
+  const { t } = useTranslation();
+
   const [hasPronouns, setHasPronouns] = useState(false);
   const [hasAboutMe, setHasAboutMe] = useState(false);
   const [hasHighLights, setHasHighLights] = useState(false);
@@ -30,7 +34,8 @@ const ProfileView = (props: IAccount) => {
     props.professionalDetails?.services && services.length > 0
   );
 
-  const contactMethod: ContactMethods = props.contact?.contactMethod ?? "Email";
+  const contactMethod: ContactMethods =
+    props.contact?.contactMethod ?? ContactMethods.email;
   const contactIsVisible: boolean = props.contact?.isContactVisible ?? true;
   const contactInfo: string = props.contact?.contactInfo ?? "";
 
@@ -46,29 +51,34 @@ const ProfileView = (props: IAccount) => {
   return (
     <div className={classes.container}>
       <div className={classes.banner}>
-        <img src={props.images?.banner} alt="Profile Banner" />
+        <img
+          src={props.images?.banner}
+          alt={t("userAccountProfile.bannerImgAlt")}
+        />
       </div>
       <div className={classes.avatarCtaContainer}>
         <div className={classes.avatar}>
-          {/* <div className={classes.avatarMock} /> */}
-          <img src={props.images?.avatar} alt="Profile Avatar" />
+          <img
+            src={props.images?.avatar}
+            alt={t("userAccountProfile.avatarImgAlt")}
+          />
         </div>
         <div className={classes.ctaContainer + " mb-0"}>
           {contactIsVisible && (
             <Button color="2" fill="normal">
-              {contactMethod == "Email" ? (
+              {contactMethod === ContactMethods.email ? (
                 <FiMail size={30} />
-              ) : contactMethod == "Phone" ? (
+              ) : contactMethod === ContactMethods.phone ? (
                 <FiPhone size={30} />
-              ) : contactMethod == "Social" ? (
+              ) : contactMethod === ContactMethods.social ? (
                 <BiWindows size={30} />
-              ) : contactMethod == "WhatsApp" ? (
+              ) : contactMethod === ContactMethods.whatsapp ? (
                 <BsWhatsapp size={30} />
               ) : (
                 false
               )}
               &nbsp;
-              {"Contact me"}
+              <Translator path="userAccountProfile.contactButtonText" />
             </Button>
           )}
         </div>
@@ -117,13 +127,17 @@ const ProfileView = (props: IAccount) => {
         </div>
         {hasAboutMe && (
           <div>
-            <h2>About me</h2>
+            <h2>
+              <Translator path="userAccountProfile.aboutMe" />
+            </h2>
             <p>{props.shortBio}</p>
           </div>
         )}
         {hasHighLights && (
           <div>
-            <h2>My highlights</h2>
+            <h2>
+              <Translator path="userAccountProfile.highlights" />
+            </h2>
             <div className={classes.hlContainer}>
               <div className={classes.hlCard}>card</div>
             </div>
@@ -132,7 +146,9 @@ const ProfileView = (props: IAccount) => {
 
         {hasServices && (
           <div className={classes.servicesDiv}>
-            <h2>Services</h2>
+            <h2>
+              <Translator path="userAccountProfile.services" />
+            </h2>
             <ul
               style={{
                 columns: services.length >= 5 ? "2" : "1"
@@ -147,7 +163,9 @@ const ProfileView = (props: IAccount) => {
 
         {hasRelatedLocations && (
           <div>
-            <h2>Related Locations</h2>
+            <h2>
+              <Translator path="userAccountProfile.relatedLocations" />
+            </h2>
             <div>
               <div>
                 <div>img</div>
@@ -171,7 +189,9 @@ const ProfileView = (props: IAccount) => {
 
         {hasRelatedExperiences && (
           <div>
-            <h2>Related Experiences</h2>
+            <h2>
+              <Translator path="userAccountProfile.relatedExperiences" />
+            </h2>
             <div>
               <div>card</div>
               <div>card</div>

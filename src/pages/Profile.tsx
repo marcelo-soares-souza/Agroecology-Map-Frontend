@@ -49,7 +49,7 @@ const Profile = () => {
       },
       contact: {
         contactInfo: "",
-        contactMethod: "Email",
+        contactMethod: ContactMethods.email,
         isContactVisible: true
       },
       agreedToTerms: false

@@ -116,7 +116,13 @@ export default {
     },
     userAccountProfile: {
       avatarImgAlt: "Profile Photo",
-      bannerImgAlt: "Profile Background Banner"
+      bannerImgAlt: "Profile Background Banner",
+      contactButtonText: "Contact me",
+      aboutMe: "About me",
+      highlights: "My highlights",
+      services: "Services",
+      relatedLocations: "Related Locations",
+      relatedExperiences: "Related Experiences"
     }
   }
 };
