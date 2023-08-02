@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "../UI/Button";
 
@@ -9,6 +10,7 @@ interface IServiceTagInput {
   onServicesChange: Function;
 }
 const ServicesTagInput = (props: IServiceTagInput) => {
+  const { t } = useTranslation();
   const [tags, setTags] = useState<string[]>(props.services);
 
   useEffect(() => {
@@ -54,7 +56,9 @@ const ServicesTagInput = (props: IServiceTagInput) => {
         type="text"
         onKeyUp={servicesInputKeyHandler}
         onChange={servicesInputChangeHandler}
-        placeholder="Organic Food Baskets, Agrotourism, Tree Pruning Workshops..."
+        placeholder={t(
+          "profileRegistration.professionalInformation.servicesInputPlaceholder"
+        )}
       />
       <div className={classes.tags}>
         {tags.length > 0 &&

@@ -28,4 +28,9 @@ export interface IAccount {
   agreedToTerms?: boolean;
 }
 
-export type ContactMethods = "WhatsApp" | "Email" | "Phone" | "Social";
+export enum ContactMethods {
+  email = "Email",
+  phone = "Phone",
+  social = "Social",
+  whatsapp = "WhatsApp"
+}

@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ContactMethods } from "../../interfaces/IAccount";
+import { useTranslation } from "react-i18next";
 
-import classes from "../../pages/Profile.module.css";
+// Components
+import Translator from "../i18n/Translator";
 import { CheckboxItem } from "../CheckboxItem";
 import PrevNextButtons from "./PrevNextButtons";
 import Button from "../UI/Button";
+
+// Styles
+import classes from "../../pages/Profile.module.css";
 
 interface IContactInformationProps {
   contact: {
@@ -18,23 +23,40 @@ interface IContactInformationProps {
   onContactVisibilityChange: Function;
 }
 
-const contactMethods: ContactMethods[] = [
-  "Email",
-  "Phone",
-  "Social",
-  "WhatsApp"
-];
-
-const contactPlaceholder = {
-  Email: "email address",
-  Phone: "phone number with country and area codes",
-  Social: "social media link",
-  WhatsApp: "WhatsApp number with country and area codes"
-};
-
 const ContactInformation = (props: IContactInformationProps) => {
+  const { t } = useTranslation();
+
+  const contactMethods = [
+    {
+      text: t("profileRegistration.contactInformation.contactMethods.email"),
+      value: ContactMethods.email
+    },
+
+    {
+      text: t("profileRegistration.contactInformation.contactMethods.phone"),
+      value: ContactMethods.phone
+    },
+
+    {
+      text: t("profileRegistration.contactInformation.contactMethods.social"),
+      value: ContactMethods.social
+    },
+
+    {
+      text: t("profileRegistration.contactInformation.contactMethods.whatsapp"),
+      value: ContactMethods.whatsapp
+    }
+  ];
+
+  const contactPlaceholder = {
+    Email: "email address.",
+    Phone: "phone number with country and area codes.",
+    Social: "social media link.",
+    WhatsApp: "WhatsApp number with country and area codes."
+  };
+
   const [contactMethod, setContactMethod] = useState<ContactMethods>(
-    props.contact.contactMethod ?? "Email"
+    props.contact.contactMethod ?? ContactMethods.email
   );
   const [contactInfo, setContactInfo] = useState<string>(
     props.contact.contactInfo ?? ""
@@ -73,13 +95,17 @@ const ContactInformation = (props: IContactInformationProps) => {
   return (
     <div className={classes.firstColumn}>
       <div>
-        <h1>Get contacted by other users</h1>
+        <h1>
+          <Translator path="profileRegistration.contactInformation.title" />
+        </h1>
         <p className="text-light">
-          How would you like to be reached out by other agroecology peers?
+          <Translator path="profileRegistration.contactInformation.subtitle" />
         </p>
       </div>
       <div className="w-full">
-        <h3>Preferred contact method</h3>
+        <h3>
+          <Translator path="profileRegistration.contactInformation.contactMethodLabel" />
+        </h3>
         <div
           className="d-flex"
           style={{
@@ -90,23 +116,27 @@ const ContactInformation = (props: IContactInformationProps) => {
         >
           {contactMethods.map((method) => (
             <Button
-              fill={contactMethod === method ? "normal" : "outline"}
-              color={contactMethod === method ? "1" : "0"}
+              fill={contactMethod === method.value ? "normal" : "outline"}
+              color={contactMethod === method.value ? "1" : "0"}
               onClick={() => {
-                handleContactMethodChange(method);
+                handleContactMethodChange(method.value);
               }}
             >
-              {method}
+              {method.text}
             </Button>
           ))}
         </div>
         <div>
-          <h3>Contact information</h3>
+          <h3>
+            <Translator path="profileRegistration.contactInformation.contactInformationLabel" />
+          </h3>
           <input
             className="w-full"
             onChange={handleContactInfoChange}
             placeholder={
-              "Type here your " + contactPlaceholder[contactMethod] + "."
+              t(
+                "profileRegistration.contactInformation.contactInformationInputPlaceholder.prefix"
+              ) + contactPlaceholder[contactMethod]
             }
             type="text"
             autoComplete="true"
@@ -120,7 +150,9 @@ const ContactInformation = (props: IContactInformationProps) => {
           }}
         >
           <CheckboxItem
-            label="Visible in profile"
+            label={t(
+              "profileRegistration.contactInformation.contactVisibleLabel"
+            )}
             checked={contactIsVisible}
             onChange={handleContactVisibilityChange}
           />

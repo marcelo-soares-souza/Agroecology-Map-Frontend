@@ -63,6 +63,40 @@ export default {
         title: "Personalize your profile",
         subtitle:
           "Do it your way! Choose a profile photo and cover - \nthat's how the world will see you ;)"
+      },
+      professionalInformation: {
+        title: "Professional Details",
+        subtitle:
+          "Show your skills and experience! Share information about your profession and services with your connections.",
+        professionLabel: "Profession",
+        professionInputPlaceholder:
+          "Farmer, Horticulturist, Teacher, Photographer...",
+        servicesLabel: "Services you offer",
+        servicesDesc:
+          'Write a list of services you offer to your clients. Press "Enter" to add more items.',
+        servicesInputPlaceholder:
+          "Organic Food Baskets, Agrotourism, Tree Pruning Workshops..."
+      },
+      contactInformation: {
+        title: "Get contacted by other users",
+        subtitle:
+          "How would you like to be reached out by other agroecology peers?",
+        contactMethodLabel: "Preferred contact method",
+        contactMethods: {
+          email: "Email",
+          phone: "Phone",
+          social: "Social",
+          whatsapp: "WhatsApp"
+        },
+        contactInformationLabel: "Contact information",
+        contactInformationInputPlaceholder: {
+          prefix: "Type here your ",
+          email: "email address.",
+          phone: "phone number with country and area codes.",
+          social: "social media link.",
+          whatsapp: "WhatsApp number with country and area codes."
+        },
+        contactVisibleLabel: "Visible in profile"
       }
     },
     register: {
