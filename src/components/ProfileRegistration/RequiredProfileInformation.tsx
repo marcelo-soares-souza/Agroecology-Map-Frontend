@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import Translator from "../i18n/Translator";
 import { useTranslation } from "react-i18next";
 
-import { CheckboxItem } from "../../components/CheckboxItem";
+// components
+import Translator from "../i18n/Translator";
+import { CheckboxItem } from "@components/CheckboxItem";
 import PrevNextButtons from "./PrevNextButtons";
 
-import classes from "../../pages/Profile.module.css";
+// styles
+import classes from "@pages/ProfileRegistration.module.css";
 
 interface IRequiredProfileInformation {
   accountName: string;

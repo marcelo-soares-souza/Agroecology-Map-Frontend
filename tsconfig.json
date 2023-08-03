@@ -23,7 +23,25 @@
       {
         "name": "typescript-plugin-css-modules"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    }
   },
   "include": [
     "src"

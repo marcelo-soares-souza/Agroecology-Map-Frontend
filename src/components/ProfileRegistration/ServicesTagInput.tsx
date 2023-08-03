@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+// components
 import Button from "../UI/Button";
 
+// styles
 import classes from "./ServicesTagInput.module.css";
 
 interface IServiceTagInput {
   services: string[];
   onServicesChange: Function;
 }
+
 const ServicesTagInput = (props: IServiceTagInput) => {
   const { t } = useTranslation();
   const [tags, setTags] = useState<string[]>(props.services);

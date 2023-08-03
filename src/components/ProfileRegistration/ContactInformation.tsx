@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { ContactMethods } from "../../interfaces/IAccount";
 import { useTranslation } from "react-i18next";
-
+// Types
+import { ContactMethods } from "@interfaces/IAccount";
 // Components
 import Translator from "../i18n/Translator";
 import { CheckboxItem } from "../CheckboxItem";
-import PrevNextButtons from "./PrevNextButtons";
 import Button from "../UI/Button";
-
+import PrevNextButtons from "./PrevNextButtons";
 // Styles
-import classes from "../../pages/Profile.module.css";
+import classes from "@pages/ProfileRegistration.module.css";
 
 interface IContactInformationProps {
   contact: {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+// Components
 import Translator from "../i18n/Translator";
 import CameraButton from "./CameraButton";
 import PrevNextButtons from "./PrevNextButtons";
-
-import { firstColumn } from "../../pages/Profile.module.css";
+// Styles
+import { firstColumn } from "@pages/ProfileRegistration.module.css";
 import classes from "./ImageSelection.module.css";
 
 interface IImageSelection {

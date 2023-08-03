@@ -1,14 +1,14 @@
 import { render } from "@testing-library/react";
 import "../i18n";
 
-// Components
-import AboutYou from "../components/Profile/AboutYou";
-import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
-import ProfilePreview from "../components/Profile/ProfilePreview";
-import Location from "../components/Profile/Location";
-import ImageSelection from "../components/Profile/ImageSelection";
-import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
-import ContactInformation from "../components/Profile/ContactInformation";
+// components
+import AboutYou from "@components/ProfileRegistration/AboutYou";
+import RequiredProfileInformation from "@components/ProfileRegistration/RequiredProfileInformation";
+import ProfilePreview from "@components/ProfileRegistration/ProfilePreview";
+import Location from "@components/ProfileRegistration/Location";
+import ImageSelection from "@components/ProfileRegistration/ImageSelection";
+import ProfessionalInformation from "@components/ProfileRegistration/ProfessionalInformation";
+import ContactInformation from "@components/ProfileRegistration/ContactInformation";
 
 describe("<Profile />", () => {
   const changePage = () => {};

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // types
-import { ContactMethods, IAccount } from "../../interfaces/IAccount";
+import { ContactMethods, IAccount } from "@interfaces/IAccount";
 
 // icons
 import { BsPersonLinesFill, BsWhatsapp } from "react-icons/bs";

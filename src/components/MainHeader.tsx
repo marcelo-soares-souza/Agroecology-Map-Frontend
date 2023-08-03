@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
 
-import classes from "./MainHeader.module.css";
+// assets
+import logo from "@assets/logo-agroecologymap.svg";
 
-import logo from "../assets/logo-agroecologymap.svg";
+// components
 import Translator from "./i18n/Translator";
 import Button from "./UI/Button";
+
+// styles
+import classes from "./MainHeader.module.css";
 
 const MainHeader = () => {
   return (

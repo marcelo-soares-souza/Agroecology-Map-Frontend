@@ -8,14 +8,12 @@ import {
   IState,
   ICity
 } from "country-state-city";
-
 // Components
 import Translator from "../i18n/Translator";
 import Select, { ActionMeta } from "react-select";
 import PrevNextButtons from "./PrevNextButtons";
-
 // Styles
-import classes from "../../pages/Profile.module.css";
+import classes from "@pages/ProfileRegistration.module.css";
 
 interface ILocation {
   country: string;
