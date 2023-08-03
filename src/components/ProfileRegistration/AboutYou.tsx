@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-
+// Components
 import Translator from "../i18n/Translator";
 import { useTranslation } from "react-i18next";
 import PrevNextButtons from "./PrevNextButtons";
-
-import classes from "../../pages/Profile.module.css";
+// Styles
+import classes from "../../pages/ProfileRegistration.module.css";
 import { textArea } from "./AboutYou.module.css";
+
 interface IAboutYou {
   pronouns: string;
   shortBio: string;

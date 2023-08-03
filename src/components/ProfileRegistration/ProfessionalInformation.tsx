@@ -1,13 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-
 // Components
 import Translator from "../i18n/Translator";
 import PrevNextButtons from "./PrevNextButtons";
 import ServicesTagInput from "./ServicesTagInput";
-
 // Styles
-import classes from "../../pages/Profile.module.css";
+import classes from "../../pages/ProfileRegistration.module.css";
 
 interface IProfessionalInformation {
   changePage: Function;

@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react";
 
-// Components
-import AboutYou from "../components/Profile/AboutYou";
-import Location from "../components/Profile/Location";
-import ImageSelection from "../components/Profile/ImageSelection";
-import ProfilePreview from "../components/Profile/ProfilePreview";
-import RequiredProfileInformation from "../components/Profile/RequiredProfileInformation";
+// components
+import AboutYou from "~/components/ProfileRegistration/AboutYou";
+import ContactInformation from "~/components/ProfileRegistration/ContactInformation";
+import ImageSelection from "~/components/ProfileRegistration/ImageSelection";
+import Location from "~/components/ProfileRegistration/Location";
+import ProfessionalInformation from "~/components/ProfileRegistration/ProfessionalInformation";
+import ProfilePreview from "~/components/ProfileRegistration/ProfilePreview";
+import RequiredProfileInformation from "~/components/ProfileRegistration/RequiredProfileInformation";
 
-// Mock Data
+// mock data
 import { mockAccount } from "../mocks/mock-account";
-import avatar from "../assets/mock/placeholder-avatar-pic.jpg";
-import banner from "../assets/mock/placeholder-avatar-banner.jpg";
+import avatar from "~/assets/mock/placeholder-avatar-pic.jpg";
+import banner from "~/assets/mock/placeholder-avatar-banner.jpg";
 
-// CSS
-import classes from "./Profile.module.css";
+// styles
+import classes from "./ProfileRegistration.module.css";
 
-// Interfaces
-import { ContactMethods, IAccount } from "../interfaces/IAccount";
-import ProfessionalInformation from "../components/Profile/ProfessionalInformation";
-import ContactInformation from "../components/Profile/ContactInformation";
+// types
+import { ContactMethods, IAccount } from "~/interfaces/IAccount";
 
-const Profile = () => {
+const ProfileRegistration = () => {
   // const mockProfile: IAccount = useLoaderData() as IAccount;
 
   const [whichPage, setWhichPage] = useState("RequiredProfileInformation");
@@ -258,7 +258,7 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfileRegistration;
 
 export const loader = async () => {
   return mockAccount;

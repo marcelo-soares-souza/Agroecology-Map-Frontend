@@ -1,5 +1,5 @@
 import { FiCamera } from "react-icons/fi";
-
+// Styles
 import classes from "./CameraButton.module.css";
 
 interface ICameraButton {

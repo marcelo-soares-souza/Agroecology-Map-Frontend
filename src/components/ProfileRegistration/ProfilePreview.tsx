@@ -1,6 +1,9 @@
+// Components
 import ProfileView from "./ProfileView";
+// Types
+import { IAccount } from "~/interfaces/IAccount";
+// Styles
 import classes from "./ProfilePreview.module.css";
-import { IAccount } from "../../interfaces/IAccount";
 
 const ProfilePreview = (props: IAccount) => {
   return (

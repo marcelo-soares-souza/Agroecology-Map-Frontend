@@ -1,14 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import ErrorPage from "../pages/ErrorPage";
 import RootLayout from "./RouteLayout";
 
+// pages
+import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import ProfileRegistration from "../pages/ProfileRegistration";
 import Register from "../pages/Register";
-import Profile from "../pages/Profile";
 
-// Loaders
-import { loader as profileLoader } from "../pages/Profile";
+// loaders
+import { loader as profileLoader } from "../pages/ProfileRegistration";
 
 export const MainRouter = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ export const MainRouter = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: <ProfileRegistration />,
         loader: profileLoader
       }
     ]
