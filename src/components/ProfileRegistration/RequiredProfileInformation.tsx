@@ -46,17 +46,31 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
   const accountNameChangedHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const value = event.target.value;
-    setAccountNameHasError(false);
-    setAccountName(value);
-    props.onAccountNameChange(value);
+    const value = event.target.value.toLocaleLowerCase();
+    if (value.length < 3) setAccountNameHasError(true);
+    if (value === "" || isAccountNameValid(value)) {
+      if (value.length >= 3) {
+        setAccountNameHasError(false);
+      }
+      setAccountName(value);
+      props.onAccountNameChange(value);
+    } else {
+      setAccountName((oldValue) => oldValue);
+    }
+  };
+
+  const isAccountNameValid = (accountName: string) => {
+    if (!accountName.match(/^[a-z_-]+$/)) {
+      return false;
+    }
+    return true;
   };
 
   const accountNameBlurHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const value = event.target.value;
-    if (value.length <= 0) {
+    if (value.length < 3) {
       setAccountNameHasError(true);
     } else {
       setAccountNameHasError(false);
@@ -157,7 +171,7 @@ const RequiredProfileInformation = (props: IRequiredProfileInformation) => {
       </CheckboxItem>
 
       <PrevNextButtons
-        disableNext={!agreedToTerms}
+        disableNext={!agreedToTerms || accountNameHasError}
         nextPageHandler={nextPageHandler}
       />
     </div>
