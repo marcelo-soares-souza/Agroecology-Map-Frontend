@@ -95,6 +95,14 @@ a:hover {
   color: var(--orange);
 }
 
+
+/* Tablet */
+@media (max-width: 1440px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
 /* Mobile */
 
 @media (max-width: 920px) {

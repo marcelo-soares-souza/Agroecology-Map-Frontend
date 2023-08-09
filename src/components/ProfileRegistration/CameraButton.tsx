@@ -7,8 +7,6 @@ interface ICameraButton {
 }
 
 const CameraButton = (props: ICameraButton) => {
-  const rand = Math.floor(Math.random() * 1000);
-
   const addPhotoChangedHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -16,20 +14,18 @@ const CameraButton = (props: ICameraButton) => {
   };
 
   return (
-    <label htmlFor={`file-input-${rand}`} style={{ cursor: "pointer" }}>
-      <div className={classes.inputImage}>
-        <div className={classes.cameraIcon}>
-          <FiCamera color="#EEE" size={32} />
-        </div>
-        <input
-          id={`file-input-${rand}`}
-          type="file"
-          name="file"
-          accept="image/x-png, image/jpeg"
-          onChange={addPhotoChangedHandler}
-        />
+    <div className={classes.inputImage}>
+      <div className={classes.cameraIcon}>
+        <FiCamera color="#EEE" size={32} />
       </div>
-    </label>
+      <input
+        tabIndex={-1}
+        type="file"
+        name="file"
+        accept="image/x-png, image/jpeg"
+        onChange={addPhotoChangedHandler}
+      />
+    </div>
   );
 };
 

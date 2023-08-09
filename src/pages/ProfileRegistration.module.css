@@ -4,14 +4,17 @@
 }
 
 .firstColumn {
-  margin: max(1rem, 5%) 1rem max(1rem, 15%) 1rem;
+  /* margin: max(1rem, 5%) 1rem max(1rem, 15%) 1rem; */
   width: min(98%, 640px);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: end;
   align-items: start;
   justify-self: center;
   gap: var(--space-4);
-  align-self: end;
+  /* align-self: end; */
+  padding: 1rem max(1rem, 2%) max(2rem, 15%) max(1rem, 2%);
 }
 
 .error {

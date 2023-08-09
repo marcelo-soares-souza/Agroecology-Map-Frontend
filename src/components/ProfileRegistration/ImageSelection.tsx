@@ -57,6 +57,13 @@ const ImageSelection = (props: IImageSelection) => {
     }
   };
 
+  const keyboardSelectOnFocusHandler = (
+    event: React.KeyboardEvent<HTMLDivElement>
+  ) => {
+    if (event.key === "Enter" || event.key === " ")
+      event.currentTarget.getElementsByTagName("input")[0].click();
+  };
+
   return (
     <div className={firstColumn}>
       <div className="h-group">
@@ -68,14 +75,22 @@ const ImageSelection = (props: IImageSelection) => {
         </p>
       </div>
       <div className="w-full mb-3">
-        <div className={classes.banner}>
+        <div
+          className={classes.banner}
+          tabIndex={0}
+          onKeyUp={keyboardSelectOnFocusHandler}
+        >
           <img
             src={bannerImageFile}
             alt={t("userAccountProfile.bannerImgAlt")}
           />
           <CameraButton addPhoto={addBannerPhotoHandler} />
         </div>
-        <div className={classes.avatar}>
+        <div
+          className={classes.avatar}
+          tabIndex={0}
+          onKeyUp={keyboardSelectOnFocusHandler}
+        >
           <img
             src={avatarImageFile}
             alt={t("userAccountProfile.avatarImgAlt")}
