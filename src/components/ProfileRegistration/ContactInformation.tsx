@@ -4,11 +4,12 @@ import { useTranslation } from "react-i18next";
 import { ContactMethods } from "~/interfaces/IAccount";
 // Components
 import Translator from "../i18n/Translator";
-import { CheckboxItem } from "../CheckboxItem";
+import CheckboxItem from "../CheckboxItem";
 import Button from "../UI/Button";
 import PrevNextButtons from "./PrevNextButtons";
 // Styles
-import classes from "../../pages/ProfileRegistration.module.css";
+import { firstColumn } from "../../pages/ProfileRegistration.module.css";
+import classes from "./ContactInformation.module.css";
 
 interface IContactInformationProps {
   contact: {
@@ -92,7 +93,7 @@ const ContactInformation = (props: IContactInformationProps) => {
   };
 
   return (
-    <div className={classes.firstColumn}>
+    <div className={firstColumn}>
       <div>
         <h1>
           <Translator path="profileRegistration.contactInformation.title" />
@@ -105,16 +106,10 @@ const ContactInformation = (props: IContactInformationProps) => {
         <h3>
           <Translator path="profileRegistration.contactInformation.contactMethodLabel" />
         </h3>
-        <div
-          className="d-flex"
-          style={{
-            textAlign: "center",
-            gap: "2rem",
-            margin: "0rem 1rem 0.5rem 1rem"
-          }}
-        >
-          {contactMethods.map((method) => (
+        <div className={classes.contactMethodButtons}>
+          {contactMethods.map((method, i) => (
             <Button
+              key={method.value + i}
               fill={contactMethod === method.value ? "normal" : "outline"}
               color={contactMethod === method.value ? "1" : "0"}
               onClick={() => {
@@ -141,13 +136,7 @@ const ContactInformation = (props: IContactInformationProps) => {
             autoComplete="true"
           />
         </div>
-        <div
-          style={{
-            marginLeft: "0.1rem",
-            width: "max-content",
-            cursor: "pointer"
-          }}
-        >
+        <div className={classes.visibilityCheckbox}>
           <CheckboxItem
             label={t(
               "profileRegistration.contactInformation.contactVisibleLabel"

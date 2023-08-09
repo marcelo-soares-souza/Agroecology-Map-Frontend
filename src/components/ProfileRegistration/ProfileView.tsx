@@ -83,7 +83,7 @@ const ProfileView = (props: IAccount) => {
           )}
         </div>
       </div>
-      <div className={classes.textContainer}>
+      <div className={classes.profileBodyContainer}>
         <div>
           <div className="d-flex">
             <div>
@@ -118,7 +118,7 @@ const ProfileView = (props: IAccount) => {
             )}
             {props.professionalDetails?.profession && (
               <li>
-                <BsPersonLinesFill />
+                <BsPersonLinesFill style={{ margin: "0 1px" }} size={18} />
                 &nbsp;
                 <p>{props.professionalDetails.profession}</p>
               </li>
@@ -154,8 +154,8 @@ const ProfileView = (props: IAccount) => {
                 columns: services.length >= 5 ? "2" : "1"
               }}
             >
-              {props.professionalDetails?.services?.map((service) => (
-                <li>{service}</li>
+              {props.professionalDetails?.services?.map((service, i) => (
+                <li key={service + i}>{service}</li>
               ))}
             </ul>
           </div>

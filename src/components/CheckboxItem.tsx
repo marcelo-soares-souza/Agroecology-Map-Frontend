@@ -7,7 +7,7 @@ interface CheckboxItemProps {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-export const CheckboxItem = (props: CheckboxItemProps) => {
+const CheckboxItem = (props: CheckboxItemProps) => {
   return (
     <label className={classes.container + " text-light input-description"}>
       <input
@@ -20,3 +20,5 @@ export const CheckboxItem = (props: CheckboxItemProps) => {
     </label>
   );
 };
+
+export default CheckboxItem;

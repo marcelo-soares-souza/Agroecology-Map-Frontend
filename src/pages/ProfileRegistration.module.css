@@ -4,14 +4,14 @@
 }
 
 .firstColumn {
-  max-width: 620px;
+  margin: max(1rem, 5%) 1rem max(1rem, 15%) 1rem;
+  width: min(98%, 640px);
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-self: center;
   gap: var(--space-4);
   align-self: end;
-  margin-bottom: 15%;
 }
 
 .error {
