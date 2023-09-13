@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 // components
 import Translator from "../i18n/Translator";
-import { CheckboxItem } from "~/components/CheckboxItem";
+import { CheckboxItem } from "../CheckboxItem";
 import PrevNextButtons from "./PrevNextButtons";
 
 // styles

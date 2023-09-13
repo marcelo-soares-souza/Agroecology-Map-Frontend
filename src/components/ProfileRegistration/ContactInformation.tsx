@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 // Types
-import { ContactMethods } from "~/interfaces/IAccount";
+import { ContactMethods } from "../../interfaces/IAccount";
 // Components
 import Translator from "../i18n/Translator";
 import { CheckboxItem } from "../CheckboxItem";
@@ -105,8 +105,7 @@ const ContactInformation = (props: IContactInformationProps) => {
         <h3>
           <Translator path="profileRegistration.contactInformation.contactMethodLabel" />
         </h3>
-        <div
-          className="d-flex"
+        <div className="d-flex"
           style={{
             textAlign: "center",
             gap: "2rem",
